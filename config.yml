@@ -1,5 +1,5 @@
-baseURL: "https://pascalmichaillat.org/hugo-website/" 
-title: Prof. Name
+baseURL: "https://damandhaliwal.github.io" 
+title: Daman Dhaliwal
 paginate: 20
 theme: PaperMod
 
@@ -25,8 +25,7 @@ menu:
           weight: 4
 
 params:
-    description: "I am a Professor of Subject at the University of Place. My research covers various topics.
-consequat."
+    description: "I am a researcher at Sciences Po's Department of Economics and work on Acquisitions at Chard Development in Vancouver, BC."
     author: Name
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
@@ -50,12 +49,12 @@ consequat."
     math: true
     profileMode:
           enabled: true
-          title: Prof. Namely Name
-          subtitle: "I am a Professor of Subject at the University of Place. I work on various topics. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo."
+          title: Damanveer Singh Dhaliwal
+          subtitle: "I am a researcher at Sciences Po's Department of Economics and work on Acquisitions at Chard Development in Vancouver, BC."
           imageUrl: "picture.jpeg"
           imageWidth: 160
           imageHeight: 160
-          imageTitle: Prof. Name
+          imageTitle: Daman Dhaliwal
           buttons:
             - name: Papers
               url: papers/
@@ -63,8 +62,6 @@ consequat."
               url: courses/
             - name: Data
               url: data/
-            - name: Newsletter
-              url: https://pmichaillat.substack.com
             - name: Tags
               url: tags/
             - name: Archive
@@ -73,21 +70,15 @@ consequat."
         - name: CV
           url: cv.pdf
         - name: Email
-          url: mailto:pascal.michaillat@gmail.com
+          url: mailto:damandhaliwal1910@gmail.com
         - name: Location
           url: location/
-        - name: Office Hours
-          url: officehours/
-        - name: Google Scholar
-          url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
-        - name: YouTube
-          url: https://www.youtube.com/@pmichaillat
         - name: GitHub
-          url: https://github.com/pmichaillat
-        - name: Substack
-          url: https://pmichaillat.substack.com
+          url: https://github.com/damandhaliwal
+        - name: LinkedIn
+          url: https://www.linkedin.com/in/damanveerdhaliwal/
         - name: Twitter
-          url: https://twitter.com/pmichaillat
+          url: https://twitter.com/damandhaliwal19
 
     assets:
         disableHLJS: true
@@ -96,7 +87,7 @@ consequat."
         hiddenInList: false
         hiddenInSingle: true
     label:
-      text: "Prof. Name"
+      text: "Daman Dhaliwal"
       icon: favicon.ico
       iconHeight: 18
 
