@@ -46,7 +46,7 @@ params:
     math: true
     profileMode:
           enabled: true
-          title: Damanveer Singh Dhaliwal
+          title: Daman Dhaliwal
           subtitle: "I am a researcher at Sciences Po's Department of Economics and work on Acquisitions at Chard Development in Vancouver, BC."
           imageUrl: "picture.jpg"
           imageWidth: 160
