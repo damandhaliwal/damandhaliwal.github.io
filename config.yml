@@ -48,7 +48,7 @@ params:
           enabled: true
           title: Daman Dhaliwal
           subtitle: "I am a researcher at Sciences Po's Department of Economics and work on Acquisitions at Chard Development in Vancouver, BC."
-          imageUrl: "picture.jpg"
+          imageUrl: "/picture.jpg"
           imageWidth: 160
           imageHeight: 160
           imageTitle: Daman Dhaliwal
@@ -65,8 +65,6 @@ params:
           url: cv.pdf
         - name: Email
           url: mailto:damandhaliwal1910@gmail.com
-        - name: Location
-          url: location/
         - name: GitHub
           url: https://github.com/damandhaliwal
         - name: LinkedIn
@@ -82,7 +80,7 @@ params:
         hiddenInSingle: true
     label:
       text: "Daman Dhaliwal"
-      icon: favicon.jpg
+      icon: /favicon.ico
       iconHeight: 18
 
 markup:
