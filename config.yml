@@ -24,7 +24,7 @@ menu:
 params:
     description: "I am a researcher at Sciences Po's Department of Economics and work on Acquisitions at Chard Development in Vancouver, BC."
     author: Name
-    # googleAnalyticsID: "G-XXXXX"
+    googleAnalyticsID: "G-VSMFLB72RM"
     DateFormat: "January 2006"
     defaultTheme: light
     hideFooter: false
