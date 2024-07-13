@@ -14,9 +14,9 @@ menu:
         - name: Papers
           url: papers/
           weight: 1
-        - name: Courses
-          url: courses/
-          weight: 2
+        #- name: Courses
+          #url: courses/
+          #weight: 2
         - name: Data
           url: data/
           weight: 3 
@@ -55,8 +55,8 @@ params:
           buttons:
             - name: Papers
               url: papers/
-            - name: Courses
-              url: courses/
+            #- name: Courses
+              #url: courses/
             - name: Data
               url: data/
 

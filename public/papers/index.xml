@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Papers on Daman Dhaliwal</title>
-    <link>https://damandhaliwal.me/papers/</link>
+    <link>http://localhost:1313/papers/</link>
     <description>Recent content in Papers on Daman Dhaliwal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://damandhaliwal.me/papers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/papers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Index Funds’ Corporate Stewardship Behaviour</title>
-      <link>https://damandhaliwal.me/papers/index-funds/</link>
+      <link>http://localhost:1313/papers/index-funds/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://damandhaliwal.me/papers/index-funds/</guid>
+      <guid>http://localhost:1313/papers/index-funds/</guid>
       <description>This paper studies corporate stewardship.</description>
     </item>
     

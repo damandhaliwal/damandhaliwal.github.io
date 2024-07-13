@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://damandhaliwal.me/tags/corporate-governane/</loc>
+    <loc>http://localhost:1313/tags/corporate-governane/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://damandhaliwal.me/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://damandhaliwal.me/tags/index-funds/</loc>
+    <loc>http://localhost:1313/tags/index-funds/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://damandhaliwal.me/papers/index-funds/</loc>
+    <loc>http://localhost:1313/papers/index-funds/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://damandhaliwal.me/papers/</loc>
+    <loc>http://localhost:1313/papers/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://damandhaliwal.me/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://damandhaliwal.me/archive/</loc>
+    <loc>http://localhost:1313/archive/</loc>
   </url><url>
-    <loc>https://damandhaliwal.me/courses/</loc>
+    <loc>http://localhost:1313/courses/</loc>
   </url><url>
-    <loc>https://damandhaliwal.me/data/</loc>
+    <loc>http://localhost:1313/data/</loc>
   </url><url>
-    <loc>https://damandhaliwal.me/location/</loc>
+    <loc>http://localhost:1313/location/</loc>
   </url><url>
-    <loc>https://damandhaliwal.me/officehours/</loc>
+    <loc>http://localhost:1313/officehours/</loc>
   </url>
 </urlset>
