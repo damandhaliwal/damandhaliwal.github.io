@@ -47,7 +47,12 @@ params:
     profileMode:
           enabled: true
           title: Daman Dhaliwal
-          subtitle: "I am a graduate student at the University of Toronto studying Economics and Machine learning. I am also a Research Replicator on Florian Oswald's team at the Journal of Political Economy."
+          subtitle: |
+            I'm an applied economist with a focus on causal inference. I'm currently finishing my MA in Economics at the University of Toronto, where my coursework has focused on causal machine learning and econometrics. Before graduate school, I worked on the Acquisitions team of a large Real Estate Investment Team in Vancouver, BC after studying Finance at UBC.
+
+            I like working on hard identification problems (social capital, heterogeneous treatment effects, spatial econometrics), especially when the data is messy and the question actually matters. I've worked with datasets ranging from 300K observation field experiments to 14M firm records, and I enjoy the challenge of building pipelines that turn noisy, real-world data into credible causal estimates.
+
+            I work in Python and R mostly, but I'll pick up whatever else the problem needs.
           imageUrl: "/picture.jpg"
           imageWidth: 160
           imageHeight: 160

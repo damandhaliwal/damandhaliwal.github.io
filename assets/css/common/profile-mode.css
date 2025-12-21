@@ -17,6 +17,10 @@
     font-size: 40px;
 }
 
+.profile_subtitle p {
+    margin-bottom: 1em;
+}
+
 .profile img {
     display: inline-table;
     border-radius: 50%;
