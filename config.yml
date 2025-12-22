@@ -48,7 +48,7 @@ params:
           enabled: true
           title: Daman Dhaliwal
           subtitle: |
-            I'm an applied economist with a focus on causal inference. I'm currently finishing my MA in Economics at the University of Toronto, where my coursework has focused on causal machine learning and econometrics. Before graduate school, I worked on the Acquisitions team of a large Real Estate Investment Team in Vancouver, BC after studying Finance at UBC.
+            I'm an applied economist with a focus on causal inference. I'm currently finishing my MA in Economics at the University of Toronto, where my coursework has focused on causal machine learning and econometrics. Before graduate school, I worked on the Acquisitions team of a large real estate investment team in Vancouver, BC after studying Finance at UBC.
 
             I like working on hard identification problems (social capital, heterogeneous treatment effects, spatial econometrics), especially when the data is messy and the question actually matters. I've worked with datasets ranging from 300K observation field experiments to 14M firm records, and I enjoy the challenge of building pipelines that turn noisy, real-world data into credible causal estimates.
 
@@ -73,9 +73,9 @@ params:
         - name: GitHub
           url: https://github.com/damandhaliwal
         - name: LinkedIn
-          url: https://www.linkedin.com/in/damanveerdhaliwal/
+          url: https://www.linkedin.com/in/dhaliwaldaman/
         - name: Twitter
-          url: https://twitter.com/damandhaliwal19
+          url: https://x.com/damandhaliwal19
 
     assets:
         disableHLJS: true

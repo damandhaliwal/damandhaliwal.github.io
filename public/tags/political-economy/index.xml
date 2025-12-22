@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Political Economy on Daman Dhaliwal</title>
+    <link>http://localhost:1313/tags/political-economy/</link>
+    <description>Recent content in Political Economy on Daman Dhaliwal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 16 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/political-economy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Viral Voting: A study in the information diffusion effects of different social pressure treatments on voter turnout.</title>
+      <link>http://localhost:1313/papers/viralvoting/</link>
+      <pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/papers/viralvoting/</guid>
+      <description>This paper studies the information diffusion effects of different social pressure treatments on voter turnout.</description>
+    </item>
+    
+  </channel>
+</rss>

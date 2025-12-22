@@ -6,13 +6,58 @@
     <description>Recent content in Tags on Daman Dhaliwal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Corporate Governane</title>
-      <link>http://localhost:1313/tags/corporate-governane/</link>
+      <title>Causal Inference</title>
+      <link>http://localhost:1313/tags/causal-inference/</link>
+      <pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/causal-inference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Information Diffusion</title>
+      <link>http://localhost:1313/tags/information-diffusion/</link>
+      <pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/information-diffusion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>http://localhost:1313/tags/machine-learning/</link>
+      <pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Political Economy</title>
+      <link>http://localhost:1313/tags/political-economy/</link>
+      <pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/political-economy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Social Pressure</title>
+      <link>http://localhost:1313/tags/social-pressure/</link>
+      <pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/social-pressure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Corporate Governance</title>
+      <link>http://localhost:1313/tags/corporate-governance/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/corporate-governane/</guid>
+      <guid>http://localhost:1313/tags/corporate-governance/</guid>
       <description></description>
     </item>
     

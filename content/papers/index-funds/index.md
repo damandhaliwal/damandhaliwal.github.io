@@ -1,7 +1,7 @@
 ---
 title: "Index Funds’ Corporate Stewardship Behaviour" 
 date: 2021-04-19
-tags: ["Corporate Governane","Index Funds"]
+tags: ["Corporate Governance","Index Funds"]
 author: "Daman Dhaliwal"
 description: "This paper studies corporate stewardship." 
 summary: "The purpose of this essay was to study and understand the incentives of the Big Three firms to underinvest in corporate stewardship." 
