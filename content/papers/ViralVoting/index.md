@@ -20,6 +20,7 @@ editPost:
 ##### Download
 
 + [Paper](final_viral_voting.pdf)
++ [Code](https://github.com/damandhaliwal/ViralVoting)
 
 ---
 

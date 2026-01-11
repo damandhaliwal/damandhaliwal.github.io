@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Black-Scholes on Daman Dhaliwal</title>
+    <link>http://localhost:1313/tags/black-scholes/</link>
+    <description>Recent content in Black-Scholes on Daman Dhaliwal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 09 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/black-scholes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deep Hedging with Non-Parametric Volatility Surfaces and Explicit Forecasting</title>
+      <link>http://localhost:1313/papers/rlalgotrading/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/papers/rlalgotrading/</guid>
+      <description>This paper develops a novel deep hedging framework trained on real SPY options data, using autoencoder-compressed volatility surfaces and LSTM forecasting to learn optimal hedging strategies.</description>
+    </item>
+    
+  </channel>
+</rss>

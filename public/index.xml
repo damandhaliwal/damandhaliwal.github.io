@@ -6,7 +6,16 @@
     <description>Recent content on Daman Dhaliwal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 16 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Role of Social Capital in Business Performance: An Empirical Analysis</title>
+      <link>http://localhost:1313/papers/socialcapital/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/papers/socialcapital/</guid>
+      <description>This paper examines how different dimensions of social capital—economic connectedness, social cohesion, and civic engagement—affect business survival and growth during economic crises.</description>
+    </item>
+    
     <item>
       <title>Viral Voting: A study in the information diffusion effects of different social pressure treatments on voter turnout.</title>
       <link>http://localhost:1313/papers/viralvoting/</link>
@@ -14,6 +23,15 @@
       
       <guid>http://localhost:1313/papers/viralvoting/</guid>
       <description>This paper studies the information diffusion effects of different social pressure treatments on voter turnout.</description>
+    </item>
+    
+    <item>
+      <title>Deep Hedging with Non-Parametric Volatility Surfaces and Explicit Forecasting</title>
+      <link>http://localhost:1313/papers/rlalgotrading/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/papers/rlalgotrading/</guid>
+      <description>This paper develops a novel deep hedging framework trained on real SPY options data, using autoencoder-compressed volatility surfaces and LSTM forecasting to learn optimal hedging strategies.</description>
     </item>
     
     <item>
