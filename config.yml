@@ -11,15 +11,15 @@ taxonomies:
 
 menu:
     main:
-        - name: Papers
-          url: papers/
+        - name: Projects
+          url: projects/
           weight: 1
         #- name: Courses
           #url: courses/
           #weight: 2
-        - name: Data
-          url: data/
-          weight: 3 
+        #- name: Data
+          #url: data/
+          #weight: 3 
 
 params:
     description: "I am a graduate student at the University of Toronto studying Economics and Machine learning. I am also a Research Replicator on Florian Oswald's team at the Journal of Political Economy."
@@ -58,12 +58,12 @@ params:
           imageHeight: 160
           imageTitle: Daman Dhaliwal
           buttons:
-            - name: Papers
-              url: papers/
+            - name: Projects
+              url: projects/
             #- name: Courses
               #url: courses/
-            - name: Data
-              url: data/
+            #- name: Data
+              #url: data/
 
     socialIcons:
         - name: CV

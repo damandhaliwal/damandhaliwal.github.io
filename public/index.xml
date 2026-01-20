@@ -9,37 +9,37 @@
     <lastBuildDate>Sun, 11 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Role of Social Capital in Business Performance: An Empirical Analysis</title>
-      <link>http://localhost:1313/papers/socialcapital/</link>
+      <link>http://localhost:1313/projects/socialcapital/</link>
       <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/papers/socialcapital/</guid>
+      <guid>http://localhost:1313/projects/socialcapital/</guid>
       <description>This paper examines how different dimensions of social capital—economic connectedness, social cohesion, and civic engagement—affect business survival and growth during economic crises.</description>
     </item>
     
     <item>
       <title>Viral Voting: A study in the information diffusion effects of different social pressure treatments on voter turnout.</title>
-      <link>http://localhost:1313/papers/viralvoting/</link>
+      <link>http://localhost:1313/projects/viralvoting/</link>
       <pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/papers/viralvoting/</guid>
+      <guid>http://localhost:1313/projects/viralvoting/</guid>
       <description>This paper studies the information diffusion effects of different social pressure treatments on voter turnout.</description>
     </item>
     
     <item>
       <title>Deep Hedging with Non-Parametric Volatility Surfaces and Explicit Forecasting</title>
-      <link>http://localhost:1313/papers/rlalgotrading/</link>
+      <link>http://localhost:1313/projects/rlalgotrading/</link>
       <pubDate>Tue, 09 Dec 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/papers/rlalgotrading/</guid>
+      <guid>http://localhost:1313/projects/rlalgotrading/</guid>
       <description>This paper develops a novel deep hedging framework trained on real SPY options data, using autoencoder-compressed volatility surfaces and LSTM forecasting to learn optimal hedging strategies.</description>
     </item>
     
     <item>
       <title>Index Funds’ Corporate Stewardship Behaviour</title>
-      <link>http://localhost:1313/papers/index-funds/</link>
+      <link>http://localhost:1313/projects/index-funds/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/papers/index-funds/</guid>
+      <guid>http://localhost:1313/projects/index-funds/</guid>
       <description>This paper studies corporate stewardship.</description>
     </item>
     
