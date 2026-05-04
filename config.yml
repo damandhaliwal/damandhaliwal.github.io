@@ -11,7 +11,7 @@ taxonomies:
 
 menu:
     main:
-        - name: Projects
+        - name: Work
           url: projects/
           weight: 1
         - name: Writing
@@ -25,8 +25,8 @@ menu:
           #weight: 3 
 
 params:
-    description: "I am a graduate student at the University of Toronto studying Economics and Machine learning. I am also a Research Replicator on Florian Oswald's team at the Journal of Political Economy."
-    author: Name
+    description: "Daman Dhaliwal brings business intuition and technical execution to data, machine learning, AI, computational economics, and causal inference projects."
+    author: Daman Dhaliwal
     googleAnalyticsID: "G-VSMFLB72RM"
     DateFormat: "January 2006"
     defaultTheme: light
@@ -47,24 +47,176 @@ params:
     UseHugoToc: true
     comments: false
     math: true
+    homepage:
+          enabled: true
+          nav:
+            - label: Work
+              url: "#selected-work"
+            - label: Research
+              url: "#research"
+            - label: About
+              url: "#about"
+            - label: Contact
+              url: "#contact"
+          hero:
+            number: "01"
+            kicker: Data systems, causal inference, and AI
+            headline:
+              line1: Turning
+              line2: Data into
+              emphasis: Human
+              line3: Understanding.
+            description: "I am a data engineer and scientist building systems that extract meaning, drive decisions, and advance research."
+            primaryCta:
+              label: Explore my work
+              url: "#selected-work"
+          about:
+            number: "02"
+            title: About Me
+            imageUrl: "/picture.jpg"
+            imageAlt: "Daman Dhaliwal"
+            intro:
+              - Engineer by training.
+              - Researcher at heart.
+              - Problem solver by choice.
+            description: "I work at the intersection of messy data, rigorous identification, machine learning, and business judgment."
+          research:
+            number: "03"
+            title: Research & Impact
+            description: "I design and execute research that creates decision-grade evidence from real-world data."
+            metrics:
+              - value: "14M"
+                label: Firm records analyzed
+              - value: "180K"
+                label: Households studied
+              - value: "2011-2023"
+                label: SPY options history
+              - value: "4"
+                label: Research projects
+            cta:
+              label: View publications
+              url: "projects/"
+          selectedWork:
+            number: "04"
+            title: Selected Work
+            description: "A selection of projects where data meets purpose."
+            cta:
+              label: View case studies
+              url: "projects/"
+            items:
+              - title: Social Capital and Firm Performance
+                tag: Urban and economic networks
+                description: "Used nearly 14 million U.S. business records and Double Machine Learning to study which local network structures help firms survive shocks."
+                url: "projects/socialcapital/"
+                accent: coral
+              - title: Deep Hedging with Real Options Data
+                tag: Quantitative finance
+                description: "Built an RL hedging framework on SPY options data with autoencoder-compressed volatility surfaces and LSTM forecasting."
+                url: "projects/rlalgotrading/"
+                accent: cyan
+              - title: Viral Voting and Campaign Targeting
+                tag: Political economy
+                description: "Re-analyzed a 180,002-household field experiment to estimate spillovers, saturation effects, and strategic treatment intensity."
+                url: "projects/viralvoting/"
+                accent: violet
+              - title: Index Funds and Stewardship
+                tag: Corporate governance
+                description: "Studied incentives that shape how passive investment giants approach stewardship and governance responsibilities."
+                url: "projects/index-funds/"
+                accent: blue
+          skills:
+            number: "05"
+            title: Skills & Tech Stack
+            description: "The toolkit I use to build, analyze, and bring ideas to life."
+            groups:
+              - title: Data and ML
+                items: ["Python", "R", "SQL", "scikit-learn", "PyTorch", "pandas"]
+              - title: Research Methods
+                items: ["Causal ML", "Double ML", "Causal Forests", "Spatial Models", "Quantile Regression"]
+              - title: Systems
+                items: ["Docker", "AWS", "dbt", "Airflow", "Git", "Pipelines"]
+          approach:
+            number: "06"
+            title: My Approach
+            description: "Data is complex. Clarity is my craft."
+            steps:
+              - title: Discover
+                description: Understand the problem deeply
+              - title: Design
+                description: Build scalable and reliable solutions
+              - title: Develop
+                description: Engineer with clarity and quality
+              - title: Deliver
+                description: Communicate insights that drive impact
+          insights:
+            number: "07"
+            title: Insights in Motion
+            description: "I believe data tells stories best when it moves."
+            cta:
+              label: Read writing
+              url: "https://damandhaliwal.substack.com/"
+          contact:
+            number: "08"
+            title: "Let's Build Something Meaningful."
+            description: "Open to research collaborations, impactful projects, and interesting conversations."
+            cta:
+              label: "Let's connect"
+              url: "mailto:damandhaliwal1910@gmail.com"
+            links:
+              - label: "damandhaliwal1910@gmail.com"
+                url: "mailto:damandhaliwal1910@gmail.com"
+                icon: email
+              - label: "linkedin.com/in/dhaliwaldaman"
+                url: "https://www.linkedin.com/in/dhaliwaldaman/"
+                icon: linkedin
+              - label: "github.com/damandhaliwal"
+                url: "https://github.com/damandhaliwal"
+                icon: github
+              - label: "CV"
+                url: "/cv.pdf"
+                icon: cv
     profileMode:
           enabled: true
           title: Daman Dhaliwal
+          eyebrow: Business intuition + technical execution
+          headline: I turn messy data and AI ideas into decisions people can act on.
           subtitle: |
-            I'm an applied economist with a focus on causal inference. I'm currently finishing my MA in Economics at the University of Toronto, where my coursework has focused on causal machine learning and econometrics. Before graduate school, I worked on the Acquisitions team of a large real estate investment team in Vancouver, BC after studying Finance at UBC.
-
-            I like working on hard identification problems (social capital, heterogeneous treatment effects, spatial econometrics), especially when the data is messy and the question actually matters. I've worked with datasets ranging from 300K observation field experiments to 14M firm records, and I enjoy the challenge of building pipelines that turn noisy, real-world data into credible causal estimates.
-
-            I work in Python and R mostly, but I'll pick up whatever else the problem needs.
+            I combine finance and acquisitions experience with causal inference, computational economics, and modern ML, turning imperfect data into models, pipelines, and recommendations that can guide real decisions.
+          proofPoints:
+            - value: 14M
+              label: firm records analyzed for business survival and growth
+            - value: 2011-2023
+              label: SPY options data used to test deep hedging systems
+            - value: 180K
+              label: households studied with causal ML and spatial models
+          capabilities:
+            - title: Business and investment judgment
+              description: Experience in finance and real estate acquisitions helps me frame technical work around capital allocation, risk, incentives, and operating decisions.
+            - title: Data and ML execution
+              description: I design pipelines, simulations, models, and evaluation workflows for messy real-world data, from causal machine learning to probabilistic modeling, reinforcement learning, and forecasting.
+            - title: Decision-grade communication
+              description: "I care about the last mile: turning statistical output into a recommendation that a founder, investor, operator, or policy team can actually use."
+          selectedWork:
+            - title: Social capital and firm performance
+              description: Used nearly 14 million U.S. business records and Double Machine Learning to study which local network structures help firms survive shocks.
+              url: projects/socialcapital/
+            - title: Deep hedging with real options data
+              description: Built an RL hedging framework on SPY options data with autoencoder-compressed volatility surfaces and LSTM forecasting.
+              url: projects/rlalgotrading/
+            - title: Viral voting and campaign targeting
+              description: Re-analyzed a 180,002-household field experiment to estimate spillovers, saturation effects, and strategic treatment intensity.
+              url: projects/viralvoting/
           imageUrl: "/picture.jpg"
           imageWidth: 160
           imageHeight: 160
           imageTitle: Daman Dhaliwal
           buttons:
-            - name: Projects
-              url: projects/
+            - name: Selected work
+              url: "#selected-work"
             - name: Writing
               url: https://damandhaliwal.substack.com/
+            - name: Contact
+              url: mailto:damandhaliwal1910@gmail.com
             #- name: Courses
               #url: courses/
             #- name: Data

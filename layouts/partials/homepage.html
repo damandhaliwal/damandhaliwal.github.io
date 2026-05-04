@@ -1,0 +1,214 @@
+{{- $home := site.Params.homepage -}}
+{{- with $home }}
+<div class="home-experience" data-homepage>
+    <section class="home-panel home-hero" aria-labelledby="home-hero-title">
+        <nav class="home-nav" aria-label="Homepage navigation">
+            <a class="home-brand" href="{{ "" | relURL }}">01</a>
+            <div class="home-nav-links">
+                {{- range .nav }}
+                <a href="{{ .url | safeURL }}">{{ .label }}</a>
+                {{- end }}
+            </div>
+        </nav>
+        <div class="home-panel-copy hero-copy">
+            {{- with .hero.kicker }}
+            <p class="hero-kicker">{{ . }}</p>
+            {{- end }}
+            <h1 id="home-hero-title">
+                <span>{{ .hero.headline.line1 }}</span>
+                <span>{{ .hero.headline.line2 }}</span>
+                <em>{{ .hero.headline.emphasis }}</em>
+                <span>{{ .hero.headline.line3 }}</span>
+            </h1>
+            <p>{{ .hero.description }}</p>
+            {{- with .hero.primaryCta }}
+            <a class="home-cta" href="{{ .url | safeURL }}">
+                <span>{{ .label }}</span>
+                <span aria-hidden="true">-></span>
+            </a>
+            {{- end }}
+        </div>
+        <div class="hero-ribbon" aria-hidden="true">
+            <span class="ribbon ribbon-one"></span>
+            <span class="ribbon ribbon-two"></span>
+            <span class="ribbon ribbon-three"></span>
+            <span class="data-ring ring-one"></span>
+            <span class="data-ring ring-two"></span>
+        </div>
+        <div class="orbit-label" aria-hidden="true">Data - Insight - Impact</div>
+    </section>
+
+    <section class="home-panel home-about" id="about" aria-labelledby="home-about-title">
+        <div class="panel-number">{{ .about.number }}</div>
+        <div class="home-panel-copy">
+            <h2 id="home-about-title">{{ .about.title }}</h2>
+            <div class="about-intro">
+                {{- range .about.intro }}
+                <p>{{ . }}</p>
+                {{- end }}
+            </div>
+            <p>{{ .about.description }}</p>
+        </div>
+        <div class="about-visual">
+            <div class="about-grid"></div>
+            <img src="{{ .about.imageUrl | relURL }}" alt="{{ .about.imageAlt }}" loading="lazy">
+            <span class="blue-block"></span>
+            <span class="scatter scatter-one"></span>
+            <span class="scatter scatter-two"></span>
+            <span class="rotating-type" aria-hidden="true">Business - Data - Systems</span>
+        </div>
+    </section>
+
+    <section class="home-panel home-research" id="research" aria-labelledby="home-research-title">
+        <div class="panel-number">{{ .research.number }}</div>
+        <div class="home-panel-copy">
+            <h2 id="home-research-title">{{ .research.title }}</h2>
+            <p>{{ .research.description }}</p>
+        </div>
+        <div class="research-terrain" aria-hidden="true">
+            <span class="sun-core"></span>
+            <span class="terrain terrain-back"></span>
+            <span class="terrain terrain-mid"></span>
+            <span class="terrain terrain-front"></span>
+            <span class="signal signal-one"></span>
+            <span class="signal signal-two"></span>
+            <span class="signal signal-three"></span>
+        </div>
+        <div class="metric-stack" aria-label="Research metrics">
+            {{- range .research.metrics }}
+            <div class="metric-item">
+                <strong>{{ .value }}</strong>
+                <span>{{ .label }}</span>
+            </div>
+            {{- end }}
+        </div>
+        {{- with .research.cta }}
+        <a class="panel-link" href="{{ .url | relURL }}">
+            <span aria-hidden="true">-></span>
+            {{ .label }}
+        </a>
+        {{- end }}
+    </section>
+
+    <section class="home-panel home-work" id="selected-work" aria-labelledby="home-work-title">
+        <div class="panel-number">{{ .selectedWork.number }}</div>
+        <div class="home-panel-copy">
+            <h2 id="home-work-title">{{ .selectedWork.title }}</h2>
+            <p>{{ .selectedWork.description }}</p>
+        </div>
+        <div class="work-constellation" aria-hidden="true">
+            <span class="constellation-sphere"></span>
+            <span class="constellation-frame frame-one"></span>
+            <span class="constellation-frame frame-two"></span>
+        </div>
+        <div class="work-list" aria-label="Selected projects">
+            {{- range $index, $item := .selectedWork.items }}
+            <a class="work-card work-accent-{{ .accent }}" href="{{ .url | relURL }}">
+                <span class="work-index">{{ printf "%02d" (add $index 1) }}</span>
+                <span>
+                    <strong>{{ .title }}</strong>
+                    <small>{{ .tag }}</small>
+                    <p>{{ .description }}</p>
+                </span>
+            </a>
+            {{- end }}
+        </div>
+        {{- with .selectedWork.cta }}
+        <a class="panel-link invert" href="{{ .url | relURL }}">{{ .label }} <span aria-hidden="true">-></span></a>
+        {{- end }}
+    </section>
+
+    <section class="home-panel home-skills" id="skills" aria-labelledby="home-skills-title">
+        <div class="panel-number">{{ .skills.number }}</div>
+        <div class="home-panel-copy">
+            <h2 id="home-skills-title">{{ .skills.title }}</h2>
+            <p>{{ .skills.description }}</p>
+        </div>
+        <div class="skill-cloud">
+            {{- range .skills.groups }}
+            <div class="skill-group">
+                <h3>{{ .title }}</h3>
+                <div class="skill-tags">
+                    {{- range .items }}
+                    <span>{{ . }}</span>
+                    {{- end }}
+                </div>
+            </div>
+            {{- end }}
+        </div>
+        <div class="skill-forms" aria-hidden="true">
+            <span class="cube cube-one">Python</span>
+            <span class="cube cube-two">SQL</span>
+            <span class="cube cube-three">AWS</span>
+            <span class="cube cube-four">ML</span>
+        </div>
+    </section>
+
+    <section class="home-panel home-approach" id="approach" aria-labelledby="home-approach-title">
+        <div class="panel-number">{{ .approach.number }}</div>
+        <div class="home-panel-copy">
+            <h2 id="home-approach-title">{{ .approach.title }}</h2>
+            <p>{{ .approach.description }}</p>
+        </div>
+        <div class="approach-orb" aria-hidden="true">
+            <span class="orb-core"></span>
+            <span class="orb-loop loop-one"></span>
+            <span class="orb-loop loop-two"></span>
+            <span class="orb-loop loop-three"></span>
+        </div>
+        <div class="approach-steps">
+            {{- range $index, $step := .approach.steps }}
+            <article class="approach-step">
+                <span>{{ printf "%02d" (add $index 1) }}</span>
+                <h3>{{ .title }}</h3>
+                <p>{{ .description }}</p>
+            </article>
+            {{- end }}
+        </div>
+    </section>
+
+    <section class="home-panel home-insights" id="writing" aria-labelledby="home-insights-title">
+        <div class="panel-number">{{ .insights.number }}</div>
+        <div class="home-panel-copy">
+            <h2 id="home-insights-title">{{ .insights.title }}</h2>
+            <p>{{ .insights.description }}</p>
+            {{- with .insights.cta }}
+            <a class="home-cta ghost" href="{{ .url | safeURL }}">
+                <span>{{ .label }}</span>
+                <span aria-hidden="true">-></span>
+            </a>
+            {{- end }}
+        </div>
+        <canvas class="flow-canvas" data-home-flow width="1200" height="720" aria-hidden="true"></canvas>
+        <div class="timeline" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </section>
+
+    <section class="home-panel home-contact" id="contact" aria-labelledby="home-contact-title">
+        <div class="panel-number">{{ .contact.number }}</div>
+        <div class="home-panel-copy">
+            <h2 id="home-contact-title">{{ .contact.title }}</h2>
+            <p>{{ .contact.description }}</p>
+            <div class="contact-links" aria-label="Contact links">
+                {{- range .contact.links }}
+                <a href="{{ .url | safeURL }}">
+                    <span class="contact-icon">{{ upper (substr .icon 0 1) }}</span>
+                    {{ .label }}
+                </a>
+                {{- end }}
+            </div>
+            {{- with .contact.cta }}
+            <a class="panel-link" href="{{ .url | safeURL }}">{{ .label }} <span aria-hidden="true">-></span></a>
+            {{- end }}
+        </div>
+        <div class="contact-sculpture" aria-hidden="true">
+            <span class="planet"></span>
+            <span class="prism"></span>
+            <span class="signal-line"></span>
+            <span class="coral-dot"></span>
+            <span class="violet-dot"></span>
+        </div>
+    </section>
+</div>
+{{- end }}

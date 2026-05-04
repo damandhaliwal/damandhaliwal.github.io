@@ -6,6 +6,9 @@
 </head>
 
 <body class="
+{{- if .IsHome -}}
+{{- print "home-page " -}}
+{{- end -}}
 {{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
 {{- print "list" -}}
 {{- end -}}
@@ -16,7 +19,7 @@
     {{- if not .IsHome  }}
     {{- partialCached "header.html" . .Page -}}
     {{- end }}
-    <main class="main">
+    <main class="main{{ if .IsHome }} home-main{{ end }}">
         {{- block "main" . }}{{ end }}
     </main>
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}

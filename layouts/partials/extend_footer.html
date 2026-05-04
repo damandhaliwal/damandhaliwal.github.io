@@ -1,0 +1,6 @@
+{{- if .IsHome }}
+{{- with resources.Get "js/homepage.js" }}
+{{- $homepageJS := . | js.Build | minify | fingerprint }}
+<script defer src="{{ $homepageJS.RelPermalink }}" integrity="{{ $homepageJS.Data.Integrity }}"></script>
+{{- end }}
+{{- end }}

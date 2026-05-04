@@ -1,6 +1,8 @@
 {{- define "main" }}
 
-{{- if (and site.Params.profileMode.enabled .IsHome) }}
+{{- if (and site.Params.homepage.enabled .IsHome) }}
+{{- partial "homepage.html" . }}
+{{- else if (and site.Params.profileMode.enabled .IsHome) }}
 {{- partial "index_profile.html" . }}
 {{- else }} {{/* if not profileMode */}}
 
