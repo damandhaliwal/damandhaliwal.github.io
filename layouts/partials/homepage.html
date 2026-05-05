@@ -10,6 +10,12 @@
                 {{- end }}
             </div>
         </nav>
+        <div class="hero-field" aria-hidden="true">
+            <span class="field-label label-top">model field / v01</span>
+            <span class="field-label label-side">human-in-loop</span>
+            <span class="field-line line-x"></span>
+            <span class="field-line line-y"></span>
+        </div>
         <div class="home-panel-copy hero-copy">
             {{- with .hero.kicker }}
             <p class="hero-kicker">{{ . }}</p>
@@ -24,7 +30,7 @@
             {{- with .hero.primaryCta }}
             <a class="home-cta" href="{{ .url | safeURL }}">
                 <span>{{ .label }}</span>
-                <span aria-hidden="true">-></span>
+                <span class="cta-arrow" aria-hidden="true">-></span>
             </a>
             {{- end }}
         </div>
@@ -32,6 +38,12 @@
             <span class="ribbon ribbon-one"></span>
             <span class="ribbon ribbon-two"></span>
             <span class="ribbon ribbon-three"></span>
+            <span class="ribbon-contour contour-one"></span>
+            <span class="ribbon-contour contour-two"></span>
+            <span class="ribbon-contour contour-three"></span>
+            <span class="ribbon-thread thread-one"></span>
+            <span class="ribbon-thread thread-two"></span>
+            <span class="ribbon-grain"></span>
             <span class="data-ring ring-one"></span>
             <span class="data-ring ring-two"></span>
         </div>
@@ -51,11 +63,24 @@
         </div>
         <div class="about-visual">
             <div class="about-grid"></div>
-            <img src="{{ .about.imageUrl | relURL }}" alt="{{ .about.imageAlt }}" loading="lazy">
+            <div class="about-interface" aria-hidden="true">
+                <span class="axis-label axis-x">x: evidence quality</span>
+                <span class="axis-label axis-y">y: decision leverage</span>
+                <span class="code-snippet code-one">df.groupby("signal").mean()</span>
+                <span class="code-snippet code-two">ATE +/- CI</span>
+                <span class="grid-tick tick-one"></span>
+                <span class="grid-tick tick-two"></span>
+                <span class="grid-tick tick-three"></span>
+            </div>
+            <div class="portrait-frame">
+                <img src="{{ .about.imageUrl | relURL }}" alt="{{ .about.imageAlt }}" loading="lazy">
+            </div>
             <span class="blue-block"></span>
             <span class="scatter scatter-one"></span>
             <span class="scatter scatter-two"></span>
-            <span class="rotating-type" aria-hidden="true">Business - Data - Systems</span>
+            <span class="scatter scatter-three"></span>
+            <span class="rotating-type seal-main" aria-hidden="true">Business - Data - Systems</span>
+            <span class="rotating-type seal-mini" aria-hidden="true">Research - Build - Explain</span>
         </div>
     </section>
 
@@ -66,17 +91,23 @@
             <p>{{ .research.description }}</p>
         </div>
         <div class="research-terrain" aria-hidden="true">
+            <span class="terrain-grid"></span>
             <span class="sun-core"></span>
+            <span class="heat-pillar"></span>
             <span class="terrain terrain-back"></span>
             <span class="terrain terrain-mid"></span>
             <span class="terrain terrain-front"></span>
+            <span class="ridge-lines"></span>
             <span class="signal signal-one"></span>
             <span class="signal signal-two"></span>
             <span class="signal signal-three"></span>
+            <span class="signal signal-four"></span>
+            <span class="terrain-label label-one">14M firm records</span>
+            <span class="terrain-label label-two">SPY 2011-2023</span>
         </div>
         <div class="metric-stack" aria-label="Research metrics">
-            {{- range .research.metrics }}
-            <div class="metric-item">
+            {{- range $index, $metric := .research.metrics }}
+            <div class="metric-item metric-{{ add $index 1 }}">
                 <strong>{{ .value }}</strong>
                 <span>{{ .label }}</span>
             </div>
@@ -98,8 +129,14 @@
         </div>
         <div class="work-constellation" aria-hidden="true">
             <span class="constellation-sphere"></span>
+            <span class="constellation-band band-coral"></span>
+            <span class="constellation-band band-cyan"></span>
+            <span class="constellation-band band-violet"></span>
+            <span class="constellation-band band-blue"></span>
             <span class="constellation-frame frame-one"></span>
             <span class="constellation-frame frame-two"></span>
+            <span class="constellation-label label-a">project map</span>
+            <span class="constellation-label label-b">evidence clusters</span>
         </div>
         <div class="work-list" aria-label="Selected projects">
             {{- range $index, $item := .selectedWork.items }}
@@ -110,6 +147,7 @@
                     <small>{{ .tag }}</small>
                     <p>{{ .description }}</p>
                 </span>
+                <span class="work-arrow" aria-hidden="true">-></span>
             </a>
             {{- end }}
         </div>
@@ -125,8 +163,9 @@
             <p>{{ .skills.description }}</p>
         </div>
         <div class="skill-cloud">
-            {{- range .skills.groups }}
+            {{- range $index, $group := .skills.groups }}
             <div class="skill-group">
+                <span class="module-index">{{ printf "%02d" (add $index 1) }}</span>
                 <h3>{{ .title }}</h3>
                 <div class="skill-tags">
                     {{- range .items }}
@@ -141,6 +180,12 @@
             <span class="cube cube-two">SQL</span>
             <span class="cube cube-three">AWS</span>
             <span class="cube cube-four">ML</span>
+            <span class="cube cube-five">Docker</span>
+            <span class="cube cube-six">Causal ML</span>
+            <span class="cube cube-seven">dbt</span>
+            <span class="skill-arc arc-one"></span>
+            <span class="skill-arc arc-two"></span>
+            <span class="skill-arc arc-three"></span>
         </div>
     </section>
 
@@ -155,10 +200,16 @@
             <span class="orb-loop loop-one"></span>
             <span class="orb-loop loop-two"></span>
             <span class="orb-loop loop-three"></span>
+            <span class="orb-signal signal-a"></span>
+            <span class="orb-signal signal-b"></span>
+            <span class="orb-signal signal-c"></span>
+            <span class="process-arrow arrow-one"></span>
+            <span class="process-arrow arrow-two"></span>
+            <span class="process-arrow arrow-three"></span>
         </div>
         <div class="approach-steps">
             {{- range $index, $step := .approach.steps }}
-            <article class="approach-step">
+            <article class="approach-step step-{{ add $index 1 }}">
                 <span>{{ printf "%02d" (add $index 1) }}</span>
                 <h3>{{ .title }}</h3>
                 <p>{{ .description }}</p>
@@ -170,7 +221,7 @@
     <section class="home-panel home-insights" id="writing" aria-labelledby="home-insights-title">
         <div class="panel-number">{{ .insights.number }}</div>
         <div class="home-panel-copy">
-            <h2 id="home-insights-title">{{ .insights.title }}</h2>
+            <h2 id="home-insights-title">{{ replace .insights.title "Motion" "<em>Motion</em>" | safeHTML }}</h2>
             <p>{{ .insights.description }}</p>
             {{- with .insights.cta }}
             <a class="home-cta ghost" href="{{ .url | safeURL }}">
@@ -180,8 +231,13 @@
             {{- end }}
         </div>
         <canvas class="flow-canvas" data-home-flow width="1200" height="720" aria-hidden="true"></canvas>
+        <div class="insight-notes" aria-hidden="true">
+            <span>research notes</span>
+            <span>model diaries</span>
+            <span>field observations</span>
+        </div>
         <div class="timeline" aria-hidden="true">
-            <span></span><span></span><span></span><span></span>
+            <span data-label="read"></span><span data-label="test"></span><span data-label="write"></span><span data-label="ship"></span>
         </div>
     </section>
 
@@ -205,9 +261,11 @@
         <div class="contact-sculpture" aria-hidden="true">
             <span class="planet"></span>
             <span class="prism"></span>
-            <span class="signal-line"></span>
+            <span class="signature-line"></span>
             <span class="coral-dot"></span>
             <span class="violet-dot"></span>
+            <span class="contact-axis axis-one"></span>
+            <span class="contact-axis axis-two"></span>
         </div>
     </section>
 </div>
