@@ -3,19 +3,13 @@
 <div class="home-experience" data-homepage>
     <section class="home-panel home-hero" aria-labelledby="home-hero-title">
         <nav class="home-nav" aria-label="Homepage navigation">
-            <a class="home-brand" href="{{ "" | relURL }}">01</a>
             <div class="home-nav-links">
                 {{- range .nav }}
                 <a href="{{ .url | safeURL }}">{{ .label }}</a>
                 {{- end }}
             </div>
         </nav>
-        <div class="hero-field" aria-hidden="true">
-            <span class="field-label label-top">model field / v01</span>
-            <span class="field-label label-side">human-in-loop</span>
-            <span class="field-line line-x"></span>
-            <span class="field-line line-y"></span>
-        </div>
+        <canvas class="hero-dot-stream" data-hero-dots width="900" height="1100" aria-hidden="true"></canvas>
         <div class="home-panel-copy hero-copy">
             {{- with .hero.kicker }}
             <p class="hero-kicker">{{ . }}</p>
@@ -34,24 +28,9 @@
             </a>
             {{- end }}
         </div>
-        <div class="hero-ribbon" aria-hidden="true">
-            <span class="ribbon ribbon-one"></span>
-            <span class="ribbon ribbon-two"></span>
-            <span class="ribbon ribbon-three"></span>
-            <span class="ribbon-contour contour-one"></span>
-            <span class="ribbon-contour contour-two"></span>
-            <span class="ribbon-contour contour-three"></span>
-            <span class="ribbon-thread thread-one"></span>
-            <span class="ribbon-thread thread-two"></span>
-            <span class="ribbon-grain"></span>
-            <span class="data-ring ring-one"></span>
-            <span class="data-ring ring-two"></span>
-        </div>
-        <div class="orbit-label" aria-hidden="true">Data - Insight - Impact</div>
     </section>
 
     <section class="home-panel home-about" id="about" aria-labelledby="home-about-title">
-        <div class="panel-number">{{ .about.number }}</div>
         <div class="home-panel-copy">
             <h2 id="home-about-title">{{ .about.title }}</h2>
             <div class="about-intro">
@@ -85,7 +64,6 @@
     </section>
 
     <section class="home-panel home-research" id="research" aria-labelledby="home-research-title">
-        <div class="panel-number">{{ .research.number }}</div>
         <div class="home-panel-copy">
             <h2 id="home-research-title">{{ .research.title }}</h2>
             <p>{{ .research.description }}</p>
@@ -102,8 +80,6 @@
             <span class="signal signal-two"></span>
             <span class="signal signal-three"></span>
             <span class="signal signal-four"></span>
-            <span class="terrain-label label-one">14M firm records</span>
-            <span class="terrain-label label-two">SPY 2011-2023</span>
         </div>
         <div class="metric-stack" aria-label="Research metrics">
             {{- range $index, $metric := .research.metrics }}
@@ -122,7 +98,6 @@
     </section>
 
     <section class="home-panel home-work" id="selected-work" aria-labelledby="home-work-title">
-        <div class="panel-number">{{ .selectedWork.number }}</div>
         <div class="home-panel-copy">
             <h2 id="home-work-title">{{ .selectedWork.title }}</h2>
             <p>{{ .selectedWork.description }}</p>
@@ -141,7 +116,6 @@
         <div class="work-list" aria-label="Selected projects">
             {{- range $index, $item := .selectedWork.items }}
             <a class="work-card work-accent-{{ .accent }}" href="{{ .url | relURL }}">
-                <span class="work-index">{{ printf "%02d" (add $index 1) }}</span>
                 <span>
                     <strong>{{ .title }}</strong>
                     <small>{{ .tag }}</small>
@@ -157,7 +131,6 @@
     </section>
 
     <section class="home-panel home-skills" id="skills" aria-labelledby="home-skills-title">
-        <div class="panel-number">{{ .skills.number }}</div>
         <div class="home-panel-copy">
             <h2 id="home-skills-title">{{ .skills.title }}</h2>
             <p>{{ .skills.description }}</p>
@@ -165,7 +138,6 @@
         <div class="skill-cloud">
             {{- range $index, $group := .skills.groups }}
             <div class="skill-group">
-                <span class="module-index">{{ printf "%02d" (add $index 1) }}</span>
                 <h3>{{ .title }}</h3>
                 <div class="skill-tags">
                     {{- range .items }}
@@ -190,7 +162,6 @@
     </section>
 
     <section class="home-panel home-approach" id="approach" aria-labelledby="home-approach-title">
-        <div class="panel-number">{{ .approach.number }}</div>
         <div class="home-panel-copy">
             <h2 id="home-approach-title">{{ .approach.title }}</h2>
             <p>{{ .approach.description }}</p>
@@ -210,7 +181,6 @@
         <div class="approach-steps">
             {{- range $index, $step := .approach.steps }}
             <article class="approach-step step-{{ add $index 1 }}">
-                <span>{{ printf "%02d" (add $index 1) }}</span>
                 <h3>{{ .title }}</h3>
                 <p>{{ .description }}</p>
             </article>
@@ -219,7 +189,6 @@
     </section>
 
     <section class="home-panel home-insights" id="writing" aria-labelledby="home-insights-title">
-        <div class="panel-number">{{ .insights.number }}</div>
         <div class="home-panel-copy">
             <h2 id="home-insights-title">{{ replace .insights.title "Motion" "<em>Motion</em>" | safeHTML }}</h2>
             <p>{{ .insights.description }}</p>
@@ -242,7 +211,6 @@
     </section>
 
     <section class="home-panel home-contact" id="contact" aria-labelledby="home-contact-title">
-        <div class="panel-number">{{ .contact.number }}</div>
         <div class="home-panel-copy">
             <h2 id="home-contact-title">{{ .contact.title }}</h2>
             <p>{{ .contact.description }}</p>
