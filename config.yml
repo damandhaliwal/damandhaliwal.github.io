@@ -50,14 +50,15 @@ params:
     homepage:
           enabled: true
           nav:
-            - label: Work
-              url: "#selected-work"
             - label: Research
-              url: "#research"
+              url: "projects/"
             - label: About
               url: "#about"
-            - label: Contact
-              url: "#contact"
+            - label: Writing
+              url: "https://damandhaliwal.substack.com/"
+          headerCta:
+            label: "Let's connect"
+            url: "#contact"
           hero:
             number: "01"
             kicker: Data systems, causal inference, and AI
@@ -68,18 +69,33 @@ params:
               line3: Understanding.
             description: "I am a data engineer and scientist building systems that extract meaning, drive decisions, and advance research."
             primaryCta:
-              label: Explore my work
-              url: "#selected-work"
+              label: Learn about me
+              url: "#about"
           about:
             number: "02"
             title: About Me
             imageUrl: "/picture.jpg"
             imageAlt: "Daman Dhaliwal"
+            location: Toronto
+            timezone: America/Toronto
             intro:
               - Engineer by training.
               - Researcher at heart.
               - Problem solver by choice.
             description: "I work at the intersection of messy data, rigorous identification, machine learning, and business judgment."
+            experiences:
+              - label: Experience 01
+                title: Research
+                description: Evidence design, causal inference, and applied machine learning.
+              - label: Experience 02
+                title: Data Systems
+                description: Pipelines, modeling workflows, and production-minded analytics.
+              - label: Experience 03
+                title: Markets
+                description: Finance, acquisitions, incentives, and capital allocation judgment.
+              - label: Experience 04
+                title: Communication
+                description: Translating technical work into decisions people can act on.
           research:
             number: "03"
             title: Research & Impact
@@ -96,45 +112,6 @@ params:
             cta:
               label: View publications
               url: "projects/"
-          selectedWork:
-            number: "04"
-            title: Selected Work
-            description: "A selection of projects where data meets purpose."
-            cta:
-              label: View case studies
-              url: "projects/"
-            items:
-              - title: Social Capital and Firm Performance
-                tag: Urban and economic networks
-                description: "Used nearly 14 million U.S. business records and Double Machine Learning to study which local network structures help firms survive shocks."
-                url: "projects/socialcapital/"
-                accent: coral
-              - title: Deep Hedging with Real Options Data
-                tag: Quantitative finance
-                description: "Built an RL hedging framework on SPY options data with autoencoder-compressed volatility surfaces and LSTM forecasting."
-                url: "projects/rlalgotrading/"
-                accent: cyan
-              - title: Viral Voting and Campaign Targeting
-                tag: Political economy
-                description: "Re-analyzed a 180,002-household field experiment to estimate spillovers, saturation effects, and strategic treatment intensity."
-                url: "projects/viralvoting/"
-                accent: violet
-              - title: Index Funds and Stewardship
-                tag: Corporate governance
-                description: "Studied incentives that shape how passive investment giants approach stewardship and governance responsibilities."
-                url: "projects/index-funds/"
-                accent: blue
-          skills:
-            number: "05"
-            title: Skills & Tech Stack
-            description: "The toolkit I use to build, analyze, and bring ideas to life."
-            groups:
-              - title: Data and ML
-                items: ["Python", "R", "SQL", "scikit-learn", "PyTorch", "pandas"]
-              - title: Research Methods
-                items: ["Causal ML", "Double ML", "Causal Forests", "Spatial Models", "Quantile Regression"]
-              - title: Systems
-                items: ["Docker", "AWS", "dbt", "Airflow", "Git", "Pipelines"]
           approach:
             number: "06"
             title: My Approach
@@ -196,23 +173,11 @@ params:
               description: I design pipelines, simulations, models, and evaluation workflows for messy real-world data, from causal machine learning to probabilistic modeling, reinforcement learning, and forecasting.
             - title: Decision-grade communication
               description: "I care about the last mile: turning statistical output into a recommendation that a founder, investor, operator, or policy team can actually use."
-          selectedWork:
-            - title: Social capital and firm performance
-              description: Used nearly 14 million U.S. business records and Double Machine Learning to study which local network structures help firms survive shocks.
-              url: projects/socialcapital/
-            - title: Deep hedging with real options data
-              description: Built an RL hedging framework on SPY options data with autoencoder-compressed volatility surfaces and LSTM forecasting.
-              url: projects/rlalgotrading/
-            - title: Viral voting and campaign targeting
-              description: Re-analyzed a 180,002-household field experiment to estimate spillovers, saturation effects, and strategic treatment intensity.
-              url: projects/viralvoting/
           imageUrl: "/picture.jpg"
           imageWidth: 160
           imageHeight: 160
           imageTitle: Daman Dhaliwal
           buttons:
-            - name: Selected work
-              url: "#selected-work"
             - name: Writing
               url: https://damandhaliwal.substack.com/
             - name: Contact

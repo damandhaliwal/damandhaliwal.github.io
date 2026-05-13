@@ -8,6 +8,9 @@
                 <a href="{{ .url | safeURL }}">{{ .label }}</a>
                 {{- end }}
             </div>
+            {{- with .headerCta }}
+            <a class="home-nav-cta" href="{{ .url | safeURL }}">{{ .label }}</a>
+            {{- end }}
         </nav>
         <canvas class="hero-dot-stream" data-hero-dots width="900" height="1100" aria-hidden="true"></canvas>
         <div class="home-panel-copy hero-copy">
@@ -31,182 +34,42 @@
     </section>
 
     <section class="home-panel home-about" id="about" aria-labelledby="home-about-title">
-        <div class="home-panel-copy">
-            <h2 id="home-about-title">{{ .about.title }}</h2>
-            <div class="about-intro">
-                {{- range .about.intro }}
-                <p>{{ . }}</p>
-                {{- end }}
-            </div>
-            <p>{{ .about.description }}</p>
-        </div>
-        <div class="about-visual">
-            <div class="about-grid"></div>
-            <div class="about-interface" aria-hidden="true">
-                <span class="axis-label axis-x">x: evidence quality</span>
-                <span class="axis-label axis-y">y: decision leverage</span>
-                <span class="code-snippet code-one">df.groupby("signal").mean()</span>
-                <span class="code-snippet code-two">ATE +/- CI</span>
-                <span class="grid-tick tick-one"></span>
-                <span class="grid-tick tick-two"></span>
-                <span class="grid-tick tick-three"></span>
-            </div>
-            <div class="portrait-frame">
-                <img src="{{ .about.imageUrl | relURL }}" alt="{{ .about.imageAlt }}" loading="lazy">
-            </div>
-            <span class="blue-block"></span>
-            <span class="scatter scatter-one"></span>
-            <span class="scatter scatter-two"></span>
-            <span class="scatter scatter-three"></span>
-            <span class="rotating-type seal-main" aria-hidden="true">Business - Data - Systems</span>
-            <span class="rotating-type seal-mini" aria-hidden="true">Research - Build - Explain</span>
-        </div>
-    </section>
-
-    <section class="home-panel home-research" id="research" aria-labelledby="home-research-title">
-        <div class="home-panel-copy">
-            <h2 id="home-research-title">{{ .research.title }}</h2>
-            <p>{{ .research.description }}</p>
-        </div>
-        <div class="research-terrain" aria-hidden="true">
-            <span class="terrain-grid"></span>
-            <span class="sun-core"></span>
-            <span class="heat-pillar"></span>
-            <span class="terrain terrain-back"></span>
-            <span class="terrain terrain-mid"></span>
-            <span class="terrain terrain-front"></span>
-            <span class="ridge-lines"></span>
-            <span class="signal signal-one"></span>
-            <span class="signal signal-two"></span>
-            <span class="signal signal-three"></span>
-            <span class="signal signal-four"></span>
-        </div>
-        <div class="metric-stack" aria-label="Research metrics">
-            {{- range $index, $metric := .research.metrics }}
-            <div class="metric-item metric-{{ add $index 1 }}">
-                <strong>{{ .value }}</strong>
-                <span>{{ .label }}</span>
-            </div>
-            {{- end }}
-        </div>
-        {{- with .research.cta }}
-        <a class="panel-link" href="{{ .url | relURL }}">
-            <span aria-hidden="true">-></span>
-            {{ .label }}
-        </a>
-        {{- end }}
-    </section>
-
-    <section class="home-panel home-work" id="selected-work" aria-labelledby="home-work-title">
-        <div class="home-panel-copy">
-            <h2 id="home-work-title">{{ .selectedWork.title }}</h2>
-            <p>{{ .selectedWork.description }}</p>
-        </div>
-        <div class="work-constellation" aria-hidden="true">
-            <span class="constellation-sphere"></span>
-            <span class="constellation-band band-coral"></span>
-            <span class="constellation-band band-cyan"></span>
-            <span class="constellation-band band-violet"></span>
-            <span class="constellation-band band-blue"></span>
-            <span class="constellation-frame frame-one"></span>
-            <span class="constellation-frame frame-two"></span>
-            <span class="constellation-label label-a">project map</span>
-            <span class="constellation-label label-b">evidence clusters</span>
-        </div>
-        <div class="work-list" aria-label="Selected projects">
-            {{- range $index, $item := .selectedWork.items }}
-            <a class="work-card work-accent-{{ .accent }}" href="{{ .url | relURL }}">
-                <span>
-                    <strong>{{ .title }}</strong>
-                    <small>{{ .tag }}</small>
-                    <p>{{ .description }}</p>
-                </span>
-                <span class="work-arrow" aria-hidden="true">-></span>
-            </a>
-            {{- end }}
-        </div>
-        {{- with .selectedWork.cta }}
-        <a class="panel-link invert" href="{{ .url | relURL }}">{{ .label }} <span aria-hidden="true">-></span></a>
-        {{- end }}
-    </section>
-
-    <section class="home-panel home-skills" id="skills" aria-labelledby="home-skills-title">
-        <div class="home-panel-copy">
-            <h2 id="home-skills-title">{{ .skills.title }}</h2>
-            <p>{{ .skills.description }}</p>
-        </div>
-        <div class="skill-cloud">
-            {{- range $index, $group := .skills.groups }}
-            <div class="skill-group">
-                <h3>{{ .title }}</h3>
-                <div class="skill-tags">
-                    {{- range .items }}
+        {{- $research := index .about.experiences 0 -}}
+        {{- $data := index .about.experiences 1 -}}
+        {{- $markets := index .about.experiences 2 -}}
+        <div class="about-mosaic">
+            <article class="about-card about-lead">
+                <h2 id="home-about-title" class="sr-only">{{ .about.title }}</h2>
+                <div class="about-statement">
+                    {{- range .about.intro }}
                     <span>{{ . }}</span>
                     {{- end }}
                 </div>
-            </div>
-            {{- end }}
-        </div>
-        <div class="skill-forms" aria-hidden="true">
-            <span class="cube cube-one">Python</span>
-            <span class="cube cube-two">SQL</span>
-            <span class="cube cube-three">AWS</span>
-            <span class="cube cube-four">ML</span>
-            <span class="cube cube-five">Docker</span>
-            <span class="cube cube-six">Causal ML</span>
-            <span class="cube cube-seven">dbt</span>
-            <span class="skill-arc arc-one"></span>
-            <span class="skill-arc arc-two"></span>
-            <span class="skill-arc arc-three"></span>
-        </div>
-    </section>
-
-    <section class="home-panel home-approach" id="approach" aria-labelledby="home-approach-title">
-        <div class="home-panel-copy">
-            <h2 id="home-approach-title">{{ .approach.title }}</h2>
-            <p>{{ .approach.description }}</p>
-        </div>
-        <div class="approach-orb" aria-hidden="true">
-            <span class="orb-core"></span>
-            <span class="orb-loop loop-one"></span>
-            <span class="orb-loop loop-two"></span>
-            <span class="orb-loop loop-three"></span>
-            <span class="orb-signal signal-a"></span>
-            <span class="orb-signal signal-b"></span>
-            <span class="orb-signal signal-c"></span>
-            <span class="process-arrow arrow-one"></span>
-            <span class="process-arrow arrow-two"></span>
-            <span class="process-arrow arrow-three"></span>
-        </div>
-        <div class="approach-steps">
-            {{- range $index, $step := .approach.steps }}
-            <article class="approach-step step-{{ add $index 1 }}">
-                <h3>{{ .title }}</h3>
-                <p>{{ .description }}</p>
+                <p>{{ .about.description }}</p>
             </article>
-            {{- end }}
-        </div>
-    </section>
-
-    <section class="home-panel home-insights" id="writing" aria-labelledby="home-insights-title">
-        <div class="home-panel-copy">
-            <h2 id="home-insights-title">{{ replace .insights.title "Motion" "<em>Motion</em>" | safeHTML }}</h2>
-            <p>{{ .insights.description }}</p>
-            {{- with .insights.cta }}
-            <a class="home-cta ghost" href="{{ .url | safeURL }}">
-                <span>{{ .label }}</span>
-                <span aria-hidden="true">-></span>
-            </a>
-            {{- end }}
-        </div>
-        <canvas class="flow-canvas" data-home-flow width="1200" height="720" aria-hidden="true"></canvas>
-        <div class="insight-notes" aria-hidden="true">
-            <span>research notes</span>
-            <span>model diaries</span>
-            <span>field observations</span>
-        </div>
-        <div class="timeline" aria-hidden="true">
-            <span data-label="read"></span><span data-label="test"></span><span data-label="write"></span><span data-label="ship"></span>
+            <article class="about-card about-portrait-card">
+                <div class="about-portrait">
+                    <img src="{{ .about.imageUrl | relURL }}" alt="{{ .about.imageAlt }}" loading="lazy">
+                </div>
+                <span class="about-name">{{ .about.imageAlt }}</span>
+            </article>
+            <article class="about-card about-research-card" aria-label="{{ $research.title }}">
+                <p>{{ $research.description }}</p>
+            </article>
+            <article class="about-card about-data-card" aria-label="{{ $data.title }}">
+                <p>{{ $data.description }}</p>
+            </article>
+            <article class="about-card about-empty-card about-empty-card-1" aria-hidden="true"></article>
+            <article class="about-card about-location-card" aria-label="Location">
+                <strong>{{ .about.location }}</strong>
+            </article>
+            <article class="about-card about-time-card" aria-label="Local time">
+                <strong data-local-time data-time-zone="{{ .about.timezone }}">--:--</strong>
+            </article>
+            <article class="about-card about-empty-card about-empty-card-2" aria-hidden="true"></article>
+            <article class="about-card about-markets-card" aria-label="{{ $markets.title }}">
+                <p>{{ $markets.description }}</p>
+            </article>
         </div>
     </section>
 

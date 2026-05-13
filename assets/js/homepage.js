@@ -21,7 +21,7 @@
   };
 
   const drawGrid = () => {
-    ctx.strokeStyle = "rgba(30, 47, 118, 0.055)";
+    ctx.strokeStyle = "rgba(111, 62, 46, 0.055)";
     ctx.lineWidth = 1;
 
     for (let x = 0; x < width; x += 72) {
@@ -41,7 +41,7 @@
 
   const draw = () => {
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = "rgba(247, 250, 255, 0.72)";
+    ctx.fillStyle = "rgba(250, 246, 239, 0.72)";
     ctx.fillRect(0, 0, width, height);
     drawGrid();
 
@@ -65,8 +65,8 @@
         if (alpha > 0.035) {
           const hot = Math.sin(phase + 1.7) > 0.5 || Math.cos(y * 0.25 + frame * 0.018) > 0.78;
           ctx.fillStyle = hot
-            ? `rgba(255, 106, 60, ${alpha * 0.58})`
-            : `rgba(38, 88, 255, ${alpha * 0.54})`;
+            ? `rgba(166, 95, 61, ${alpha * 0.58})`
+            : `rgba(217, 165, 139, ${alpha * 0.54})`;
           ctx.beginPath();
           ctx.arc(px, py, 0.8 + alpha * 2.35, 0, Math.PI * 2);
           ctx.fill();
@@ -74,7 +74,7 @@
       }
     }
 
-    ctx.strokeStyle = "rgba(30, 47, 118, 0.2)";
+    ctx.strokeStyle = "rgba(111, 62, 46, 0.2)";
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(width * 0.02, centerY);
@@ -87,7 +87,7 @@
     }
     ctx.stroke();
 
-    ctx.strokeStyle = "rgba(255, 106, 60, 0.18)";
+    ctx.strokeStyle = "rgba(166, 95, 61, 0.18)";
     ctx.beginPath();
     ctx.moveTo(width * 0.08, centerY + height * 0.12);
     for (let x = 0; x <= width; x += 18) {
@@ -118,6 +118,27 @@
   if (typeof prefersReducedMotion.addEventListener === "function") {
     prefersReducedMotion.addEventListener("change", redraw);
   }
+})();
+
+(() => {
+  const timeNodes = document.querySelectorAll("[data-local-time]");
+  if (!timeNodes.length) return;
+
+  const updateTime = () => {
+    timeNodes.forEach((node) => {
+      const timeZone = node.dataset.timeZone || Intl.DateTimeFormat().resolvedOptions().timeZone;
+      node.textContent = new Intl.DateTimeFormat([], {
+        timeZone,
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true
+      }).format(new Date());
+    });
+  };
+
+  updateTime();
+  const intervalId = window.setInterval(updateTime, 30000);
+  window.addEventListener("pagehide", () => window.clearInterval(intervalId), { once: true });
 })();
 
 (() => {
@@ -215,10 +236,10 @@
         (particle.hue > 0.82 && particle.t > 0.25);
       const color =
         warm
-          ? `rgba(255, 105, 42, ${alpha * 0.82})`
+          ? `rgba(166, 95, 61, ${alpha * 0.82})`
           : particle.hue > 0.44
-            ? `rgba(29, 89, 255, ${alpha * 0.92})`
-            : `rgba(58, 198, 235, ${alpha * 0.76})`;
+            ? `rgba(111, 62, 46, ${alpha * 0.72})`
+            : `rgba(217, 165, 139, ${alpha * 0.76})`;
 
       ctx.fillStyle = color;
       ctx.beginPath();
@@ -230,10 +251,10 @@
     ctx.restore();
 
     const gradient = ctx.createLinearGradient(width * 0.18, 0, width * 0.9, height);
-    gradient.addColorStop(0, "rgba(84, 215, 232, 0)");
-    gradient.addColorStop(0.45, "rgba(84, 215, 232, 0.11)");
-    gradient.addColorStop(0.72, "rgba(255, 123, 93, 0.1)");
-    gradient.addColorStop(1, "rgba(38, 88, 255, 0)");
+    gradient.addColorStop(0, "rgba(217, 165, 139, 0)");
+    gradient.addColorStop(0.45, "rgba(217, 165, 139, 0.11)");
+    gradient.addColorStop(0.72, "rgba(166, 95, 61, 0.1)");
+    gradient.addColorStop(1, "rgba(111, 62, 46, 0)");
     ctx.strokeStyle = gradient;
     ctx.lineWidth = 1;
     ctx.beginPath();
