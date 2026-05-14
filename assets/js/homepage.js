@@ -21,7 +21,7 @@
   };
 
   const drawGrid = () => {
-    ctx.strokeStyle = "rgba(111, 62, 46, 0.055)";
+    ctx.strokeStyle = "rgba(45, 86, 137, 0.065)";
     ctx.lineWidth = 1;
 
     for (let x = 0; x < width; x += 72) {
@@ -41,7 +41,7 @@
 
   const draw = () => {
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = "rgba(250, 246, 239, 0.72)";
+    ctx.fillStyle = "rgba(250, 247, 239, 0.72)";
     ctx.fillRect(0, 0, width, height);
     drawGrid();
 
@@ -65,8 +65,8 @@
         if (alpha > 0.035) {
           const hot = Math.sin(phase + 1.7) > 0.5 || Math.cos(y * 0.25 + frame * 0.018) > 0.78;
           ctx.fillStyle = hot
-            ? `rgba(166, 95, 61, ${alpha * 0.58})`
-            : `rgba(217, 165, 139, ${alpha * 0.54})`;
+            ? `rgba(142, 169, 204, ${alpha * 0.56})`
+            : `rgba(110, 143, 184, ${alpha * 0.48})`;
           ctx.beginPath();
           ctx.arc(px, py, 0.8 + alpha * 2.35, 0, Math.PI * 2);
           ctx.fill();
@@ -74,7 +74,7 @@
       }
     }
 
-    ctx.strokeStyle = "rgba(111, 62, 46, 0.2)";
+    ctx.strokeStyle = "rgba(33, 59, 92, 0.22)";
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(width * 0.02, centerY);
@@ -87,7 +87,7 @@
     }
     ctx.stroke();
 
-    ctx.strokeStyle = "rgba(166, 95, 61, 0.18)";
+    ctx.strokeStyle = "rgba(110, 143, 184, 0.18)";
     ctx.beginPath();
     ctx.moveTo(width * 0.08, centerY + height * 0.12);
     for (let x = 0; x <= width; x += 18) {
@@ -236,10 +236,10 @@
         (particle.hue > 0.82 && particle.t > 0.25);
       const color =
         warm
-          ? `rgba(166, 95, 61, ${alpha * 0.82})`
+          ? `rgba(72, 101, 143, ${alpha * 0.76})`
           : particle.hue > 0.44
-            ? `rgba(111, 62, 46, ${alpha * 0.72})`
-            : `rgba(217, 165, 139, ${alpha * 0.76})`;
+            ? `rgba(33, 59, 92, ${alpha * 0.7})`
+            : `rgba(110, 143, 184, ${alpha * 0.68})`;
 
       ctx.fillStyle = color;
       ctx.beginPath();
@@ -251,10 +251,10 @@
     ctx.restore();
 
     const gradient = ctx.createLinearGradient(width * 0.18, 0, width * 0.9, height);
-    gradient.addColorStop(0, "rgba(217, 165, 139, 0)");
-    gradient.addColorStop(0.45, "rgba(217, 165, 139, 0.11)");
-    gradient.addColorStop(0.72, "rgba(166, 95, 61, 0.1)");
-    gradient.addColorStop(1, "rgba(111, 62, 46, 0)");
+    gradient.addColorStop(0, "rgba(110, 143, 184, 0)");
+    gradient.addColorStop(0.45, "rgba(110, 143, 184, 0.11)");
+    gradient.addColorStop(0.72, "rgba(142, 169, 204, 0.1)");
+    gradient.addColorStop(1, "rgba(33, 59, 92, 0)");
     ctx.strokeStyle = gradient;
     ctx.lineWidth = 1;
     ctx.beginPath();
