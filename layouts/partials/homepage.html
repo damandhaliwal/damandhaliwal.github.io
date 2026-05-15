@@ -12,8 +12,6 @@
             <a class="home-nav-cta" href="{{ .url | safeURL }}">{{ .label }}</a>
             {{- end }}
         </nav>
-        {{- $data := index .about.experiences 1 -}}
-        {{- $markets := index .about.experiences 2 -}}
         <div class="about-mosaic">
             <article class="about-card about-lead">
                 <h2 id="home-about-title" class="sr-only">{{ .about.title }}</h2>
@@ -41,46 +39,57 @@
                     </p>
                 </article>
             </div>
-            <article class="about-card about-location-card" aria-label="Placeholder">
-                <strong>Placeholder</strong>
+            <article class="about-card about-location-card" aria-label="Space settlement concept">
+                <img src="{{ "/space-settlement.png" | relURL }}" alt="Space settlement concept drawing" loading="lazy">
             </article>
             <article class="about-card about-story-card" aria-label="Background and current work">
                 <div class="about-story-copy">
-                    <p>{{ $data.description }}</p>
-                    <p>{{ $markets.description }}</p>
+                    <p>In high school, I took part in a space settlement competition organized by NASA. I had to figure out where people would live, how things would be built, and how everything would work day to day.</p>
                 </div>
             </article>
-        </div>
-    </section>
-
-    <section class="home-panel home-contact" id="contact" aria-labelledby="home-contact-title">
-        <canvas class="hero-dot-stream contact-dot-stream" data-hero-dots width="900" height="1100" aria-hidden="true"></canvas>
-        <div class="home-panel-copy contact-copy">
-            {{- with .hero.kicker }}
-            <p class="hero-kicker">{{ . }}</p>
-            {{- end }}
-            <h2 id="home-contact-title" class="contact-hero-title">
-                <span>{{ .hero.headline.line1 }}</span>
-                <span>{{ .hero.headline.line2 }}</span>
-                <em>{{ .hero.headline.emphasis }}</em>
-                <span>{{ .hero.headline.line3 }}</span>
-            </h2>
-            <div class="contact-intro">
-                <p>{{ .hero.description }}</p>
-                <p><span>{{ .contact.title }}</span> {{ .contact.description }}</p>
-            </div>
-            <div class="contact-actions">
-                <div class="contact-links" aria-label="Contact links">
-                    {{- range .contact.links }}
-                    <a href="{{ .url | safeURL }}" aria-label="{{ .label }}" title="{{ .label }}">
-                        <span class="contact-icon">{{ partial "svg.html" (dict "name" .icon) }}</span>
-                    </a>
-                    {{- end }}
+            <article class="about-card about-ubc-story-card" aria-label="UBC studies and campus life">
+                <div class="about-story-copy">
+                    <p>At UBC, I studied finance, math, philosophy, history, and political science. I spent a lot of time doing research, making friends, and taking long walks around campus.</p>
                 </div>
-            {{- with .contact.cta }}
-                <a class="panel-link" href="{{ .url | safeURL }}">{{ .label }} <span aria-hidden="true">-></span></a>
-            {{- end }}
-            </div>
+            </article>
+            <article class="about-card about-ubc-image-card" aria-label="UBC campus">
+                <img src="{{ "/ubc-campus.jpg" | relURL }}" alt="UBC campus photograph" loading="lazy">
+            </article>
+            <article class="about-card about-third-image-card" aria-label="Work image">
+                <img src="{{ "/work-third.jpg" | relURL }}" alt="Work photograph" loading="lazy">
+            </article>
+            <article class="about-card about-third-copy-card about-third-copy-card-top" aria-label="Work note">
+                <div class="about-story-copy">
+                    <p>After graduation, I helped build homes and communities at <a href="https://www.chardproperties.com/">Chard</a>.</p>
+                </div>
+            </article>
+            <article class="about-card about-third-copy-card about-third-copy-card-bottom" aria-label="Work note">
+                <div class="about-story-copy">
+                    <p>I joined at a busy time, so I ended up doing a bit of everything: visiting construction sites, working with banks and investors, doing market research, and thinking through the decisions behind large buildings.</p>
+                </div>
+            </article>
+            <article class="about-card about-current-work-card" aria-label="Current work">
+                <div class="about-story-copy">
+                    <p>These days, I’m wrapping up my master’s in economics at the University of Toronto. I’ve been writing <a href="{{ "/projects/" | relURL }}">research papers</a>, working with data and models, and building tools and workflows that make the work easier.</p>
+                </div>
+            </article>
+            <article class="about-contact-card" id="contact" aria-labelledby="home-contact-title">
+                <div class="about-contact-copy">
+                    <p id="home-contact-title"><span>{{ .contact.title }}</span> {{ .contact.description }}</p>
+                    <div class="contact-actions">
+                        <div class="contact-links" aria-label="Contact links">
+                            {{- range .contact.links }}
+                            <a href="{{ .url | safeURL }}" aria-label="{{ .label }}" title="{{ .label }}">
+                                <span class="contact-icon">{{ partial "svg.html" (dict "name" .icon) }}</span>
+                            </a>
+                            {{- end }}
+                        </div>
+                        {{- with .contact.cta }}
+                        <a class="panel-link" href="{{ .url | safeURL }}">{{ .label }} <span aria-hidden="true">-></span></a>
+                        {{- end }}
+                    </div>
+                </div>
+            </article>
         </div>
     </section>
 </div>

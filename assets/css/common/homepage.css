@@ -361,6 +361,8 @@
     z-index: 3;
     display: grid;
     container-type: inline-size;
+    --about-work-square: calc(((100cqw - (2 * var(--about-gap))) / 3.24) * 1.24);
+    --about-work-wide: calc(100cqw - var(--about-work-square) - var(--about-gap));
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.24fr);
     grid-template-rows: auto auto auto;
     gap: var(--about-gap);
@@ -566,26 +568,104 @@
 
 .about-story-card {
     display: grid;
-    grid-column: 2 / span 2;
+    grid-column: 1 / -1;
     grid-row: 3;
+    align-items: center;
+    justify-self: end;
+    width: var(--about-work-wide);
+    height: var(--about-work-square);
+    text-align: left;
+}
+
+.about-ubc-story-card {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 4;
+    align-items: center;
+    justify-self: start;
+    width: var(--about-work-wide);
+    height: var(--about-work-square);
+    text-align: left;
+}
+
+.about-third-copy-card {
+    display: grid;
+    grid-column: 3;
     align-items: center;
     text-align: left;
 }
 
+.about-third-copy-card-top {
+    grid-row: 5;
+}
+
+.about-third-copy-card-bottom {
+    grid-row: 6;
+}
+
+.about-current-work-card {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 7;
+    align-items: center;
+    width: 100%;
+    height: var(--about-work-square);
+    text-align: left;
+}
+
+.about-contact-card {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 8;
+    align-items: center;
+    justify-items: center;
+    min-height: var(--about-work-square);
+    padding: clamp(24px, 4vw, 52px) 0 0;
+    text-align: left;
+}
+
+.about-contact-copy {
+    display: grid;
+    gap: clamp(30px, 5cqw, 58px);
+    width: min(100%, 920px);
+    justify-items: center;
+}
+
+.about-contact-copy p {
+    max-width: none;
+    color: var(--home-muted);
+    font-size: clamp(20px, min(3.15cqw, 5.4cqh), 32px);
+    line-height: 1.45;
+    text-align: center;
+}
+
+.about-contact-copy p span {
+    color: var(--home-ink);
+}
+
 .about-story-copy {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: clamp(18px, 3.2cqw, 46px);
     width: 100%;
 }
 
 .about-story-copy p {
-    max-width: 62ch;
+    width: 100%;
+    max-width: none;
     margin: 0;
     color: #4A5F80;
-    font-size: clamp(13px, min(1.75cqw, 4.2cqh), 18px);
-    line-height: 1.42;
+    font-size: clamp(19px, min(3.05cqw, 7.4cqh), 34px);
+    line-height: 1.18;
+    text-align: left;
     white-space: pre-line;
+}
+
+.about-story-copy a {
+    color: var(--home-blue);
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+    text-underline-offset: 0.14em;
 }
 
 .about-data-card,
@@ -623,11 +703,49 @@
 }
 
 .about-location-card {
-    grid-column: 1;
+    grid-column: 1 / -1;
     grid-row: 3;
     justify-content: center;
+    justify-self: start;
+    width: var(--about-work-square);
+    height: var(--about-work-square);
     aspect-ratio: 1;
-    padding-bottom: clamp(20px, 2.2cqw, 34px);
+    padding: 0;
+    border-color: rgba(49, 95, 154, 0.42);
+    background: transparent;
+}
+
+.about-ubc-image-card {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    justify-content: center;
+    justify-self: end;
+    width: var(--about-work-square);
+    height: var(--about-work-square);
+    aspect-ratio: 1;
+    padding: 0;
+    border-color: rgba(49, 95, 154, 0.42);
+    background: transparent;
+}
+
+.about-third-image-card {
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 2;
+    justify-content: center;
+    align-self: stretch;
+    aspect-ratio: 1;
+    padding: 0;
+    border-color: rgba(49, 95, 154, 0.42);
+    background: transparent;
+}
+
+.about-location-card::before,
+.about-location-card::after,
+.about-ubc-image-card::before,
+.about-ubc-image-card::after,
+.about-third-image-card::before,
+.about-third-image-card::after {
+    content: none;
 }
 
 .about-time-card {
@@ -656,6 +774,17 @@
     line-height: 1.1;
     letter-spacing: 0;
     text-align: center;
+}
+
+.about-location-card img,
+.about-ubc-image-card img,
+.about-third-image-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.94) contrast(1.04);
 }
 
 .home-research {
@@ -1340,6 +1469,12 @@
     .about-portrait-card,
     .about-research-card,
     .about-story-card,
+    .about-ubc-story-card,
+    .about-ubc-image-card,
+    .about-third-image-card,
+    .about-third-copy-card,
+    .about-current-work-card,
+    .about-contact-card,
     .about-data-card,
     .about-location-card,
     .about-time-card,
@@ -1351,9 +1486,32 @@
     }
 
     .about-lead,
-    .about-story-card {
+    .about-third-image-card,
+    .about-third-copy-card,
+    .about-current-work-card,
+    .about-contact-card {
         grid-column: 1 / -1;
         min-height: 360px;
+    }
+
+    .about-location-card,
+    .about-ubc-story-card {
+        grid-column: 1;
+    }
+
+    .about-story-card,
+    .about-ubc-image-card {
+        grid-column: 2;
+    }
+
+    .about-story-card,
+    .about-ubc-story-card,
+    .about-third-image-card {
+        min-height: 0;
+    }
+
+    .about-ubc-image-card {
+        aspect-ratio: 1;
     }
 
     .about-portrait-card,
@@ -1367,6 +1525,8 @@
 
     .about-data-card,
     .about-location-card,
+    .about-ubc-image-card,
+    .about-third-image-card,
     .about-time-card,
     .about-markets-card {
         min-height: 180px;
@@ -1562,6 +1722,12 @@
     .about-portrait-card,
     .about-research-card,
     .about-story-card,
+    .about-ubc-story-card,
+    .about-ubc-image-card,
+    .about-third-image-card,
+    .about-third-copy-card,
+    .about-current-work-card,
+    .about-contact-card,
     .about-data-card,
     .about-location-card,
     .about-time-card,
@@ -1598,7 +1764,11 @@
         font-size: clamp(30px, min(8.6cqw, 8.2cqh), 44px);
     }
 
-    .about-story-card {
+    .about-story-card,
+    .about-ubc-story-card,
+    .about-third-copy-card,
+    .about-current-work-card,
+    .about-contact-card {
         min-height: auto;
     }
 
@@ -1613,9 +1783,22 @@
 
     .about-data-card,
     .about-location-card,
+    .about-ubc-image-card,
+    .about-third-image-card,
     .about-time-card,
     .about-markets-card {
         min-height: 170px;
+    }
+
+    .about-location-card,
+    .about-ubc-image-card,
+    .about-third-image-card {
+        padding: 0;
+    }
+
+    .about-third-image-card {
+        min-height: 390px;
+        aspect-ratio: auto;
     }
 
     .contact-hero-title {
