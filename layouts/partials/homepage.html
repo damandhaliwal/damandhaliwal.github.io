@@ -12,7 +12,6 @@
             <a class="home-nav-cta" href="{{ .url | safeURL }}">{{ .label }}</a>
             {{- end }}
         </nav>
-        {{- $research := index .about.experiences 0 -}}
         {{- $data := index .about.experiences 1 -}}
         {{- $markets := index .about.experiences 2 -}}
         <div class="about-mosaic">
@@ -23,30 +22,33 @@
                     <span>{{ . }}</span>
                     {{- end }}
                 </div>
-                <p>{{ .about.description }}</p>
+                {{- with .about.description }}
+                <p>{{ . }}</p>
+                {{- end }}
             </article>
-            <article class="about-card about-portrait-card">
-                <div class="about-portrait">
-                    <img src="{{ .about.imageUrl | relURL }}" alt="{{ .about.imageAlt }}" loading="lazy">
+            <div class="about-side-stack">
+                <article class="about-card about-portrait-card">
+                    <div class="about-portrait">
+                        <img src="{{ .about.imageUrl | relURL }}" alt="{{ .about.imageAlt }}" loading="lazy">
+                    </div>
+                    <span class="about-name">{{ .about.imageAlt }}</span>
+                </article>
+                <article class="about-card about-research-card" aria-label="Location and local time">
+                    <p class="about-place-time">
+                        <span>{{ .about.location }}</span>
+                        <span aria-hidden="true">|</span>
+                        <span data-local-time data-time-zone="{{ .about.timezone }}">--:--</span>
+                    </p>
+                </article>
+            </div>
+            <article class="about-card about-location-card" aria-label="Placeholder">
+                <strong>Placeholder</strong>
+            </article>
+            <article class="about-card about-story-card" aria-label="Background and current work">
+                <div class="about-story-copy">
+                    <p>{{ $data.description }}</p>
+                    <p>{{ $markets.description }}</p>
                 </div>
-                <span class="about-name">{{ .about.imageAlt }}</span>
-            </article>
-            <article class="about-card about-research-card" aria-label="{{ $research.title }}">
-                <p>{{ $research.description }}</p>
-            </article>
-            <article class="about-card about-data-card" aria-label="{{ $data.title }}">
-                <p>{{ $data.description }}</p>
-            </article>
-            <article class="about-card about-empty-card about-empty-card-1" aria-hidden="true"></article>
-            <article class="about-card about-location-card" aria-label="Location">
-                <strong>{{ .about.location }}</strong>
-            </article>
-            <article class="about-card about-time-card" aria-label="Local time">
-                <strong data-local-time data-time-zone="{{ .about.timezone }}">--:--</strong>
-            </article>
-            <article class="about-card about-empty-card about-empty-card-2" aria-hidden="true"></article>
-            <article class="about-card about-markets-card" aria-label="{{ $markets.title }}">
-                <p>{{ $markets.description }}</p>
             </article>
         </div>
     </section>

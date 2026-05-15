@@ -324,9 +324,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: clamp(22px, 3.2vh, 44px);
-    padding: clamp(58px, 7vh, 96px) clamp(28px, 5vw, 96px);
+    justify-content: flex-start;
+    gap: clamp(14px, 2.2vh, 30px);
+    min-height: 100svh;
+    padding: clamp(22px, 3.4vh, 44px) clamp(28px, 5vw, 96px) clamp(32px, 4vh, 64px);
     background:
         radial-gradient(circle at 77% 20%, rgba(49, 95, 154, 0.26), transparent 24%),
         radial-gradient(circle at 18% 76%, rgba(110, 143, 184, 0.14), transparent 24%),
@@ -340,11 +341,12 @@
 
 .about-statement {
     display: grid;
-    gap: clamp(5px, 0.58cqw, 10px);
+    gap: clamp(4px, 1.1cqh, 10px);
+    width: 100%;
     max-width: min(520px, 100%);
     color: var(--home-blue);
     font-family: var(--home-display);
-    font-size: clamp(28px, 3.25cqw, 56px);
+    font-size: clamp(32px, min(7.6cqw, 8.4cqh), 60px);
     font-weight: 400;
     line-height: 1.13;
 }
@@ -354,22 +356,26 @@
 }
 
 .about-mosaic {
+    --about-gap: clamp(12px, 1vw, 18px);
     position: relative;
     z-index: 3;
     display: grid;
     container-type: inline-size;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-template-rows: minmax(0, 2fr) minmax(0, 1fr);
-    gap: clamp(10px, 0.82vw, 16px);
-    width: min(88vw, 1520px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.24fr);
+    grid-template-rows: auto auto auto;
+    gap: var(--about-gap);
+    width: min(70vw, 940px);
     max-width: 100%;
-    height: min(clamp(530px, 68vh, 760px), calc(100vh - 116px));
+    max-height: none;
+    aspect-ratio: auto;
+    height: auto;
     margin: 0 auto;
 }
 
 .about-card {
     position: relative;
     display: flex;
+    container-type: size;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -454,26 +460,28 @@
 
 .about-lead {
     grid-column: 1 / span 2;
-    grid-row: 1;
+    grid-row: 1 / span 2;
     align-items: flex-start;
     justify-content: center;
+    aspect-ratio: 1;
     text-align: left;
 }
 
 .about-lead > p {
+    width: 100%;
     max-width: min(420px, 100%);
-    margin-top: clamp(22px, 2.4cqw, 34px);
+    margin-top: clamp(18px, 5.2cqh, 34px);
     color: #536174;
-    font-size: clamp(12px, 0.95cqw, 15px);
+    font-size: clamp(11px, min(2.25cqw, 2.6cqh), 16px);
     line-height: 1.5;
 }
 
 .about-portrait-card {
-    grid-column: 3 / span 2;
-    grid-row: 1;
     align-items: center;
     justify-content: center;
-    gap: clamp(18px, 2.4vw, 32px);
+    aspect-ratio: 1;
+    width: 100%;
+    gap: clamp(12px, 1.7vw, 24px);
     border-color: rgba(202, 214, 231, 0.42);
     color: var(--home-surface);
     background:
@@ -483,7 +491,7 @@
 }
 
 .about-portrait {
-    width: min(76%, 360px);
+    width: min(58%, 180px);
     aspect-ratio: 0.84;
     overflow: hidden;
     border-radius: 8px;
@@ -503,25 +511,81 @@
 .about-name {
     color: var(--home-surface);
     font-family: var(--home-display);
-    font-size: clamp(42px, 4.2cqw, 66px);
+    font-size: clamp(22px, min(9cqw, 8.2cqh), 38px);
     line-height: 0.9;
     text-align: center;
     white-space: nowrap;
 }
 
+.about-side-stack {
+    display: grid;
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    grid-template-rows: auto minmax(0, 1fr);
+    align-self: stretch;
+    gap: var(--about-gap);
+    height: 100%;
+}
+
+.about-side-stack .about-portrait-card,
+.about-side-stack .about-research-card {
+    grid-column: 1;
+    grid-row: auto;
+}
+
 .about-research-card {
-    grid-column: 5 / span 2;
-    grid-row: 1;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    text-align: center;
 }
 
 .about-research-card p {
+    width: 100%;
     max-width: min(490px, 100%);
     color: #315F9A;
     font-family: var(--home-display);
-    font-size: clamp(24px, 3.1cqw, 50px);
+    font-size: clamp(28px, min(13.5cqw, 8.2cqh), 46px);
     line-height: 1.14;
+}
+
+.about-research-card .about-place-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35em;
+    width: 100%;
+    color: #4F6F9E;
+    font-family: var(--home-mono);
+    font-size: clamp(18px, min(5.2cqw, 6.2cqh), 30px);
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.about-story-card {
+    display: grid;
+    grid-column: 2 / span 2;
+    grid-row: 3;
+    align-items: center;
+    text-align: left;
+}
+
+.about-story-copy {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(18px, 3.2cqw, 46px);
+    width: 100%;
+}
+
+.about-story-copy p {
+    max-width: 62ch;
+    margin: 0;
+    color: #4A5F80;
+    font-size: clamp(13px, min(1.75cqw, 4.2cqh), 18px);
+    line-height: 1.42;
+    white-space: pre-line;
 }
 
 .about-data-card,
@@ -532,22 +596,24 @@
 }
 
 .about-data-card {
-    grid-column: 1;
+    grid-column: 1 / span 2;
     grid-row: 2;
 }
 
 .about-markets-card {
-    grid-column: 6;
+    grid-column: 5 / span 2;
     grid-row: 2;
 }
 
 .about-data-card p,
 .about-markets-card p {
-    max-width: 220px;
+    width: 100%;
+    max-width: min(420px, 100%);
     color: #4A5F80;
-    font-family: var(--home-mono);
-    font-size: clamp(10px, 0.93cqw, 15px);
-    line-height: 1.42;
+    font-family: var(--home-body);
+    font-size: clamp(13px, min(3.15cqw, 5.8cqh), 18px);
+    line-height: 1.38;
+    white-space: pre-line;
 }
 
 .about-location-card,
@@ -557,8 +623,11 @@
 }
 
 .about-location-card {
-    grid-column: 3;
-    grid-row: 2;
+    grid-column: 1;
+    grid-row: 3;
+    justify-content: center;
+    aspect-ratio: 1;
+    padding-bottom: clamp(20px, 2.2cqw, 34px);
 }
 
 .about-time-card {
@@ -569,18 +638,20 @@
 .about-empty-card-1 {
     grid-column: 2;
     grid-row: 2;
+    display: none;
 }
 
 .about-empty-card-2 {
     grid-column: 5;
     grid-row: 2;
+    display: none;
 }
 
 .about-location-card strong,
 .about-time-card strong {
     color: #4F6F9E;
     font-family: var(--home-mono);
-    font-size: clamp(18px, 1.9cqw, 32px);
+    font-size: clamp(18px, min(8.6cqw, 7.2cqh), 34px);
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: 0;
@@ -1258,14 +1329,17 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: auto;
         width: min(100%, 760px);
+        max-height: none;
+        aspect-ratio: auto;
         height: auto;
         min-height: auto;
-        padding-top: 72px;
     }
 
     .about-lead,
+    .about-side-stack,
     .about-portrait-card,
     .about-research-card,
+    .about-story-card,
     .about-data-card,
     .about-location-card,
     .about-time-card,
@@ -1277,10 +1351,14 @@
     }
 
     .about-lead,
+    .about-story-card {
+        grid-column: 1 / -1;
+        min-height: 360px;
+    }
+
     .about-portrait-card,
     .about-research-card {
-        grid-column: 1 / -1;
-        min-height: 420px;
+        min-height: 340px;
     }
 
     .about-empty-card {
@@ -1299,7 +1377,12 @@
     }
 
     .about-name {
-        font-size: clamp(46px, 8vw, 72px);
+        font-size: clamp(42px, min(10cqw, 8.2cqh), 68px);
+    }
+
+    .about-story-copy {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .contact-copy {
@@ -1468,7 +1551,6 @@
         gap: 10px;
         width: 100%;
         height: auto;
-        padding-top: 78px;
     }
 
     .about-card {
@@ -1476,8 +1558,10 @@
     }
 
     .about-lead,
+    .about-side-stack,
     .about-portrait-card,
     .about-research-card,
+    .about-story-card,
     .about-data-card,
     .about-location-card,
     .about-time-card,
@@ -1490,7 +1574,7 @@
     }
 
     .about-statement {
-        font-size: clamp(36px, 12vw, 52px);
+        font-size: clamp(34px, min(9cqw, 8.4cqh), 52px);
     }
 
     .about-portrait-card {
@@ -1503,7 +1587,7 @@
     }
 
     .about-name {
-        font-size: clamp(34px, 10.5vw, 44px);
+        font-size: clamp(34px, min(10cqw, 7.8cqh), 48px);
     }
 
     .about-research-card {
@@ -1511,7 +1595,20 @@
     }
 
     .about-research-card p {
-        font-size: clamp(30px, 10vw, 42px);
+        font-size: clamp(30px, min(8.6cqw, 8.2cqh), 44px);
+    }
+
+    .about-story-card {
+        min-height: auto;
+    }
+
+    .about-story-copy {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .about-story-copy p {
+        font-size: clamp(14px, min(4.4cqw, 3.6cqh), 17px);
     }
 
     .about-data-card,

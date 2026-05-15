@@ -52,13 +52,10 @@ params:
           nav:
             - label: Research
               url: "projects/"
-            - label: About
-              url: "#about"
             - label: Writing
               url: "https://damandhaliwal.substack.com/"
-          headerCta:
-            label: "Let's connect"
-            url: "#contact"
+            - label: Contact
+              url: "#contact"
           hero:
             number: "01"
             kicker: Data systems, causal inference, and AI
@@ -79,20 +76,24 @@ params:
             location: Toronto
             timezone: America/Toronto
             intro:
-              - Engineer by training.
-              - Researcher at heart.
-              - Problem solver by choice.
-            description: "I work at the intersection of messy data, rigorous identification, machine learning, and business judgment."
+              - I spend my time around economics, data, finance, and building useful systems.
+            description: ""
             experiences:
               - label: Experience 01
                 title: Research
-                description: Evidence design, causal inference, and applied machine learning.
+                description: I like making ideas useful.
               - label: Experience 02
                 title: Data Systems
-                description: Pipelines, modeling workflows, and production-minded analytics.
+                description: |-
+                  In high school, I spent time envisioning a space settlement.
+
+                  At UBC, I tried to understand housing markets from an economics point of view: prices, incentives, supply, and why cities change slowly.
               - label: Experience 03
                 title: Markets
-                description: Finance, acquisitions, incentives, and capital allocation judgment.
+                description: |-
+                  After graduating, I helped build large buildings. At Chard, I worked close to the capital, financing, and project decisions behind real estate development.
+
+                  Now I work on solving real-world problems with data, models, and research.
               - label: Experience 04
                 title: Communication
                 description: Translating technical work into decisions people can act on.
