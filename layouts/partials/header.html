@@ -147,6 +147,13 @@
                 </a>
             </li>
             {{- end }}
+            {{- with site.Params.headerCta }}
+            <li class="menu-cta">
+                <a href="{{ .url | relURL }}" title="{{ .label }}">
+                    <span>{{ .label }}</span>
+                </a>
+            </li>
+            {{- end }}
         </ul>
     </nav>
 </header>

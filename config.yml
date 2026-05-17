@@ -14,9 +14,12 @@ menu:
         - name: Work
           url: projects/
           weight: 1
+        - name: About
+          url: about/
+          weight: 2
         - name: Writing
           url: https://damandhaliwal.substack.com/
-          weight: 2
+          weight: 3
         #- name: Courses
           #url: courses/
           #weight: 2
@@ -52,10 +55,13 @@ params:
           nav:
             - label: Research
               url: "projects/"
+            - label: About
+              url: "about/"
             - label: Writing
               url: "https://damandhaliwal.substack.com/"
-            - label: Contact
-              url: "#contact"
+          headerCta:
+            label: Contact
+            url: "#contact"
           hero:
             number: "01"
             kicker: Data systems, causal inference, and AI
@@ -210,6 +216,9 @@ params:
       text: "Daman Dhaliwal"
       icon: /favicon.ico
       iconHeight: 18
+    headerCta:
+      label: Contact
+      url: /#contact
 
 markup:
     goldmark:
