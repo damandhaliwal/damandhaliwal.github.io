@@ -41,7 +41,7 @@
             </div>
             <div class="about-contact-panel" id="contact" aria-labelledby="home-contact-title">
                 <div class="about-contact-copy">
-                    <p id="home-contact-title"><span>{{ .contact.title }}</span> {{ .contact.description }}</p>
+                    <p id="home-contact-title"><span>{{ .contact.title }}</span> {{ .contact.description | safeHTML }}</p>
                     <div class="contact-actions">
                         <div class="contact-links" aria-label="Contact links">
                             {{- range .contact.links }}

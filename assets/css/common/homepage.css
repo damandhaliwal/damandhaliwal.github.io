@@ -202,6 +202,13 @@
     transform: scaleX(1);
 }
 
+.home-nav-links a[aria-current="page"]::after {
+    height: 1px;
+    background: var(--home-coral);
+    opacity: 0.82;
+    transform: scaleX(1);
+}
+
 .home-nav-cta {
     position: absolute;
     top: 50%;
@@ -595,6 +602,23 @@
 
 .about-contact-copy p span {
     color: var(--home-ink);
+}
+
+.about-contact-copy a {
+    color: var(--home-clay-dark);
+    text-decoration: underline;
+    text-decoration-color: rgba(194, 148, 138, 0.76);
+    text-decoration-thickness: 0.06em;
+    text-underline-offset: 0.14em;
+}
+
+.about-contact-copy a:hover {
+    color: var(--home-blue);
+    text-decoration-color: var(--home-blue);
+}
+
+.about-contact-copy .panel-link {
+    color: #fff;
 }
 
 .about-story-copy {
@@ -1359,10 +1383,33 @@
     font-family: var(--home-body);
 }
 
+body:has(.about-page-shell) .footer {
+    display: none;
+}
+
 .about-page-experience {
     width: min(1040px, calc(100% - 48px));
     margin: 0 auto;
-    padding: clamp(38px, 6vw, 82px) 0 clamp(72px, 9vw, 128px);
+    padding: clamp(22px, 3.4vh, 44px) 0 clamp(72px, 9vw, 128px);
+}
+
+.about-page-nav {
+    width: calc(100vw - (2 * clamp(28px, 5vw, 96px)));
+    max-width: none;
+    margin-right: calc(50% - 50vw + clamp(28px, 5vw, 96px));
+    margin-bottom: clamp(28px, 4vw, 44px);
+    margin-left: calc(50% - 50vw + clamp(28px, 5vw, 96px));
+}
+
+.about-page-intro {
+    max-width: 920px;
+    margin: 0 auto clamp(30px, 4vw, 54px);
+    color: var(--home-ink);
+    font-size: clamp(20px, min(3.15cqw, 5.4cqh), 32px);
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: 0;
+    text-align: center;
 }
 
 .about-page-mosaic {
@@ -1376,7 +1423,18 @@
 .about-page-mosaic .about-card {
     width: 100%;
     min-height: clamp(240px, 24vw, 340px);
+    border-color: var(--home-line);
+    background: var(--home-surface);
     justify-self: stretch;
+}
+
+.about-page-mosaic .about-story-copy p {
+    color: var(--home-muted);
+}
+
+.about-page-mosaic .about-story-copy a {
+    color: var(--home-clay-dark);
+    text-decoration-color: rgba(194, 148, 138, 0.76);
 }
 
 .about-page-mosaic .about-location-card {
@@ -1385,6 +1443,7 @@
     width: 100%;
     height: auto;
     aspect-ratio: 1;
+    padding: 0;
 }
 
 .about-page-mosaic .about-story-card {
@@ -1416,6 +1475,17 @@
     width: 100%;
     min-height: 100%;
     aspect-ratio: auto;
+}
+
+.about-page-mosaic .about-location-card,
+.about-page-mosaic .about-ubc-image-card,
+.about-page-mosaic .about-third-image-card {
+    border-color: var(--home-line);
+    background: var(--home-surface);
+}
+
+.about-page-mosaic .about-location-card img {
+    object-fit: cover;
 }
 
 .about-page-mosaic .about-third-copy-card-top {
@@ -1530,6 +1600,19 @@
     .about-markets-card,
     .about-empty-card-1,
     .about-empty-card-2 {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .about-side-stack {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        height: auto;
+    }
+
+    .about-side-stack .about-portrait-card,
+    .about-side-stack .about-research-card {
         grid-column: auto;
         grid-row: auto;
     }
@@ -1702,11 +1785,11 @@
 
 @media (max-width: 620px) {
     .home-panel {
-        padding: 22px;
+        padding: 16px;
     }
 
     .home-about {
-        padding-inline: 22px;
+        padding-inline: 16px;
     }
 
     .panel-number,
@@ -1796,11 +1879,14 @@
         grid-template-columns: 1fr;
         gap: 10px;
         width: 100%;
+        min-width: 0;
         height: auto;
     }
 
     .about-card {
-        padding: 24px;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
     }
 
     .about-lead,
@@ -1822,12 +1908,23 @@
         grid-column: 1;
     }
 
+    .about-lead,
+    .about-portrait-card {
+        aspect-ratio: auto;
+    }
+
+    .about-side-stack {
+        grid-template-columns: 1fr;
+    }
+
     .about-lead {
         min-height: 390px;
     }
 
     .about-statement {
-        font-size: clamp(34px, min(9cqw, 8.4cqh), 52px);
+        max-width: 100%;
+        font-size: clamp(29px, min(8.2cqw, 7.8cqh), 38px);
+        line-height: 1.18;
     }
 
     .about-portrait-card {

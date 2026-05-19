@@ -141,8 +141,8 @@ params:
               url: "https://damandhaliwal.substack.com/"
           contact:
             number: "08"
-            title: "Let's Build Something Meaningful."
-            description: "Open to research collaborations, impactful projects, and interesting conversations."
+            title: "Most of my work is about understanding messy problems and making them easier to reason through."
+            description: 'You can read some of my <a href="/projects/">research</a>, learn a bit more about <a href="/about/">me</a>, or send me a note if something here seems interesting.'
             cta:
               label: "Let's connect"
               url: "mailto:damandhaliwal1910@gmail.com"
