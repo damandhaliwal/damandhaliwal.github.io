@@ -19,45 +19,76 @@
             <a class="home-nav-cta" href="{{ $href | safeURL }}">{{ .label }}</a>
             {{- end }}
         </nav>
-        <h1 id="about-page-title" class="sr-only">About</h1>
-        <div class="about-page-intro" aria-hidden="true">
-            A longer version of how I got here
-        </div>
-        <div class="about-mosaic about-page-mosaic">
-            <article class="about-card about-location-card" aria-label="Space settlement concept">
-                <img src="{{ "/space-settlement.png" | relURL }}" alt="Space settlement concept drawing" loading="lazy">
-            </article>
-            <article class="about-card about-story-card" aria-label="Background and current work">
-                <div class="about-story-copy">
+        <header class="about-page-heading">
+            <h1 id="about-page-title">About</h1>
+            <p>I like work that sits between technical questions and real-world decisions. I’ve worked with causal inference, machine learning, econometrics, and open source software, but I’ve also worked closely with banks, institutional investors, construction crews, and supported real large capital decisions. That overlap is where I do my best work.</p>
+        </header>
+        <div class="about-timeline" aria-label="Chronological timeline">
+            <section class="about-timeline-section is-feature" aria-labelledby="timeline-early-design">
+                <figure class="about-artifact-card is-feature-image">
+                    <img src="{{ "/space-settlement.png" | relURL }}" alt="Space settlement concept drawing" loading="lazy">
+                </figure>
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-early-design">Early Design</h2>
                     <p>In high school, I took part in a space settlement competition organized by NASA. I had to figure out where people would live, how things would be built, and how everything would work day to day.</p>
                 </div>
-            </article>
-            <article class="about-card about-ubc-story-card" aria-label="UBC studies and campus life">
-                <div class="about-story-copy">
+            </section>
+
+            <section class="about-timeline-section is-standard is-reverse" aria-labelledby="timeline-ubc">
+                <figure class="about-artifact-card is-image">
+                    <img src="{{ "/ubc-campus.jpg" | relURL }}" alt="UBC campus photograph" loading="lazy">
+                </figure>
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-ubc">UBC</h2>
                     <p>At UBC, I studied finance, math, philosophy, history, and political science. I spent a lot of time doing research, making friends, and taking long walks around campus.</p>
                 </div>
-            </article>
-            <article class="about-card about-ubc-image-card" aria-label="UBC campus">
-                <img src="{{ "/ubc-campus.jpg" | relURL }}" alt="UBC campus photograph" loading="lazy">
-            </article>
-            <article class="about-card about-third-image-card" aria-label="Work image">
-                <img src="{{ "/work-third.jpg" | relURL }}" alt="Work photograph" loading="lazy">
-            </article>
-            <article class="about-card about-third-copy-card about-third-copy-card-top" aria-label="Work note">
-                <div class="about-story-copy">
-                    <p>After graduation, I helped build homes and communities at <a href="https://www.chardproperties.com/">Chard</a>.</p>
+            </section>
+
+            <section class="about-timeline-section is-feature is-reverse" aria-labelledby="timeline-chard">
+                <figure class="about-artifact-card is-feature-image">
+                    <img src="{{ "/work-third.jpg" | relURL }}" alt="Construction site photograph" loading="lazy">
+                </figure>
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-chard">Chard</h2>
+                    <p>After graduation, I helped build homes and communities at <a href="https://www.chardproperties.com/">Chard</a>. I joined at a busy time, so I ended up doing a bit of everything: visiting construction sites, working with banks and investors, doing market research, and thinking through the decisions behind large buildings.</p>
                 </div>
-            </article>
-            <article class="about-card about-third-copy-card about-third-copy-card-bottom" aria-label="Work note">
-                <div class="about-story-copy">
-                    <p>I joined at a busy time, so I ended up doing a bit of everything: visiting construction sites, working with banks and investors, doing market research, and thinking through the decisions behind large buildings.</p>
+            </section>
+
+            <section class="about-timeline-section has-artifact-grid" aria-labelledby="timeline-utoronto">
+                <div class="about-artifact-grid" aria-label="University of Toronto artifact placeholders">
+                    <div class="about-artifact-card is-placeholder"><span>Paper visual</span></div>
+                    <div class="about-artifact-card is-placeholder"><span>Code visual</span></div>
+                    <div class="about-artifact-card is-placeholder"><span>Model visual</span></div>
+                    <div class="about-artifact-card is-placeholder"><span>Research notes</span></div>
                 </div>
-            </article>
-            <article class="about-card about-current-work-card" aria-label="Current work">
-                <div class="about-story-copy">
-                    <p>These days, I’m wrapping up my master’s in economics at the University of Toronto. I’ve been writing <a href="{{ "/projects/" | relURL }}">research papers</a>, working with data and models, and building tools and workflows that make the work easier.</p>
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-utoronto">University of Toronto</h2>
+                    <p>Placeholder copy for the University of Toronto research chapter.</p>
                 </div>
-            </article>
+            </section>
+
+            <section class="about-timeline-section is-standard" aria-labelledby="timeline-pyfixest">
+                <div class="about-artifact-card is-placeholder"><span>Package visual</span></div>
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-pyfixest">PyFixest</h2>
+                    <p>Placeholder copy for the PyFixest software chapter.</p>
+                </div>
+            </section>
+
+            <section class="about-timeline-section is-standard is-reverse" aria-labelledby="timeline-jpe">
+                <div class="about-artifact-card is-placeholder"><span>Replication visual</span></div>
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-jpe">JPE Replication</h2>
+                    <p>Placeholder copy for the JPE replication chapter.</p>
+                </div>
+            </section>
+
+            <section class="about-timeline-section is-closing" aria-labelledby="timeline-current-direction">
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-current-direction">Current Direction</h2>
+                    <p>Placeholder copy for the current direction and closing chapter.</p>
+                </div>
+            </section>
         </div>
     </section>
 </div>
