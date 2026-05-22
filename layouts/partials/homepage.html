@@ -1,0 +1,62 @@
+{{- $home := site.Params.homepage -}}
+{{- with $home }}
+<div class="home-experience" data-homepage>
+    <section class="home-panel home-about" id="about" aria-labelledby="home-about-title">
+        <nav class="home-nav" aria-label="Homepage navigation">
+            <div class="home-nav-links">
+                {{- range .nav }}
+                <a href="{{ .url | safeURL }}">{{ .label }}</a>
+                {{- end }}
+            </div>
+            {{- with .headerCta }}
+            <a class="home-nav-cta" href="{{ .url | safeURL }}">{{ .label }}</a>
+            {{- end }}
+        </nav>
+        <div class="about-mosaic">
+            <article class="about-card about-lead">
+                <h2 id="home-about-title" class="sr-only">{{ .about.title }}</h2>
+                <div class="about-statement">
+                    {{- range .about.intro }}
+                    <span>{{ . }}</span>
+                    {{- end }}
+                </div>
+                {{- with .about.description }}
+                <p>{{ . }}</p>
+                {{- end }}
+            </article>
+            <div class="about-side-stack">
+                <article class="about-card about-portrait-card">
+                    <div class="about-portrait">
+                        <img src="{{ .about.imageUrl | relURL }}" alt="{{ .about.imageAlt }}" loading="lazy">
+                    </div>
+                    <span class="about-name">{{ .about.imageAlt }}</span>
+                </article>
+                <article class="about-card about-research-card" aria-label="Location and local time">
+                    <p class="about-place-time">
+                        <span>{{ .about.location }}</span>
+                        <span aria-hidden="true">|</span>
+                        <span data-local-time data-time-zone="{{ .about.timezone }}">--:--</span>
+                    </p>
+                </article>
+            </div>
+            <div class="about-contact-panel" id="contact" aria-labelledby="home-contact-title">
+                <div class="about-contact-copy">
+                    <p id="home-contact-title"><span>{{ .contact.title }}</span> {{ .contact.description | safeHTML }}</p>
+                    <div class="contact-actions">
+                        <div class="contact-links" aria-label="Contact links">
+                            {{- range .contact.links }}
+                            <a href="{{ .url | safeURL }}" aria-label="{{ .label }}" title="{{ .label }}">
+                                <span class="contact-icon">{{ partial "svg.html" (dict "name" .icon) }}</span>
+                            </a>
+                            {{- end }}
+                        </div>
+                        {{- with .contact.cta }}
+                        <a class="panel-link" href="{{ .url | safeURL }}">{{ .label }} <span aria-hidden="true">-></span></a>
+                        {{- end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{{- end }}

@@ -1,0 +1,99 @@
+{{- define "main" }}
+{{- $page := . -}}
+{{- $home := site.Params.homepage -}}
+{{- with $home }}
+<div class="home-page about-page-shell">
+    <section class="about-page-experience" aria-labelledby="about-page-title">
+        <nav class="home-nav about-page-nav" aria-label="About page navigation">
+            <div class="home-nav-links">
+                {{- range .nav }}
+                {{- $url := .url -}}
+                {{- $href := cond (or (hasPrefix $url "http") (hasPrefix $url "#")) $url ($url | relURL) -}}
+                {{- $navPath := cond (or (hasPrefix $url "http") (hasPrefix $url "#")) "" ($url | relURL) -}}
+                <a href="{{ $href | safeURL }}"{{ if and $navPath (eq $navPath $page.RelPermalink) }} aria-current="page"{{ end }}>{{ .label }}</a>
+                {{- end }}
+            </div>
+            {{- with .headerCta }}
+            {{- $url := .url -}}
+            {{- $href := cond (hasPrefix $url "#") (printf "/%s" $url) $url -}}
+            <a class="home-nav-cta" href="{{ $href | safeURL }}">{{ .label }}</a>
+            {{- end }}
+        </nav>
+        <header class="about-page-heading">
+            <h1 id="about-page-title">About</h1>
+            <p>I like work that sits between technical questions and real-world decisions. I’ve worked with causal inference, machine learning, econometrics, and open source software, but I’ve also worked closely with banks, institutional investors, construction crews, and supported real large capital decisions. That overlap is where I do my best work.</p>
+        </header>
+        <div class="about-timeline" aria-label="Chronological timeline">
+            <section class="about-timeline-section is-feature" aria-labelledby="timeline-early-design">
+                <figure class="about-artifact-card is-feature-image">
+                    <img src="{{ "/space-settlement.png" | relURL }}" alt="Space settlement concept drawing" loading="lazy">
+                </figure>
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-early-design">Space Settlement Design</h2>
+                    <p>In high school, my team won first prize in the NASA/NSS Space Settlement Contest. We designed a full orbital settlement: where people would live, how it would be powered, how it would be lit, and how everything would work day to day. I worked on the orbital structure, artificial gravity system, energy generation plan, and commercial model for the settlement.</p>
+                </div>
+            </section>
+
+            <section class="about-timeline-section is-standard is-reverse" aria-labelledby="timeline-ubc">
+                <figure class="about-artifact-card is-image">
+                    <img src="{{ "/ubc-campus.jpg" | relURL }}" alt="UBC campus photograph" loading="lazy">
+                </figure>
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-ubc">UBC</h2>
+                    <p>At UBC, I studied finance, math, philosophy, history, and political science. I did research in urban economics and municipal bankruptcies, worked at Canalyst on financial models used by hedge funds and institutional investors, and spent a semester abroad at UCL in London. I also made close friends and took a lot of long walks around campus.</p>
+                </div>
+            </section>
+
+            <section class="about-timeline-section is-feature" aria-labelledby="timeline-chard">
+                <figure class="about-artifact-card is-feature-image">
+                    <img src="{{ "/work-third.jpg" | relURL }}" alt="Construction site photograph" loading="lazy">
+                </figure>
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-chard">Chard</h2>
+                    <p>After graduation, I helped build homes and communities at <a href="https://www.chardproperties.com/">Chard</a>. I worked across the development business: building financial models, designing debt structures with bank MDs, speaking with brokers on new acquisitions, reviewing drawings, rezoning applications, and contracts, and preparing investment memos, risk memos, pitches, and business plans.</p>
+                    <p>I also worked on asset management, tracked rents and operating costs, and automated market data collection using AI. It was a growing company, so I worked closely with the CEO, COO, and CFO and got pulled into the practical decisions behind large buildings.</p>
+                </div>
+            </section>
+
+            <section class="about-timeline-section is-standard is-reverse" aria-labelledby="timeline-research-data">
+                <figure class="about-artifact-card is-image">
+                    <img src="{{ "/research-data-map.png" | relURL }}" alt="Map visualization of London bus network GPS data" loading="lazy">
+                </figure>
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-research-data">Research + Data Work</h2>
+                    <p>I’ve also spent a lot of time on research and data work where the details really matter. At the Journal of Political Economy, I audit code and data to check whether published results actually run and reproduce. At Sciences Po, I built geospatial data pipelines for 50M+ GPS observations across London’s bus network. I also contribute to PyFixest, an open-source econometrics library, where I work on making research methods more reliable and easier to use.</p>
+                </div>
+            </section>
+
+            <section class="about-timeline-section has-artifact-grid" aria-labelledby="timeline-utoronto">
+                <div class="about-artifact-grid is-research-figures" aria-label="University of Toronto research figures">
+                    <figure class="about-artifact-card">
+                        <img src="{{ "/st-george-campus.avif" | relURL }}" alt="University of Toronto St. George campus skyline" loading="lazy">
+                    </figure>
+                    <figure class="about-artifact-card">
+                        <img src="{{ "/utoronto-volatility-forecast.png" | relURL }}" alt="Full surface forecast of representative ATM volatility" loading="lazy">
+                    </figure>
+                    <figure class="about-artifact-card">
+                        <img src="{{ "/utoronto-bootstrap-effects.png" | relURL }}" alt="Bootstrap distributions of average treatment effects" loading="lazy">
+                    </figure>
+                    <figure class="about-artifact-card is-paper-preview">
+                        <img src="{{ "/utoronto-social-preferences-paper.png" | relURL }}" alt="Social Capital and Social Preferences paper abstract page" loading="lazy">
+                    </figure>
+                </div>
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-utoronto">University of Toronto</h2>
+                    <p>I moved to Toronto for a master’s in economics at the University of Toronto, where I focused on causal inference, econometrics, machine learning, and computational economics. I wrote <a href="{{ "/research/" | relURL }}">research</a> papers in finance and statistics, took courses with PhD students, and became much more disciplined about how I build, test, and interpret models.</p>
+                </div>
+            </section>
+
+            <section class="about-timeline-section is-closing" aria-labelledby="timeline-current-direction">
+                <div class="about-timeline-copy">
+                    <h2 id="timeline-current-direction">Current Direction</h2>
+                    <p>These days, I’m looking for work where technical depth and real-world judgment both matter. I like getting close to the context, working through the data, and building something useful around it.</p>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+{{- end }}
+{{- end }}

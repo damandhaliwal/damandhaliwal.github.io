@@ -67,7 +67,27 @@ body:not(.dark) #sun {
 }
 
 #menu .active {
-    border-bottom: 2px solid var(--darkpurple);
+    border-bottom: 2px solid var(--midpurple);
+}
+
+#menu .menu-cta {
+    margin-inline-start: calc(var(--gap) * 1.2);
+}
+
+#menu .menu-cta a {
+    min-height: 36px;
+    padding: 0 18px;
+    border: 1px solid rgba(165, 196, 212, 0.44);
+    border-radius: 999px;
+    background: rgba(250, 248, 242, 0.9);
+    box-shadow: 0 10px 24px rgba(46, 71, 86, 0.08);
+    color: var(--primary);
+    line-height: 36px;
+}
+
+#menu .menu-cta a:hover {
+    border-color: var(--midpurple);
+    color: var(--darkpurple);
 }
 
 .lang-switch li,

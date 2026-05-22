@@ -11,12 +11,15 @@ taxonomies:
 
 menu:
     main:
-        - name: Projects
-          url: projects/
+        - name: Research
+          url: research/
           weight: 1
+        - name: About
+          url: about/
+          weight: 2
         - name: Writing
           url: https://damandhaliwal.substack.com/
-          weight: 2
+          weight: 3
         #- name: Courses
           #url: courses/
           #weight: 2
@@ -25,8 +28,8 @@ menu:
           #weight: 3 
 
 params:
-    description: "I am a graduate student at the University of Toronto studying Economics and Machine learning. I am also a Research Replicator on Florian Oswald's team at the Journal of Political Economy."
-    author: Name
+    description: "Daman Dhaliwal brings business intuition and technical execution to data, machine learning, AI, computational economics, and causal inference projects."
+    author: Daman Dhaliwal
     googleAnalyticsID: "G-VSMFLB72RM"
     DateFormat: "January 2006"
     defaultTheme: light
@@ -47,24 +50,145 @@ params:
     UseHugoToc: true
     comments: false
     math: true
+    homepage:
+          enabled: true
+          nav:
+            - label: Research
+              url: "research/"
+            - label: About
+              url: "about/"
+            - label: Writing
+              url: "https://damandhaliwal.substack.com/"
+          headerCta:
+            label: Contact
+            url: "#contact"
+          hero:
+            number: "01"
+            kicker: Data systems, causal inference, and AI
+            headline:
+              line1: Turning
+              line2: Data into
+              emphasis: Human
+              line3: Understanding.
+            description: "I am a data engineer and scientist building systems that extract meaning, drive decisions, and advance research."
+            primaryCta:
+              label: Learn about me
+              url: "#about"
+          about:
+            number: "02"
+            title: About Me
+            imageUrl: "/picture.jpg"
+            imageAlt: "Daman Dhaliwal"
+            location: Toronto
+            timezone: America/Toronto
+            intro:
+              - I spend my time around economics, data, finance, and building useful systems.
+            description: ""
+            experiences:
+              - label: Experience 01
+                title: Research
+                description: I like making ideas useful.
+              - label: Experience 02
+                title: Data Systems
+                description: |-
+                  In high school, I spent time envisioning a space settlement.
+
+                  At UBC, I tried to understand housing markets from an economics point of view: prices, incentives, supply, and why cities change slowly.
+              - label: Experience 03
+                title: Markets
+                description: |-
+                  After graduating, I helped build large buildings. At Chard, I worked close to the capital, financing, and project decisions behind real estate development.
+
+                  Now I work on solving real-world problems with data, models, and research.
+              - label: Experience 04
+                title: Communication
+                description: Translating technical work into decisions people can act on.
+          research:
+            number: "03"
+            title: Research & Impact
+            description: "I design and execute research that creates decision-grade evidence from real-world data."
+            metrics:
+              - value: "14M"
+                label: Firm records analyzed
+              - value: "180K"
+                label: Households studied
+              - value: "2011-2023"
+                label: SPY options history
+              - value: "4"
+                label: Research projects
+            cta:
+              label: View publications
+              url: "research/"
+          approach:
+            number: "06"
+            title: My Approach
+            description: "Data is complex. Clarity is my craft."
+            steps:
+              - title: Discover
+                description: Understand the problem deeply
+              - title: Design
+                description: Build scalable and reliable solutions
+              - title: Develop
+                description: Engineer with clarity and quality
+              - title: Deliver
+                description: Communicate insights that drive impact
+          insights:
+            number: "07"
+            title: Insights in Motion
+            description: "I believe data tells stories best when it moves."
+            cta:
+              label: Read writing
+              url: "https://damandhaliwal.substack.com/"
+          contact:
+            number: "08"
+            title: "Most of my work is about understanding messy problems and making them easier to reason through."
+            description: 'You can read some of my <a href="/research/">research</a>, learn a bit more about <a href="/about/">me</a>, or send me a note if something here seems interesting.'
+            cta:
+              label: "Let's connect"
+              url: "mailto:damandhaliwal1910@gmail.com"
+            links:
+              - label: "damandhaliwal1910@gmail.com"
+                url: "mailto:damandhaliwal1910@gmail.com"
+                icon: email
+              - label: "linkedin.com/in/dhaliwaldaman"
+                url: "https://www.linkedin.com/in/dhaliwaldaman/"
+                icon: linkedin
+              - label: "github.com/damandhaliwal"
+                url: "https://github.com/damandhaliwal"
+                icon: github
+              - label: "CV"
+                url: "/cv.pdf"
+                icon: cv
     profileMode:
           enabled: true
           title: Daman Dhaliwal
+          eyebrow: Business intuition + technical execution
+          headline: I turn messy data and AI ideas into decisions people can act on.
           subtitle: |
-            I'm an applied economist with a focus on causal inference. I'm currently finishing my MA in Economics at the University of Toronto, where my coursework has focused on causal machine learning and econometrics. Before graduate school, I worked on the Acquisitions team of a large real estate investment team in Vancouver, BC after studying Finance at UBC.
-
-            I like working on hard identification problems (social capital, heterogeneous treatment effects, spatial econometrics), especially when the data is messy and the question actually matters. I've worked with datasets ranging from 300K observation field experiments to 14M firm records, and I enjoy the challenge of building pipelines that turn noisy, real-world data into credible causal estimates.
-
-            I work in Python and R mostly, but I'll pick up whatever else the problem needs.
+            I combine finance and acquisitions experience with causal inference, computational economics, and modern ML, turning imperfect data into models, pipelines, and recommendations that can guide real decisions.
+          proofPoints:
+            - value: 14M
+              label: firm records analyzed for business survival and growth
+            - value: 2011-2023
+              label: SPY options data used to test deep hedging systems
+            - value: 180K
+              label: households studied with causal ML and spatial models
+          capabilities:
+            - title: Business and investment judgment
+              description: Experience in finance and real estate acquisitions helps me frame technical work around capital allocation, risk, incentives, and operating decisions.
+            - title: Data and ML execution
+              description: I design pipelines, simulations, models, and evaluation workflows for messy real-world data, from causal machine learning to probabilistic modeling, reinforcement learning, and forecasting.
+            - title: Decision-grade communication
+              description: "I care about the last mile: turning statistical output into a recommendation that a founder, investor, operator, or policy team can actually use."
           imageUrl: "/picture.jpg"
           imageWidth: 160
           imageHeight: 160
           imageTitle: Daman Dhaliwal
           buttons:
-            - name: Projects
-              url: projects/
             - name: Writing
               url: https://damandhaliwal.substack.com/
+            - name: Contact
+              url: mailto:damandhaliwal1910@gmail.com
             #- name: Courses
               #url: courses/
             #- name: Data
@@ -92,6 +216,9 @@ params:
       text: "Daman Dhaliwal"
       icon: /favicon.ico
       iconHeight: 18
+    headerCta:
+      label: Contact
+      url: /#contact
 
 markup:
     goldmark:
