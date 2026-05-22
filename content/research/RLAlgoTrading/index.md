@@ -10,8 +10,10 @@ summary: "A three-stage deep hedging architecture combining autoencoder compress
 #    alt: "Image caption"
 #    relative: false
 editPost:
-    URL: "https://damandhaliwal.me/projects"
+    URL: "https://damandhaliwal.me/research"
     Text: "Working Paper"
+aliases:
+    - /projects/rlalgotrading/
 
 ---
 

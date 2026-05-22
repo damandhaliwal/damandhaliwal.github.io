@@ -10,8 +10,10 @@ summary: "The purpose of this essay was to study and understand the secondary ef
 #    alt: "Image caption"
 #    relative: false
 editPost:
-    URL: "https://damandhaliwal.me/projects"
+    URL: "https://damandhaliwal.me/research"
     Text: "Working Paper"
+aliases:
+    - /projects/viralvoting/
 
 ---
 
@@ -30,4 +32,3 @@ Voter turnout is a cornerstone of democratic stability, yet participation contin
 ---
 
 ##### Related material
-

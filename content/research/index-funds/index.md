@@ -10,8 +10,10 @@ summary: "The purpose of this essay was to study and understand the incentives o
 #    alt: "Image caption"
 #    relative: false
 editPost:
-    URL: "https://damandhaliwal.me/projects"
+    URL: "https://damandhaliwal.me/research"
     Text: "Working Paper"
+aliases:
+    - /projects/index-funds/
 
 ---
 
@@ -30,4 +32,3 @@ This paper examines the corporate stewardship behavior of major index funds, foc
 ---
 
 ##### Related material
-

@@ -10,8 +10,10 @@ summary: "Using data on nearly 14 million U.S. businesses and Facebook-derived s
 #    alt: "Image caption"
 #    relative: false
 editPost:
-    URL: "https://damandhaliwal.me/projects"
+    URL: "https://damandhaliwal.me/research"
     Text: "Working Paper"
+aliases:
+    - /projects/socialcapital/
 
 ---
 

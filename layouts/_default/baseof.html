@@ -16,7 +16,7 @@
 {{- print " dark" }}
 {{- end -}}
 " id="top">
-    {{- if and (not .IsHome) (ne .Layout "about") }}
+    {{- if and (not .IsHome) (ne .Layout "about") (ne .Section "research") }}
     {{- partialCached "header.html" . .Page -}}
     {{- end }}
     <main class="main{{ if .IsHome }} home-main{{ end }}">

@@ -1,0 +1,65 @@
+{{- define "main" }}
+{{- $page := . -}}
+{{- $home := site.Params.homepage -}}
+<div class="home-page research-detail-shell">
+    <article class="research-detail-experience" aria-labelledby="research-detail-title">
+        {{- with $home }}
+        <nav class="home-nav research-detail-nav" aria-label="Research page navigation">
+            <div class="home-nav-links">
+                {{- range .nav }}
+                {{- $url := .url -}}
+                {{- $href := cond (or (hasPrefix $url "http") (hasPrefix $url "#")) $url ($url | relURL) -}}
+                {{- $navPath := cond (or (hasPrefix $url "http") (hasPrefix $url "#")) "" ($url | relURL) -}}
+                <a href="{{ $href | safeURL }}"{{ if and $navPath (eq $navPath $page.CurrentSection.RelPermalink) }} aria-current="page"{{ end }}>{{ .label }}</a>
+                {{- end }}
+            </div>
+            {{- with .headerCta }}
+            {{- $url := .url -}}
+            {{- $href := cond (hasPrefix $url "#") (printf "/%s" $url) $url -}}
+            <a class="home-nav-cta" href="{{ $href | safeURL }}">{{ .label }}</a>
+            {{- end }}
+        </nav>
+        {{- end }}
+
+        <header class="research-detail-heading">
+            <a class="research-back-link" href="{{ "/research/" | relURL }}">Research</a>
+            <h1 id="research-detail-title">{{ .Title }}</h1>
+            <div class="research-detail-meta">
+                {{- with .Date }}
+                <span>{{ .Format (site.Params.DateFormat | default "January 2006") }}</span>
+                {{- end }}
+                {{- with .Params.author }}
+                <span>{{ . }}</span>
+                {{- end }}
+                {{- with .Params.editPost.Text }}
+                <span>{{ . }}</span>
+                {{- end }}
+            </div>
+            {{- with .Params.summary | default .Description }}
+            <p>{{ . }}</p>
+            {{- end }}
+        </header>
+
+        <div class="research-detail-body">
+            {{- if .Content }}
+            <div class="research-detail-content post-content">
+                {{- if not (.Param "disableAnchoredHeadings") }}
+                {{- partial "anchored_headings.html" .Content -}}
+                {{- else }}{{ .Content }}{{ end }}
+            </div>
+            {{- end }}
+
+            {{- with .Params.tags }}
+            <aside class="research-topic-panel" aria-label="Research topics">
+                <span>Topics</span>
+                <ul class="research-topic-list">
+                    {{- range . }}
+                    <li>{{ . }}</li>
+                    {{- end }}
+                </ul>
+            </aside>
+            {{- end }}
+        </div>
+    </article>
+</div>
+{{- end }}

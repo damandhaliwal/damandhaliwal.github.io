@@ -11,8 +11,8 @@ taxonomies:
 
 menu:
     main:
-        - name: Work
-          url: projects/
+        - name: Research
+          url: research/
           weight: 1
         - name: About
           url: about/
@@ -54,7 +54,7 @@ params:
           enabled: true
           nav:
             - label: Research
-              url: "projects/"
+              url: "research/"
             - label: About
               url: "about/"
             - label: Writing
@@ -118,7 +118,7 @@ params:
                 label: Research projects
             cta:
               label: View publications
-              url: "projects/"
+              url: "research/"
           approach:
             number: "06"
             title: My Approach
@@ -142,7 +142,7 @@ params:
           contact:
             number: "08"
             title: "Most of my work is about understanding messy problems and making them easier to reason through."
-            description: 'You can read some of my <a href="/projects/">research</a>, learn a bit more about <a href="/about/">me</a>, or send me a note if something here seems interesting.'
+            description: 'You can read some of my <a href="/research/">research</a>, learn a bit more about <a href="/about/">me</a>, or send me a note if something here seems interesting.'
             cta:
               label: "Let's connect"
               url: "mailto:damandhaliwal1910@gmail.com"
