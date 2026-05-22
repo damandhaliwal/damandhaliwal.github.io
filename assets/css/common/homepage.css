@@ -2382,6 +2382,8 @@ body:has(.research-detail-shell) .footer {
     .about-timeline-section,
     .about-timeline-section.is-standard,
     .about-timeline-section.is-feature,
+    .about-timeline-section.is-standard.is-reverse,
+    .about-timeline-section.is-feature.is-reverse,
     .about-timeline-section.has-artifact-grid {
         grid-template-columns: 1fr;
         gap: clamp(22px, 5vw, 42px);
