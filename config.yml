@@ -11,15 +11,21 @@ taxonomies:
 
 menu:
     main:
+        - name: Home
+          url: /
+          weight: 1
+        - name: Projects
+          url: projects/
+          weight: 2
         - name: Research
           url: research/
-          weight: 1
+          weight: 3
         - name: About
           url: about/
-          weight: 2
+          weight: 4
         - name: Writing
           url: https://damandhaliwal.substack.com/
-          weight: 3
+          weight: 5
         #- name: Courses
           #url: courses/
           #weight: 2
@@ -53,112 +59,32 @@ params:
     homepage:
           enabled: true
           nav:
+            - label: Home
+              url: "/"
+            - label: Projects
+              url: "/projects/"
             - label: Research
-              url: "research/"
+              url: "/research/"
             - label: About
-              url: "about/"
+              url: "/about/"
             - label: Writing
               url: "https://damandhaliwal.substack.com/"
-          headerCta:
-            label: Contact
-            url: "#contact"
           hero:
-            number: "01"
-            kicker: Data systems, causal inference, and AI
-            headline:
-              line1: Turning
-              line2: Data into
-              emphasis: Human
-              line3: Understanding.
-            description: "I am a data engineer and scientist building systems that extract meaning, drive decisions, and advance research."
+            kicker: Economics · Data science · Engineering
+            line1: From complex data
+            emphasis: to useful systems.
+            description: I’m Daman. I bring research rigor, business judgment, and technical execution to problems that matter outside the notebook.
             primaryCta:
-              label: Learn about me
-              url: "#about"
+              label: Explore my work
+              url: "#selected-work"
+            secondaryCta:
+              label: View my CV
+              url: "/cv.pdf"
           about:
-            number: "02"
-            title: About Me
-            imageUrl: "/picture.jpg"
-            imageAlt: "Daman Dhaliwal"
-            location: Toronto
-            timezone: America/Toronto
-            intro:
-              - I spend my time around economics, data, finance, and building useful systems.
-            description: ""
-            experiences:
-              - label: Experience 01
-                title: Research
-                description: I like making ideas useful.
-              - label: Experience 02
-                title: Data Systems
-                description: |-
-                  In high school, I spent time envisioning a space settlement.
-
-                  At UBC, I tried to understand housing markets from an economics point of view: prices, incentives, supply, and why cities change slowly.
-              - label: Experience 03
-                title: Markets
-                description: |-
-                  After graduating, I helped build large buildings. At Chard, I worked close to the capital, financing, and project decisions behind real estate development.
-
-                  Now I work on solving real-world problems with data, models, and research.
-              - label: Experience 04
-                title: Communication
-                description: Translating technical work into decisions people can act on.
-          research:
-            number: "03"
-            title: Research & Impact
-            description: "I design and execute research that creates decision-grade evidence from real-world data."
-            metrics:
-              - value: "14M"
-                label: Firm records analyzed
-              - value: "180K"
-                label: Households studied
-              - value: "2011-2023"
-                label: SPY options history
-              - value: "4"
-                label: Research projects
-            cta:
-              label: View publications
-              url: "research/"
-          approach:
-            number: "06"
-            title: My Approach
-            description: "Data is complex. Clarity is my craft."
-            steps:
-              - title: Discover
-                description: Understand the problem deeply
-              - title: Design
-                description: Build scalable and reliable solutions
-              - title: Develop
-                description: Engineer with clarity and quality
-              - title: Deliver
-                description: Communicate insights that drive impact
-          insights:
-            number: "07"
-            title: Insights in Motion
-            description: "I believe data tells stories best when it moves."
-            cta:
-              label: Read writing
-              url: "https://damandhaliwal.substack.com/"
+            title: The interesting work happens at the intersection.
+            description: I’ve worked close to capital decisions in real estate, studied economics at the University of Toronto, and built research and data systems. I like understanding the whole problem—and staying close enough to build something useful.
           contact:
-            number: "08"
-            title: "Most of my work is about understanding messy problems and making them easier to reason through."
-            description: 'You can read some of my <a href="/research/">research</a>, learn a bit more about <a href="/about/">me</a>, or send me a note if something here seems interesting.'
-            cta:
-              label: "Let's connect"
-              url: "mailto:damandhaliwal1910@gmail.com"
-            links:
-              - label: "damandhaliwal1910@gmail.com"
-                url: "mailto:damandhaliwal1910@gmail.com"
-                icon: email
-              - label: "linkedin.com/in/dhaliwaldaman"
-                url: "https://www.linkedin.com/in/dhaliwaldaman/"
-                icon: linkedin
-              - label: "github.com/damandhaliwal"
-                url: "https://github.com/damandhaliwal"
-                icon: github
-              - label: "CV"
-                url: "/cv.pdf"
-                icon: cv
+            email: damandhaliwal1910@gmail.com
     profileMode:
           enabled: true
           title: Daman Dhaliwal

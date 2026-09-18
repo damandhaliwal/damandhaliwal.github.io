@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Mars Water Search concept map</title>
+  <desc id="desc">Four illustrative rover paths explore contour lines around a hidden deposit. This is a concept illustration, not a recorded simulation run.</desc>
+  <defs>
+    <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0v38" stroke="#2E4756" stroke-opacity=".07"/></pattern>
+    <clipPath id="map"><rect x="56" y="145" width="848" height="468" rx="2"/></clipPath>
+    <path id="contour" d="M-134-10c-17-57 13-111 67-112 43-1 45-33 91-27 59 9 67 53 98 76 47 36 53 83 14 114-29 23-20 67-79 72-42 3-63 31-110 11-45-20-66-57-81-134Z"/>
+  </defs>
+  <path fill="#FAF8F2" d="M0 0h960v720H0z"/>
+  <g fill="#2E4756" font-family="Inter, Arial, sans-serif">
+    <text x="56" y="58" font-size="12" letter-spacing="2.2">MARS WATER SEARCH</text>
+    <text x="56" y="99" font-size="28" font-family="Georgia, serif">Explore. Share. Ask for help.</text>
+    <text x="904" y="58" text-anchor="end" font-size="11" letter-spacing="1.5" fill="#6A7C85">FOUR AGENTS / ONE PRIZE</text>
+  </g>
+  <rect x="56" y="145" width="848" height="468" fill="#F2EEE5"/>
+  <g clip-path="url(#map)">
+    <rect x="56" y="145" width="848" height="468" fill="url(#grid)"/>
+    <g transform="translate(567 365) rotate(-23)" stroke="#BA9B8F" stroke-width="1.3">
+      <use href="#contour" transform="scale(2.48 1.97)" opacity=".2"/>
+      <use href="#contour" transform="scale(2.17 1.79)" opacity=".25"/>
+      <use href="#contour" transform="scale(1.89 1.58)" opacity=".3"/>
+      <use href="#contour" transform="scale(1.61 1.34)" opacity=".36"/>
+      <use href="#contour" transform="scale(1.32 1.12)" opacity=".42"/>
+      <use href="#contour" transform="scale(1.07 .92)" opacity=".5"/>
+      <use href="#contour" transform="scale(.83 .72)" opacity=".58"/>
+      <use href="#contour" transform="scale(.61 .55)" opacity=".66"/>
+      <use href="#contour" transform="scale(.4 .38)" fill="#D0DEE1" stroke="#A5C4D4"/>
+      <use href="#contour" transform="scale(.23 .23)" fill="#A5C4D4" stroke="#A5C4D4"/>
+    </g>
+    <g transform="translate(137 533) rotate(41)" stroke="#BA9B8F" stroke-width="1.3" opacity=".2">
+      <use href="#contour" transform="scale(1.1 .74)"/>
+      <use href="#contour" transform="scale(.82 .51)"/>
+      <use href="#contour" transform="scale(.49 .3)"/>
+    </g>
+    <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.3">
+      <path d="m140 220 75 38 83-19 49 69 69 24 26 65 60-12" stroke="#2E4756"/>
+      <path d="m810 225-52 51-72-9-29 59-42 17" stroke="#B77C70"/>
+      <path d="m814 550-71-19-14-79-46-17-18-46" stroke="#7D9EAB"/>
+      <path d="m298 562 46-34-17-52 47-37 12-28" stroke="#9A9181"/>
+    </g>
+    <g fill="#FAF8F2" stroke-width="1.6">
+      <g stroke="#2E4756"><circle cx="215" cy="258" r="4"/><circle cx="347" cy="308" r="4"/><circle cx="442" cy="397" r="4"/></g>
+      <g stroke="#B77C70"><circle cx="758" cy="276" r="4"/><circle cx="657" cy="326" r="4"/></g>
+      <g stroke="#7D9EAB"><circle cx="743" cy="531" r="4"/><circle cx="683" cy="435" r="4"/></g>
+      <g stroke="#9A9181"><circle cx="344" cy="528" r="4"/><circle cx="374" cy="439" r="4"/></g>
+    </g>
+    <g fill="#FAF8F2" font-family="Inter, Arial, sans-serif" font-size="11" text-anchor="middle">
+      <circle cx="502" cy="385" r="15" fill="#2E4756"/><text x="502" y="389">A</text>
+      <circle cx="615" cy="343" r="15" fill="#B77C70"/><text x="615" y="347">B</text>
+      <circle cx="665" cy="389" r="15" fill="#7D9EAB"/><text x="665" y="393">C</text>
+      <circle cx="386" cy="411" r="15" fill="#9A9181"/><text x="386" y="415">D</text>
+    </g>
+    <g stroke="#2E4756" stroke-opacity=".45" stroke-width="1">
+      <path d="M557 365h20m-10-10v20"/>
+      <circle cx="567" cy="365" r="27" stroke-dasharray="2 5"/>
+    </g>
+    <g fill="#2E4756" opacity=".25"><circle cx="140" cy="220" r="4"/><circle cx="810" cy="225" r="4"/><circle cx="814" cy="550" r="4"/><circle cx="298" cy="562" r="4"/></g>
+  </g>
+  <g stroke="#2E4756" stroke-opacity=".4" stroke-width="1.2"><path d="M56 164v-19h19M885 145h19v19M56 594v19h19M885 613h19v-19"/></g>
+  <g font-family="Inter, Arial, sans-serif" font-size="10" fill="#6A7C85" letter-spacing="1">
+    <text x="67" y="169">SYNTHETIC TERRAIN</text>
+    <text x="889" y="596" text-anchor="end">CONCEPT MAP</text>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-size="11" fill="#6A7C85">
+    <path d="M57 654h30" stroke="#2E4756" stroke-width="2"/>
+    <circle cx="72" cy="654" r="4" fill="#FAF8F2" stroke="#2E4756"/>
+    <text x="98" y="658">Search paths</text>
+    <circle cx="264" cy="654" r="6" fill="#A5C4D4"/>
+    <text x="282" y="658">Hidden deposit</text>
+    <text x="904" y="658" text-anchor="end">A study in decisions under uncertainty</text>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+{{- define "main" }}
+<article class="portfolio-wrap project-article" aria-labelledby="project-title">
+    <header class="project-article-heading">
+        <a class="project-back-link" href="{{ "/projects/" | relURL }}"><span aria-hidden="true">←</span> All projects</a>
+        <p class="projects-eyebrow">{{ .Params.topic }}</p>
+        <h1 id="project-title">{{ .Title }}</h1>
+        <p class="project-article-question">{{ .Params.question }}</p>
+        <div class="project-article-meta"><span>{{ .Params.status }}</span><span>{{ .Params.year }}</span></div>
+    </header>
+    <figure class="project-hero-figure">
+        <img src="{{ .Params.illustration | relURL }}" alt="{{ .Params.illustrationAlt }}" width="960" height="720">
+        <figcaption>{{ .Params.illustrationCaption }}</figcaption>
+    </figure>
+    <div class="project-article-body">
+        <aside class="project-facts" aria-label="Project details">
+            <p class="projects-eyebrow">Built with</p>
+            <ul class="project-tech">
+                {{- range .Params.technologies }}<li>{{ . }}</li>{{- end }}
+            </ul>
+            <a class="project-source-link" href="{{ .Params.repository }}" target="_blank" rel="noopener noreferrer">{{ .Params.repositoryLabel }} <span aria-hidden="true">↗</span><span class="project-sr-only"> (opens in a new tab)</span></a>
+        </aside>
+        <div class="project-copy">{{ .Content }}</div>
+    </div>
+    <div class="project-end-link"><a href="{{ "/projects/" | relURL }}"><span aria-hidden="true">←</span> Back to all projects</a></div>
+</article>
+{{- end }}

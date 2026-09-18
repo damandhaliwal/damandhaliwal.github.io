@@ -14,21 +14,16 @@ editPost:
     Text: "Working Paper"
 aliases:
     - /projects/viralvoting/
-
+displayTitle: "How influence travels"
+displaySummary: "Can social pressure spread from one household to the next—and change who turns out to vote?"
+topic: "Political economy · Spatial effects"
+illustration: "/images/research/viral-voting.svg"
+illustrationAlt: "An abstract neighborhood of houses with concentric rings radiating from a central household."
+illustrationCaption: "A household, its neighbors, and the reach of social pressure."
+paper: "final_viral_voting.pdf"
+code: "https://github.com/damandhaliwal/ViralVoting"
 ---
 
----
+## Abstract
 
-##### Download
-
-+ [Paper](final_viral_voting.pdf)
-+ [Code](https://github.com/damandhaliwal/ViralVoting)
-
----
-
-##### Abstract
 Voter turnout is a cornerstone of democratic stability, yet participation continues to decline across developed nations. This study investigates the mechanisms of information diffusion within geographical neighborhoods, examining how four social pressure treatments: Civic Duty, Hawthorne, Self, and Neighbors—influence both treated and untreated individuals. Using a combination of spatial autoregressive models and causal machine learning, including Double ML and Causal Forests, I re-analyze data from a large-scale field experiment involving 180,002 households. While direct treatment effects remain robust, with the "Neighbors" treatment generating the highest impact (~8%), I find no evidence of simple positive spillovers to untreated neighbors. Crucially, the machine learning models reveal a non-linear, inverted-U relationship between neighborhood treatment intensity and turnout for public pressure treatments. These results suggest that social pressure acts as a contagion only up to a saturation point, beyond which community fatigue or free-riding diminishes the effect. These findings provide a strategic framework for mobilization, suggesting that campaigns should target moderate treatment densities to optimize turnout.
-
----
-
-##### Related material

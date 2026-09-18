@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">The local machine learning loop</title>
+  <desc id="desc">A schematic showing model training, API prediction, delayed outcomes, monitoring, and model improvement. All project data is synthetic.</desc>
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2E4756" opacity=".08"/></pattern>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="m1 1 4 3-4 3" stroke="#8397A2" stroke-width="1.2" fill="none"/></marker>
+  </defs>
+  <path fill="#FAF8F2" d="M0 0h960v720H0z"/>
+  <path fill="url(#dots)" d="M40 135h880v490H40z"/>
+  <g fill="#2E4756" font-family="Inter, Arial, sans-serif">
+    <text x="56" y="58" font-size="12" letter-spacing="2.2">THE LEARNING LOOP</text>
+    <text x="56" y="99" font-size="28" font-family="Georgia, serif">A prediction is the beginning.</text>
+    <text x="904" y="58" text-anchor="end" font-size="11" letter-spacing="1.5" fill="#6A7C85">LOCAL / SYNTHETIC</text>
+  </g>
+  <g stroke="#8397A2" stroke-width="1.5" marker-end="url(#arrow)">
+    <path d="M330 237h156c37 0 51 18 51 45v11"/>
+    <path d="M682 339h58c27 0 35 13 35 37v37"/>
+    <path d="M681 459H581c-33 0-50 12-50 43v10"/>
+    <path d="M373 558H268c-41 0-49-17-49-46v-9"/>
+    <path d="M145 411v-67c0-33 12-45 55-45v-12"/>
+  </g>
+  <circle cx="458" cy="391" r="118" stroke="#A5C4D4" stroke-opacity=".24"/>
+  <circle cx="458" cy="391" r="99" stroke="#A5C4D4" stroke-opacity=".4"/>
+  <circle cx="458" cy="391" r="77" fill="#E8EEF0"/>
+  <circle cx="458" cy="391" r="60" fill="#2E4756"/>
+  <g stroke="#FAF8F2" stroke-width="2.2" stroke-linecap="round">
+    <path d="M434 397v-10m12 18v-27m12 31v-36m12 27v-17m12 10v-7"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(110 189)">
+      <rect width="220" height="98" rx="6" fill="#FAF8F2" stroke="#CDD5D6"/>
+      <rect x="16" y="17" width="30" height="30" rx="15" fill="#E3EBED"/>
+      <text x="31" y="37" text-anchor="middle" fill="#2E4756" font-size="11">01</text>
+      <text x="59" y="38" fill="#2E4756" font-size="18">Train</text>
+      <text x="19" y="74" fill="#6A7C85" font-size="12">Time-aware evaluation</text>
+    </g>
+    <g transform="translate(492 293)">
+      <rect width="190" height="98" rx="6" fill="#2E4756"/>
+      <rect x="16" y="17" width="30" height="30" rx="15" stroke="#79909C"/>
+      <text x="31" y="37" text-anchor="middle" fill="#FAF8F2" font-size="11">02</text>
+      <text x="59" y="38" fill="#FAF8F2" font-size="18">Predict</text>
+      <text x="19" y="74" fill="#C9DADF" font-size="12">ETA + late-delivery risk</text>
+    </g>
+    <g transform="translate(681 413)">
+      <rect width="200" height="98" rx="6" fill="#FAF8F2" stroke="#CDD5D6"/>
+      <rect x="16" y="17" width="30" height="30" rx="15" fill="#E3EBED"/>
+      <text x="31" y="37" text-anchor="middle" fill="#2E4756" font-size="11">03</text>
+      <text x="59" y="38" fill="#2E4756" font-size="18">Observe</text>
+      <text x="19" y="74" fill="#6A7C85" font-size="12">Join delayed outcomes</text>
+    </g>
+    <g transform="translate(373 512)">
+      <rect width="236" height="98" rx="6" fill="#FAF8F2" stroke="#CDD5D6"/>
+      <rect x="16" y="17" width="30" height="30" rx="15" fill="#E3EBED"/>
+      <text x="31" y="37" text-anchor="middle" fill="#2E4756" font-size="11">04</text>
+      <text x="59" y="38" fill="#2E4756" font-size="18">Monitor</text>
+      <text x="19" y="74" fill="#6A7C85" font-size="12">Performance + input drift</text>
+    </g>
+    <g transform="translate(75 411)">
+      <rect width="224" height="98" rx="6" fill="#F1E5DF" stroke="#D3B6AC"/>
+      <rect x="16" y="17" width="30" height="30" rx="15" fill="#C2948A"/>
+      <text x="31" y="37" text-anchor="middle" fill="#FAF8F2" font-size="11">05</text>
+      <text x="59" y="38" fill="#2E4756" font-size="18">Improve</text>
+      <text x="19" y="74" fill="#6A7C85" font-size="12">Challenge, promote, roll back</text>
+    </g>
+  </g>
+  <path d="M56 650h848" stroke="#2E4756" stroke-opacity=".13"/>
+  <g font-family="Inter, Arial, sans-serif" font-size="11" fill="#6A7C85">
+    <text x="56" y="680" letter-spacing="1">MODEL → SYSTEM → FEEDBACK</text>
+    <text x="904" y="680" text-anchor="end">System schematic</text>
+  </g>
+</svg>

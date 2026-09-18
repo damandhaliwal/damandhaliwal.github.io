@@ -1,0 +1,15 @@
+{{- $page := . -}}
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="portfolio-header">
+  <nav class="portfolio-wrap portfolio-nav" aria-label="Main navigation">
+    <a class="portfolio-brand" href="{{ "/" | relURL }}" aria-label="Daman Dhaliwal — home">Daman Dhaliwal<span aria-hidden="true">.</span></a>
+    <div class="portfolio-nav-links">
+      {{- range site.Params.homepage.nav }}
+      {{- $external := hasPrefix .url "https://" -}}
+      {{- $active := and (not $external) (or (and (eq .url "/") $page.IsHome) (and (ne .url "/") (hasPrefix $page.RelPermalink (.url | relURL)))) -}}
+      <a href="{{ .url | relURL }}"{{ if $active }} aria-current="page"{{ end }}{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .label }}{{ if $external }}<span class="nav-external" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>{{ end }}</a>
+      {{- end }}
+    </div>
+    <a class="portfolio-contact-link" href="{{ "/#contact" | relURL }}">Let’s talk <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>

@@ -1,11 +1,4 @@
 ---
 title: "Research"
-description: "Research and technical projects at the intersection of business questions, causal inference, machine learning, and AI."
-aliases:
-  - /projects/
----
-
-
-## Research
-
+description: "How do people, markets, and networks shape outcomes? Selected work in causal inference, machine learning, and economics."
 ---
