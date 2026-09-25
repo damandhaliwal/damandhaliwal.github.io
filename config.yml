@@ -40,7 +40,7 @@ params:
     DateFormat: "January 2006"
     defaultTheme: light
     hideFooter: false
-    disableThemeToggle: true
+    disableThemeToggle: false
     ShowShareButtons: false
     ShowReadingTime: false
     disableSpecial1stPost: true
@@ -57,34 +57,13 @@ params:
     comments: false
     math: true
     homepage:
-          enabled: true
-          nav:
-            - label: Home
-              url: "/"
-            - label: Projects
-              url: "/projects/"
-            - label: Research
-              url: "/research/"
-            - label: About
-              url: "/about/"
-            - label: Writing
-              url: "https://damandhaliwal.substack.com/"
-          hero:
-            kicker: Economics · Data science · Engineering
-            line1: From complex data
-            emphasis: to useful systems.
-            description: I’m Daman. I bring research rigor, business judgment, and technical execution to problems that matter outside the notebook.
-            primaryCta:
-              label: Explore my work
-              url: "#selected-work"
-            secondaryCta:
-              label: View my CV
-              url: "/cv.pdf"
-          about:
-            title: The interesting work happens at the intersection.
-            description: I’ve worked close to capital decisions in real estate, studied economics at the University of Toronto, and built research and data systems. I like understanding the whole problem—and staying close enough to build something useful.
-          contact:
-            email: damandhaliwal1910@gmail.com
+        enabled: true
+        name: "Damanveer Singh Dhaliwal"
+        standfirst: "Economist and builder. I work on data, machine learning, and the systems that turn analysis into decisions."
+        contact:
+            email: "mailto:damandhaliwal1910@gmail.com"
+            linkedin: "https://www.linkedin.com/in/dhaliwaldaman/"
+            github: "https://github.com/damandhaliwal"
     profileMode:
           enabled: true
           title: Daman Dhaliwal

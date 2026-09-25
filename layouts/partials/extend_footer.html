@@ -1,1 +1,35 @@
-{{/* The portfolio uses native links and CSS; no homepage script is required. */}}
+<script>
+(function () {
+  function isDark() {
+    return document.documentElement.classList.contains("dark") || document.body.classList.contains("dark");
+  }
+  function setDark(dark) {
+    document.documentElement.classList.toggle("dark", dark);
+    if (document.body) {
+      document.body.classList.toggle("dark", dark);
+    }
+    try {
+      localStorage.setItem("pref-theme", dark ? "dark" : "light");
+    } catch (e) {}
+  }
+  // Sync body with the head init script (head sets <html>; body may not have existed yet).
+  try {
+    if (document.documentElement.classList.contains("dark") && document.body) {
+      document.body.classList.add("dark");
+    }
+  } catch (e) {}
+  document.addEventListener("DOMContentLoaded", function () {
+    try {
+      if (document.documentElement.classList.contains("dark")) {
+        document.body.classList.add("dark");
+      }
+    } catch (e) {}
+    var btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        setDark(!isDark());
+      });
+    }
+  });
+})();
+</script>
