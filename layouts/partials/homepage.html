@@ -1,84 +1,105 @@
 {{- $home := site.Params.homepage -}}
-{{- $standfirst := $home.standfirst | default "Economist and builder. I work on data, machine learning, and the systems that turn analysis into decisions." -}}
 {{- $email := $home.contact.email | default "mailto:damandhaliwal1910@gmail.com" -}}
 {{- $linkedin := $home.contact.linkedin | default "https://www.linkedin.com/in/dhaliwaldaman/" -}}
 {{- $github := $home.contact.github | default "https://github.com/damandhaliwal" -}}
-<div class="single-home">
-  <section class="single-hero" aria-labelledby="home-title">
-    <h1 id="home-title">Damanveer Singh <em>Dhaliwal</em></h1>
-    <p class="single-standfirst">{{ $standfirst }}</p>
-  </section>
+<div class="single-home" data-home-panels>
+  <div class="home-panel" id="home-panel-about" data-home-panel="about">
+    <section class="single-section" id="about" aria-label="About">
+      <p>I'm an economist by training (MA, University of Toronto) working at the intersection of data science, software, and applied research. Most of my work comes down to one question: what should we actually do, given the evidence?</p>
+      <p>Previously I spent three years in institutional real estate investment and development as a Senior Financial Analyst at Chard. Now I'm a part-time Data Scientist at Sciences Po and a replicator for the Journal of Political Economy, and I build tools like Ask Steve, an institutional-memory product for real estate.</p>
+      <p>I'm based in Toronto and open to roles where technical work meets real operating problems.</p>
+    </section>
 
-  <section class="single-section" id="about" aria-labelledby="about-title">
-    <p class="kicker">About</p>
-    <h2 id="about-title">About</h2>
-    <p>I'm an economist by training (MA, University of Toronto) working at the intersection of data science, software, and applied research. Most of my work comes down to one question: what should we actually do, given the evidence?</p>
-    <p>Previously I spent three years in institutional real estate investment and development as a Senior Financial Analyst at Chard. Now I'm a part-time Data Scientist at Sciences Po and a replicator for the Journal of Political Economy, and I build tools like Ask Steve, an institutional-memory product for real estate.</p>
-    <p>I'm based in Toronto and open to roles where technical work meets real operating problems.</p>
-  </section>
+    <section class="single-section" id="contact" aria-labelledby="contact-title">
+      <p class="kicker" id="contact-title">Contact</p>
+      <p>The fastest way to reach me is email. I'm also on LinkedIn and GitHub.</p>
+      <p class="single-contact-links">
+        <a href="{{ $email }}">Email</a><span aria-hidden="true"> · </span><a href="{{ $linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a><span aria-hidden="true"> · </span><a href="{{ $github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </section>
+  </div>
 
-  <section class="single-section" id="work" aria-labelledby="work-title">
-    <p class="kicker">Work</p>
-    <h2 id="work-title">Work</h2>
-    <ul class="single-list">
-      <li>
-        <h3>Data Scientist, Sciences Po</h3>
-        <p class="single-meta">Part-time · London bus networks</p>
-        <p>GPS data, map matching, and spatial analysis of one of the world's busiest bus networks.</p>
-      </li>
-      <li>
-        <h3>Replicator, Journal of Political Economy</h3>
-        <p class="single-meta">R · Stata · Python · Docker</p>
-        <p>Reproducing published empirical research: geospatial analysis, research computing, reproducible environments.</p>
-      </li>
-      <li>
-        <h3>Senior Financial Analyst, Chard</h3>
-        <p class="single-meta">2022–2025 · Vancouver real estate</p>
-        <p>Underwriting, capital allocation, forecasting, and financing analysis. Built SQL and Power BI dashboards and automated market-intelligence workflows.</p>
-      </li>
-    </ul>
-  </section>
+  <div class="home-panel" id="home-panel-work" data-home-panel="work">
+    <section class="single-section" id="work" aria-labelledby="work-title">
+      <p class="kicker" id="work-title">Work</p>
+      <ul class="single-list">
+        <li>
+          <h3>Data Scientist, Sciences Po</h3>
+          <p class="single-meta">Part-time · London bus networks</p>
+          <p>GPS data, map matching, and spatial analysis of one of the world's busiest bus networks.</p>
+        </li>
+        <li>
+          <h3>Replicator, Journal of Political Economy</h3>
+          <p class="single-meta">R · Stata · Python · Docker</p>
+          <p>Reproducing published empirical research: geospatial analysis, research computing, reproducible environments.</p>
+        </li>
+        <li>
+          <h3>Senior Financial Analyst, Chard</h3>
+          <p class="single-meta">2022–2025 · Vancouver real estate</p>
+          <p>Underwriting, capital allocation, forecasting, and financing analysis. Built SQL and Power BI dashboards and automated market-intelligence workflows.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
 
-  <section class="single-section" id="projects" aria-labelledby="projects-title">
-    <p class="kicker">Projects</p>
-    <h2 id="projects-title">Projects</h2>
-    <ul class="single-list">
-      <li>
-        <h3>Ask Steve</h3>
-        <p class="single-meta">YC startup concept · LLM retrieval + agents</p>
-        <p>Institutional memory for real estate: preserves the context behind decisions across models, documents, and systems of record. Real estate is the wedge.</p>
-      </li>
-      <li>
-        <h3>Marketplace simulation</h3>
-        <p class="single-meta">Production-style ML systems demo</p>
-        <p>Simulated orders and couriers with matching, routing, ETA estimation, batching, experimentation, monitoring, and CI/CD.</p>
-      </li>
-      <li>
-        <h3>Open source</h3>
-        <p class="single-meta">PyFixest · RovingBandit</p>
-        <p>Contributions to econometric inference tooling and multi-armed bandit algorithms.</p>
-      </li>
-    </ul>
-  </section>
+  <div class="home-panel" id="home-panel-projects" data-home-panel="projects">
+    <section class="single-section" id="projects" aria-labelledby="projects-title">
+      <p class="kicker" id="projects-title">Projects</p>
+      <ul class="single-list">
+        <li>
+          <h3><a href="{{ "/projects/ml-simulation/" | relURL }}">Marketplace simulation</a></h3>
+          <p class="single-meta">Production-style ML systems demo</p>
+          <p>Simulated orders and couriers with matching, routing, ETA estimation, batching, experimentation, monitoring, and CI/CD.</p>
+        </li>
+        <li>
+          <h3><a href="{{ "/projects/mars-water-search/" | relURL }}">Mars Water Search</a></h3>
+          <p class="single-meta">Agents &amp; decision-making · Sundai Club research prototype</p>
+          <p>Four AI rovers, limited budgets, one discovery prize. An experiment in search, incentives, and collaboration.</p>
+        </li>
+        <li>
+          <h3>Open source</h3>
+          <p class="single-meta">PyFixest · RovingBandit</p>
+          <p>Contributions to econometric inference tooling and multi-armed bandit algorithms.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
 
-  <section class="single-section" id="research" aria-labelledby="research-title">
-    <p class="kicker">Research</p>
-    <h2 id="research-title">Research</h2>
-    <ul class="single-list">
-      <li>
-        <h3><a href="{{ "/research/socialcapital/" | relURL }}">Social capital and business performance</a></h3>
-        <p class="single-meta">Working paper</p>
-        <p>Using nearly 14 million US businesses with double machine learning and quantile regression to study how social capital shapes firm outcomes.</p>
-      </li>
-    </ul>
-  </section>
+  <div class="home-panel" id="home-panel-research" data-home-panel="research">
+    <section class="single-section" id="research" aria-labelledby="research-title">
+      <p class="kicker" id="research-title">Research</p>
+      <ul class="single-list">
+        <li>
+          <h3><a href="{{ "/research/socialcapital/" | relURL }}">The Role of Social Capital in Business Performance: An Empirical Analysis</a></h3>
+          <p class="single-meta">Working paper</p>
+          <p>Using nearly 14 million US businesses with double machine learning and quantile regression to study how social capital shapes firm outcomes.</p>
+        </li>
+        <li>
+          <h3><a href="{{ "/research/viralvoting/" | relURL }}">Viral Voting: A study in the information diffusion effects of different social pressure treatments on voter turnout.</a></h3>
+          <p class="single-meta">Political economy · Spatial effects</p>
+          <p>Can social pressure spread from one household to the next—and change who turns out to vote?</p>
+        </li>
+        <li>
+          <h3><a href="{{ "/research/rlalgotrading/" | relURL }}">Deep Hedging with Non-Parametric Volatility Surfaces and Explicit Forecasting</a></h3>
+          <p class="single-meta">Machine learning · Quantitative finance</p>
+          <p>Can a reinforcement learning agent use the shape of volatility to make better hedging decisions?</p>
+        </li>
+        <li>
+          <h3><a href="{{ "/research/index-funds/" | relURL }}">Index Funds’ Corporate Stewardship Behaviour</a></h3>
+          <p class="single-meta">Corporate governance · Finance</p>
+          <p>What happens to corporate stewardship when ownership is concentrated in the largest passive investors?</p>
+        </li>
+      </ul>
+    </section>
+  </div>
 
-  <section class="single-section" id="contact" aria-labelledby="contact-title">
-    <p class="kicker">Contact</p>
-    <h2 id="contact-title">Contact</h2>
-    <p>The fastest way to reach me is email. I'm also on LinkedIn and GitHub.</p>
-    <p class="single-contact-links">
-      <a href="{{ $email }}">Email</a><span aria-hidden="true"> · </span><a href="{{ $linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a><span aria-hidden="true"> · </span><a href="{{ $github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </p>
-  </section>
+  <div class="home-panel contact-panel" id="home-panel-contact" data-home-panel="contact">
+    <section class="single-section" aria-labelledby="contact-panel-title">
+      <p class="kicker" id="contact-panel-title">Contact</p>
+      <p>The fastest way to reach me is email. I'm also on LinkedIn and GitHub.</p>
+      <p class="single-contact-links">
+        <a href="{{ $email }}">Email</a><span aria-hidden="true"> · </span><a href="{{ $linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a><span aria-hidden="true"> · </span><a href="{{ $github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </section>
+  </div>
 </div>

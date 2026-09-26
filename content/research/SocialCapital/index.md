@@ -14,7 +14,6 @@ editPost:
     Text: "Working Paper"
 aliases:
     - /projects/socialcapital/
-displayTitle: "The value of connection"
 displaySummary: "When a crisis hits, which social ties help businesses survive—and which help them grow?"
 topic: "Social capital · Causal inference"
 illustration: "/images/research/social-capital.svg"

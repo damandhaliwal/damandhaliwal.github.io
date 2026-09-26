@@ -1,9 +1,12 @@
 {{- define "main" }}
 
-<header class="page-header">
-</header>
-
-<ul class="terms-tags">
+<div class="single-home terms-page">
+  <header class="single-page-head">
+    <p class="kicker">Research and writing</p>
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}<p class="single-lede">{{ . }}</p>{{- end }}
+  </header>
+  <ul class="single-terms">
     {{- $type := .Type }}
     {{- range $key, $value := .Data.Terms.Alphabetical }}
     {{- $name := .Name }}
@@ -14,6 +17,7 @@
     </li>
     {{- end }}
     {{- end }}
-</ul>
+  </ul>
+</div>
 
 {{- end }}{{/* end main */ -}}

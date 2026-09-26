@@ -1,45 +1,27 @@
 {{- define "main" }}
-<article class="portfolio-wrap research-article" aria-labelledby="research-detail-title">
-    <a class="research-back-link" href="{{ "/research/" | relURL }}"><span aria-hidden="true">←</span> All research</a>
-    <header class="research-article-heading">
-        <p class="research-eyebrow">{{ .Params.topic }}</p>
-        <h1 id="research-detail-title">{{ .Title }}</h1>
-        <p class="research-article-intro">{{ .Params.displaySummary | default .Description }}</p>
-        <div class="research-article-meta">
-            {{- with .Params.author }}<span>{{ . }}</span>{{- end }}
-            <span>{{ .Date.Format "January 2006" }}</span>
-            {{- with .Params.editPost.Text }}<span>{{ . }}</span>{{- end }}
-        </div>
-        <div class="research-paper-actions" aria-label="Paper resources">
-            {{- with .Params.paper }}
-            <a class="research-paper-button" href="{{ . }}" target="_blank" rel="noopener noreferrer">Read the paper <span>PDF ↗</span><span class="research-screen-reader-only"> (opens in a new tab)</span></a>
-            {{- end }}
-            {{- with .Params.code }}
-            <a class="research-code-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">View code <span aria-hidden="true">↗</span><span class="research-screen-reader-only"> (opens in a new tab)</span></a>
-            {{- end }}
-        </div>
-    </header>
-    {{- with .Params.illustration }}
-    <figure class="research-article-visual">
-        <img src="{{ . | relURL }}" alt="{{ $.Params.illustrationAlt }}" width="800" height="500" decoding="async">
-        <figcaption>Concept illustration · {{ $.Params.illustrationCaption }}</figcaption>
-    </figure>
-    {{- end }}
-    <div class="research-reading-layout">
-        <aside class="research-reading-aside" aria-label="Research topics">
-            <p>In this paper</p>
-            {{- with .Params.tags }}
-            <ul>{{- range . }}<li>{{ . }}</li>{{- end }}</ul>
-            {{- end }}
-        </aside>
-        <div class="research-article-content post-content">
-            {{- if not (.Param "disableAnchoredHeadings") }}
-            {{- partial "anchored_headings.html" .Content -}}
-            {{- else }}{{ .Content }}{{ end }}
-        </div>
-    </div>
-    <div class="research-article-end">
-        <a class="research-read-link" href="{{ "/research/" | relURL }}"><span aria-hidden="true">←</span> Explore more research</a>
-    </div>
+<article class="single-home" aria-labelledby="research-detail-title">
+  <header class="single-page-head">
+    <p class="kicker">{{ .Params.topic }}</p>
+    <h1 id="research-detail-title">{{ .Title }}</h1>
+    <p class="single-lede">{{ .Params.displaySummary | default .Description }}</p>
+    <p class="single-meta">
+      {{- with .Params.author }}{{ . }}{{ end }}{{ with .Date }} · {{ .Format "January 2006" }}{{ end }}{{- with .Params.editPost.Text }} · {{ . }}{{ end }}
+    </p>
+    <p>
+      {{- with .Params.paper }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">Read the paper (PDF)</a>{{- end }}{{- if and .Params.paper .Params.code }}<span aria-hidden="true"> · </span>{{- end }}{{- with .Params.code }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">View code</a>{{- end }}
+    </p>
+  </header>
+  {{- with .Params.illustration }}
+  <figure class="single-figure">
+    <img src="{{ . | relURL }}" alt="{{ $.Params.illustrationAlt }}" loading="lazy" decoding="async">
+    {{- with $.Params.illustrationCaption }}<figcaption>Concept illustration · {{ . }}</figcaption>{{- end }}
+  </figure>
+  {{- end }}
+  <div class="single-prose single-section">
+    {{ .Content }}
+  </div>
+  {{- with .Params.tags }}
+  <p class="single-meta">{{ delimit . " · " }}</p>
+  {{- end }}
 </article>
 {{- end }}

@@ -1,31 +1,19 @@
 {{- define "main" }}
-<section class="portfolio-wrap research-editorial" aria-labelledby="research-page-title">
-    <header class="research-editorial-heading">
-        <p class="research-eyebrow">Questions worth asking</p>
-        <div class="research-heading-row">
-            <h1 id="research-page-title">{{ .Title }}<span aria-hidden="true">.</span></h1>
-            <p>{{ .Description }}</p>
-        </div>
-    </header>
-    <div class="research-visual-grid" aria-label="Research papers">
-        {{- range $index, $paper := .Pages.ByDate.Reverse }}
-        <article class="research-visual-card">
-            <a class="research-card-cover" href="{{ $paper.RelPermalink }}" aria-label="Read {{ $paper.Params.displayTitle | default $paper.Title }}">
-                {{- with $paper.Params.illustration }}
-                <img src="{{ . | relURL }}" alt="" width="800" height="500" loading="{{ if lt $index 2 }}eager{{ else }}lazy{{ end }}" decoding="async">
-                {{- end }}
-                <span class="research-cover-arrow" aria-hidden="true">↗</span>
-            </a>
-            <div class="research-card-labels">
-                <span>{{ $paper.Params.topic }}</span>
-                <span>{{ $paper.Date.Format "2006" }}</span>
-            </div>
-            <h2><a href="{{ $paper.RelPermalink }}">{{ $paper.Params.displayTitle | default $paper.Title }}</a></h2>
-            <p>{{ $paper.Params.displaySummary | default $paper.Description }}</p>
-            <a class="research-read-link" href="{{ $paper.RelPermalink }}" aria-label="Read {{ $paper.Params.displayTitle | default $paper.Title }}">Explore the paper <span aria-hidden="true">→</span></a>
-        </article>
-        {{- end }}
-    </div>
-    <p class="research-illustration-note">Illustrations explore each paper’s ideas; they do not depict empirical results.</p>
-</section>
+<div class="single-home">
+  <header class="single-page-head" aria-labelledby="research-title">
+    <h1 id="research-title">Research</h1>
+    <p class="single-lede">{{ .Description }}</p>
+  </header>
+  <section class="single-section" aria-label="Research papers">
+    <ul class="single-list">
+      {{- range .Pages.ByDate.Reverse }}
+      <li>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="single-meta">{{ .Params.topic }}{{ with .Date }} · {{ .Format "2006" }}{{ end }}</p>
+        <p>{{ .Params.displaySummary | default .Description }}</p>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+</div>
 {{- end }}

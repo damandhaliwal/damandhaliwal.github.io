@@ -5,10 +5,9 @@
     {{- partial "head.html" . }}
 </head>
 
-{{- $portfolio := or .IsHome (eq .Layout "about") (eq .Section "research") (eq .Section "projects") -}}
-<body class="portfolio-page{{ if .IsHome }} home-page{{ end }}{{ if eq site.Params.defaultTheme "dark" }} dark{{ end }}" id="top">
+<body class="portfolio-page{{ if .IsHome }} home-page{{ end }}{{ if or (eq .Section "projects") (eq .Section "research") }} project-research-page{{ end }}{{ if eq site.Params.defaultTheme "dark" }} dark{{ end }}" id="top">
     {{- partial "portfolio-nav.html" . }}
-    <main id="main-content" tabindex="-1" class="main{{ if $portfolio }} portfolio-main{{ end }}">
+    <main id="main-content" tabindex="-1" class="main portfolio-main">
         {{- block "main" . }}{{ end }}
     </main>
     {{- partial "portfolio-footer.html" . }}

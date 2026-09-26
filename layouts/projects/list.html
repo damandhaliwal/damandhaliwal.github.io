@@ -1,33 +1,19 @@
 {{- define "main" }}
-<div class="portfolio-wrap projects-editorial">
-    <header class="projects-heading">
-        <p class="projects-eyebrow">Selected builds</p>
-        <h1>Ideas, <em>in practice.</em></h1>
-        <p class="projects-intro">Working systems at the intersection of machine learning, economics, and human decisions.</p>
-    </header>
-
-    <div class="projects-collection" aria-label="Projects">
-        {{- range $index, $project := .Pages.ByWeight }}
-        <article class="project-feature">
-            <a class="project-visual-link" href="{{ .RelPermalink }}" aria-label="Explore {{ .Title }}">
-                <img src="{{ .Params.illustration | relURL }}" alt="{{ .Params.illustrationAlt }}" width="960" height="720"{{ if gt $index 0 }} loading="lazy"{{ end }}>
-            </a>
-            <div class="project-feature-copy">
-                <div class="project-feature-meta"><span>{{ .Params.topic }}</span><span>{{ .Params.year }}</span></div>
-                <h2><a href="{{ .RelPermalink }}">{{ .Params.displayTitle | default .Title }}</a></h2>
-                <p class="project-feature-summary">{{ .Params.displaySummary }}</p>
-                <p class="project-feature-status">{{ .Params.status }}</p>
-                <ul class="project-tech" aria-label="Technologies">
-                    {{- range first 4 .Params.technologies }}<li>{{ . }}</li>{{- end }}
-                </ul>
-                <a class="project-read-link" href="{{ .RelPermalink }}">Inside the project <span aria-hidden="true">↗</span></a>
-            </div>
-        </article>
-        {{- end }}
-    </div>
-    <div class="projects-closing">
-        <p>The other side of the work: asking better questions.</p>
-        <a href="{{ "/research/" | relURL }}">Explore my research <span aria-hidden="true">↗</span></a>
-    </div>
+<div class="single-home">
+  <header class="single-page-head" aria-labelledby="projects-title">
+    <h1 id="projects-title">Projects</h1>
+    <p class="single-lede">{{ .Description }}</p>
+  </header>
+  <section class="single-section" aria-label="Projects">
+    <ul class="single-list">
+      {{- range .Pages.ByWeight }}
+      <li>
+        <h3><a href="{{ .RelPermalink }}">{{ .Params.displayTitle | default .Title }}</a></h3>
+        <p class="single-meta">{{ .Params.topic }}{{ with .Params.year }} · {{ . }}{{ end }}</p>
+        <p>{{ .Params.displaySummary | default .Description }}</p>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
 </div>
 {{- end }}

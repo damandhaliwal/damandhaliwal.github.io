@@ -1,26 +1,23 @@
 {{- define "main" }}
-<article class="portfolio-wrap project-article" aria-labelledby="project-title">
-    <header class="project-article-heading">
-        <a class="project-back-link" href="{{ "/projects/" | relURL }}"><span aria-hidden="true">←</span> All projects</a>
-        <p class="projects-eyebrow">{{ .Params.topic }}</p>
-        <h1 id="project-title">{{ .Title }}</h1>
-        <p class="project-article-question">{{ .Params.question }}</p>
-        <div class="project-article-meta"><span>{{ .Params.status }}</span><span>{{ .Params.year }}</span></div>
-    </header>
-    <figure class="project-hero-figure">
-        <img src="{{ .Params.illustration | relURL }}" alt="{{ .Params.illustrationAlt }}" width="960" height="720">
-        <figcaption>{{ .Params.illustrationCaption }}</figcaption>
-    </figure>
-    <div class="project-article-body">
-        <aside class="project-facts" aria-label="Project details">
-            <p class="projects-eyebrow">Built with</p>
-            <ul class="project-tech">
-                {{- range .Params.technologies }}<li>{{ . }}</li>{{- end }}
-            </ul>
-            <a class="project-source-link" href="{{ .Params.repository }}" target="_blank" rel="noopener noreferrer">{{ .Params.repositoryLabel }} <span aria-hidden="true">↗</span><span class="project-sr-only"> (opens in a new tab)</span></a>
-        </aside>
-        <div class="project-copy">{{ .Content }}</div>
-    </div>
-    <div class="project-end-link"><a href="{{ "/projects/" | relURL }}"><span aria-hidden="true">←</span> Back to all projects</a></div>
+<article class="single-home" aria-labelledby="project-title">
+  <header class="single-page-head">
+    <p class="kicker">{{ .Params.topic }}</p>
+    <h1 id="project-title">{{ .Title }}</h1>
+    {{- with .Params.question }}<p class="single-lede">{{ . }}</p>{{- end }}
+    <p class="single-meta">{{ .Params.status }}{{ with .Params.year }} · {{ . }}{{ end }}</p>
+    <ul class="single-facts" aria-label="Technologies">
+      {{- range .Params.technologies }}<li>{{ . }}</li>{{- end }}
+    </ul>
+    <p><a href="{{ .Params.repository }}" target="_blank" rel="noopener noreferrer">{{ .Params.repositoryLabel | default "Explore the code" }}</a></p>
+  </header>
+  {{- with .Params.illustration }}
+  <figure class="single-figure">
+    <img src="{{ . | relURL }}" alt="{{ $.Params.illustrationAlt }}" loading="lazy" decoding="async">
+    {{- with $.Params.illustrationCaption }}<figcaption>{{ . }}</figcaption>{{- end }}
+  </figure>
+  {{- end }}
+  <div class="single-prose single-section">
+    {{ .Content }}
+  </div>
 </article>
 {{- end }}

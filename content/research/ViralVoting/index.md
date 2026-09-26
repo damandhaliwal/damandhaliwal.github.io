@@ -14,7 +14,6 @@ editPost:
     Text: "Working Paper"
 aliases:
     - /projects/viralvoting/
-displayTitle: "How influence travels"
 displaySummary: "Can social pressure spread from one household to the next—and change who turns out to vote?"
 topic: "Political economy · Spatial effects"
 illustration: "/images/research/viral-voting.svg"

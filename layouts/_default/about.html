@@ -1,71 +1,41 @@
 {{- define "main" }}
-<div class="portfolio-wrap about-editorial">
-    <header class="about-introduction" aria-labelledby="about-title">
-        <div class="about-introduction-copy">
-            <p class="about-eyebrow">A bit of background</p>
-            <h1 id="about-title">A little<br>about me.</h1>
-            <p class="about-introduction-lead">{{ .Params.introduction }}</p>
-            <p class="about-introduction-note">{{ .Params.background }}</p>
-        </div>
-        <figure class="about-portrait-figure">
-            <div class="about-portrait-frame">
-                <img src="{{ "/picture.jpg" | relURL }}" alt="Daman Dhaliwal" width="3071" height="3071" fetchpriority="high">
-            </div>
-            <figcaption><span>Daman Dhaliwal</span><span>Based in Toronto</span></figcaption>
-        </figure>
-    </header>
+<div class="single-home">
+  <header class="single-page-head" aria-labelledby="about-title">
+    <p class="kicker">A bit of background</p>
+    <h1 id="about-title">A little about me.</h1>
+    <p class="single-lede">{{ .Params.introduction }}</p>
+    <p>{{ .Params.background }}</p>
+  </header>
 
-    <nav class="about-journey" aria-label="My journey">
-        <p class="about-eyebrow">The path so far</p>
-        <ol>
-            {{- range .Params.chapters }}
-            <li>
-                <a href="#{{ .id }}">
-                    <span class="about-journey-marker" aria-hidden="true">{{ .number }}</span>
-                    <span class="about-journey-stage">{{ .stage }}</span>
-                    <span class="about-journey-place">{{ .place }}</span>
-                </a>
-            </li>
-            {{- end }}
-            <li>
-                <a href="#about-now">
-                    <span class="about-journey-marker" aria-hidden="true">05</span>
-                    <span class="about-journey-stage">Today</span>
-                    <span class="about-journey-place">Research + building</span>
-                </a>
-            </li>
-        </ol>
-    </nav>
+  <section class="single-section" aria-labelledby="journey-title">
+    <p class="kicker" id="journey-title">The path so far</p>
+    <ul class="single-list">
+      {{- range .Params.chapters }}
+      <li>
+        <h3><a href="#{{ .id }}">{{ .title }}</a></h3>
+        <p class="single-meta">{{ .number }} · {{ .stage }} · {{ .place }}</p>
+      </li>
+      {{- end }}
+      <li>
+        <h3><a href="#about-now">Close to the problem. Hands on with the work.</a></h3>
+        <p class="single-meta">05 · Today · Research + building</p>
+      </li>
+    </ul>
+  </section>
 
-    <div class="about-chapters">
-        {{- range .Params.chapters }}
-        <section id="{{ .id }}" class="about-chapter" aria-labelledby="{{ .id }}-title">
-            <figure class="about-chapter-figure{{ if .drawing }} about-chapter-drawing{{ end }}">
-                <img src="{{ .image | relURL }}" alt="{{ .imageAlt }}" loading="lazy" decoding="async">
-                <figcaption>{{ .caption }}</figcaption>
-            </figure>
-            <div class="about-chapter-copy">
-                <p class="about-eyebrow"><span>{{ .number }}</span> {{ .place }}</p>
-                <h2 id="{{ .id }}-title">{{ .title }}</h2>
-                <p>{{ .text | markdownify }}</p>
-            </div>
-        </section>
-        {{- end }}
-    </div>
+  {{- range .Params.chapters }}
+  <section class="single-section" id="{{ .id }}" aria-labelledby="{{ .id }}-title">
+    <p class="kicker">{{ .number }} · {{ .place }}</p>
+    <h3 id="{{ .id }}-title" class="single-section-title">{{ .title }}</h3>
+    <p>{{ .text | markdownify }}</p>
+  </section>
+  {{- end }}
 
-    <section id="about-now" class="about-current" aria-labelledby="about-current-title">
-        <div>
-            <p class="about-eyebrow">05 / Today</p>
-            <h2 id="about-current-title">Close to the problem.<br>Hands on with the work.</h2>
-        </div>
-        <div class="about-current-copy">
-            <p>{{ .Params.currentWork | markdownify }}</p>
-            <p>{{ .Params.currentDirection }}</p>
-            <div class="about-current-links">
-                <a href="{{ "/projects/" | relURL }}">What I’m building <span aria-hidden="true">↗</span></a>
-                <a href="{{ "/research/" | relURL }}">My research <span aria-hidden="true">↗</span></a>
-            </div>
-        </div>
-    </section>
+  <section class="single-section" id="about-now" aria-labelledby="about-current-title">
+    <p class="kicker" id="about-current-title">05 · Today</p>
+    <p>{{ .Params.currentWork | markdownify }}</p>
+    <p>{{ .Params.currentDirection }}</p>
+    <p><a href="{{ "/projects/" | relURL }}">What I'm building</a><span aria-hidden="true"> · </span><a href="{{ "/research/" | relURL }}">My research</a></p>
+  </section>
 </div>
 {{- end }}

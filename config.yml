@@ -58,7 +58,7 @@ params:
     math: true
     homepage:
         enabled: true
-        name: "Damanveer Singh Dhaliwal"
+        name: "Daman Dhaliwal"
         standfirst: "Economist and builder. I work on data, machine learning, and the systems that turn analysis into decisions."
         contact:
             email: "mailto:damandhaliwal1910@gmail.com"

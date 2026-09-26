@@ -14,7 +14,6 @@ editPost:
     Text: "Working Paper"
 aliases:
     - /projects/rlalgotrading/
-displayTitle: "Learning to hedge"
 displaySummary: "Can a reinforcement learning agent use the shape of volatility to make better hedging decisions?"
 topic: "Machine learning · Quantitative finance"
 illustration: "/images/research/deep-hedging.svg"

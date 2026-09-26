@@ -14,7 +14,6 @@ editPost:
     Text: "Working Paper"
 aliases:
     - /projects/index-funds/
-displayTitle: "Who watches the index funds?"
 displaySummary: "What happens to corporate stewardship when ownership is concentrated in the largest passive investors?"
 topic: "Corporate governance · Finance"
 illustration: "/images/research/index-funds.svg"

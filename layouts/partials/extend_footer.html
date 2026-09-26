@@ -33,3 +33,6 @@
   });
 })();
 </script>
+{{- if .IsHome }}
+<script src="{{ "js/home-panels.js" | relURL }}?v=2" defer></script>
+{{- end }}
