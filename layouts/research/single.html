@@ -1,65 +1,27 @@
 {{- define "main" }}
-{{- $page := . -}}
-{{- $home := site.Params.homepage -}}
-<div class="home-page research-detail-shell">
-    <article class="research-detail-experience" aria-labelledby="research-detail-title">
-        {{- with $home }}
-        <nav class="home-nav research-detail-nav" aria-label="Research page navigation">
-            <div class="home-nav-links">
-                {{- range .nav }}
-                {{- $url := .url -}}
-                {{- $href := cond (or (hasPrefix $url "http") (hasPrefix $url "#")) $url ($url | relURL) -}}
-                {{- $navPath := cond (or (hasPrefix $url "http") (hasPrefix $url "#")) "" ($url | relURL) -}}
-                <a href="{{ $href | safeURL }}"{{ if and $navPath (eq $navPath $page.CurrentSection.RelPermalink) }} aria-current="page"{{ end }}>{{ .label }}</a>
-                {{- end }}
-            </div>
-            {{- with .headerCta }}
-            {{- $url := .url -}}
-            {{- $href := cond (hasPrefix $url "#") (printf "/%s" $url) $url -}}
-            <a class="home-nav-cta" href="{{ $href | safeURL }}">{{ .label }}</a>
-            {{- end }}
-        </nav>
-        {{- end }}
-
-        <header class="research-detail-heading">
-            <a class="research-back-link" href="{{ "/research/" | relURL }}">Research</a>
-            <h1 id="research-detail-title">{{ .Title }}</h1>
-            <div class="research-detail-meta">
-                {{- with .Date }}
-                <span>{{ .Format (site.Params.DateFormat | default "January 2006") }}</span>
-                {{- end }}
-                {{- with .Params.author }}
-                <span>{{ . }}</span>
-                {{- end }}
-                {{- with .Params.editPost.Text }}
-                <span>{{ . }}</span>
-                {{- end }}
-            </div>
-            {{- with .Params.summary | default .Description }}
-            <p>{{ . }}</p>
-            {{- end }}
-        </header>
-
-        <div class="research-detail-body">
-            {{- if .Content }}
-            <div class="research-detail-content post-content">
-                {{- if not (.Param "disableAnchoredHeadings") }}
-                {{- partial "anchored_headings.html" .Content -}}
-                {{- else }}{{ .Content }}{{ end }}
-            </div>
-            {{- end }}
-
-            {{- with .Params.tags }}
-            <aside class="research-topic-panel" aria-label="Research topics">
-                <span>Topics</span>
-                <ul class="research-topic-list">
-                    {{- range . }}
-                    <li>{{ . }}</li>
-                    {{- end }}
-                </ul>
-            </aside>
-            {{- end }}
-        </div>
-    </article>
-</div>
+<article class="single-home" aria-labelledby="research-detail-title">
+  <header class="single-page-head">
+    <p class="kicker">{{ .Params.topic }}</p>
+    <h1 id="research-detail-title">{{ .Title }}</h1>
+    <p class="single-lede">{{ .Params.displaySummary | default .Description }}</p>
+    <p class="single-meta">
+      {{- with .Params.author }}{{ . }}{{ end }}{{ with .Date }} · {{ .Format "January 2006" }}{{ end }}{{- with .Params.editPost.Text }} · {{ . }}{{ end }}
+    </p>
+    <p>
+      {{- with .Params.paper }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">Read the paper (PDF)</a>{{- end }}{{- if and .Params.paper .Params.code }}<span aria-hidden="true"> · </span>{{- end }}{{- with .Params.code }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">View code</a>{{- end }}
+    </p>
+  </header>
+  {{- with .Params.illustration }}
+  <figure class="single-figure">
+    <img src="{{ . | relURL }}" alt="{{ $.Params.illustrationAlt }}" loading="lazy" decoding="async">
+    {{- with $.Params.illustrationCaption }}<figcaption>Concept illustration · {{ . }}</figcaption>{{- end }}
+  </figure>
+  {{- end }}
+  <div class="single-prose single-section">
+    {{ .Content }}
+  </div>
+  {{- with .Params.tags }}
+  <p class="single-meta">{{ delimit . " · " }}</p>
+  {{- end }}
+</article>
 {{- end }}

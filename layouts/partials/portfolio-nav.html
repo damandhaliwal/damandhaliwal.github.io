@@ -1,0 +1,35 @@
+{{- $isHome := .IsHome -}}
+{{- $projectsActive := eq .Section "projects" -}}
+{{- $researchActive := eq .Section "research" -}}
+{{- $contactActive := eq .Section "contact" -}}
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="portfolio-header">
+  <nav class="portfolio-wrap portfolio-nav single-nav" aria-label="Main navigation">
+    <a class="portfolio-brand" href="{{ "/" | relURL }}" aria-label="Daman Dhaliwal — home"{{ if $isHome }} data-home-panel-target="about" data-home-panel-reset="true" aria-controls="home-panel-about"{{ end }}>Daman Dhaliwal</a>
+    <div class="single-nav-right">
+      <div class="portfolio-nav-links single-nav-links">
+        <a href="{{ if $isHome }}#work{{ else }}{{ "/#work" | relURL }}{{ end }}"{{ if $isHome }} data-home-panel-target="work" aria-controls="home-panel-work"{{ end }}>Work</a>
+        <a href="{{ if $isHome }}#projects{{ else }}{{ "/#projects" | relURL }}{{ end }}"{{ if $isHome }} data-home-panel-target="projects" aria-controls="home-panel-projects"{{ else if $projectsActive }} aria-current="location"{{ end }}>Projects</a>
+        <a href="{{ if $isHome }}#research{{ else }}{{ "/#research" | relURL }}{{ end }}"{{ if $isHome }} data-home-panel-target="research" aria-controls="home-panel-research"{{ else if $researchActive }} aria-current="location"{{ end }}>Research</a>
+        <a href="https://damandhaliwal.substack.com/" target="_blank" rel="noopener noreferrer">Writing<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="{{ if $isHome }}#contact{{ else }}{{ "/#contact" | relURL }}{{ end }}"{{ if $isHome }} data-home-panel-target="contact" aria-controls="home-panel-contact"{{ else if $contactActive }} aria-current="location"{{ end }}>Contact</a>
+      </div>
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>

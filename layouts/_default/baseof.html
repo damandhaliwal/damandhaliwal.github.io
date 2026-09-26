@@ -5,23 +5,12 @@
     {{- partial "head.html" . }}
 </head>
 
-<body class="
-{{- if .IsHome -}}
-{{- print "home-page " -}}
-{{- end -}}
-{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
-{{- print "list" -}}
-{{- end -}}
-{{- if eq site.Params.defaultTheme `dark` -}}
-{{- print " dark" }}
-{{- end -}}
-" id="top">
-    {{- if and (not .IsHome) (ne .Layout "about") (ne .Section "research") }}
-    {{- partialCached "header.html" . .Page -}}
-    {{- end }}
-    <main class="main{{ if .IsHome }} home-main{{ end }}">
+<body class="portfolio-page{{ if .IsHome }} home-page{{ end }}{{ if or (eq .Section "projects") (eq .Section "research") }} project-research-page{{ end }}{{ if eq site.Params.defaultTheme "dark" }} dark{{ end }}" id="top">
+    {{- partial "portfolio-nav.html" . }}
+    <main id="main-content" tabindex="-1" class="main portfolio-main">
         {{- block "main" . }}{{ end }}
     </main>
-    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+    {{- partial "portfolio-footer.html" . }}
+    {{- partial "extend_footer.html" . }}
 </body>
 </html>

@@ -1,0 +1,19 @@
+{{- define "main" }}
+<div class="single-home">
+  <header class="single-page-head" aria-labelledby="projects-title">
+    <h1 id="projects-title">Projects</h1>
+    <p class="single-lede">{{ .Description }}</p>
+  </header>
+  <section class="single-section" aria-label="Projects">
+    <ul class="single-list">
+      {{- range .Pages.ByWeight }}
+      <li>
+        <h3><a href="{{ .RelPermalink }}">{{ .Params.displayTitle | default .Title }}</a></h3>
+        <p class="single-meta">{{ .Params.topic }}{{ with .Params.year }} · {{ . }}{{ end }}</p>
+        <p>{{ .Params.displaySummary | default .Description }}</p>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+</div>
+{{- end }}

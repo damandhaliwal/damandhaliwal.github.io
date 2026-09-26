@@ -14,21 +14,15 @@ editPost:
     Text: "Working Paper"
 aliases:
     - /projects/socialcapital/
-
+displaySummary: "When a crisis hits, which social ties help businesses survive—and which help them grow?"
+topic: "Social capital · Causal inference"
+illustration: "/images/research/social-capital.svg"
+illustrationAlt: "An abstract network of connected blue and coral nodes arranged in overlapping communities."
+illustrationCaption: "The connections between businesses and communities."
+paper: "social_capital_business.pdf"
+code: "https://github.com/damandhaliwal/SocialCapital"
 ---
 
----
+## Abstract
 
-##### Download
-
-+ [Paper](social_capital_business.pdf)
-+ [Code](https://github.com/damandhaliwal/SocialCapital)
-
----
-
-##### Abstract
 Social capital has been linked to individual economic mobility, yet its effects on firm-level outcomes remain understudied. This paper investigates the relationship between social capital and business performance using data on nearly 14 million U.S. businesses combined with county-level social capital measures derived from Facebook friendship networks. Leveraging the COVID-19 pandemic as an exogenous shock, I examine how three dimensions of social capital—economic connectedness, social cohesion, and civic engagement—affect firm survival and revenue growth. Using Double Machine Learning to flexibly control for high-dimensional confounders, I find that social cohesion is the dominant predictor of survival, with a one standard deviation increase associated with a nearly one percentage point higher survival probability. Quantile regression reveals striking heterogeneity: economic connectedness benefits top-performing firms but imposes costs on struggling businesses, while social cohesion acts as a safety net for the lower-middle distribution. Industry-level analysis shows that information-intensive sectors (telecommunications, finance) benefit most from social capital, while healthcare exhibited surprising negative effects during the pandemic. These findings challenge the view of social capital as uniformly beneficial and highlight that different dimensions serve competing economic functions across the firm performance distribution.
-
----
-
-##### Related material

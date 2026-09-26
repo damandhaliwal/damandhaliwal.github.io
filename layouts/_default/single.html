@@ -1,14 +1,12 @@
 {{- define "main" }}
-
-<article class="post-single">
-  <header class="post-header">
-    {{ partial "breadcrumbs.html" . }}
-    <h1 class="post-title">
-      {{ .Title }}
-      {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
-    </h1>
+<article class="single-home" aria-labelledby="page-title">
+  <header class="single-page-head">
+    {{- partial "breadcrumbs.html" . }}
+    {{- with .Params.topic }}<p class="kicker">{{ . }}</p>{{- end }}
+    <h1 id="page-title">{{ .Title }}{{ if .Draft }} <span class="entry-isdraft">(draft)</span>{{ end }}</h1>
+    {{- with .Description }}<p class="single-lede">{{ . }}</p>{{- end }}
     {{- if not (.Param "hideMeta") }}
-    <div class="post-meta">
+    <div class="single-meta">
       {{- partial "post_meta.html" . -}}
       {{- partial "translation_list.html" . -}}
       {{- partial "edit_post.html" . -}}
@@ -18,36 +16,22 @@
   </header>
   {{- $isHidden := .Params.cover.hidden | default site.Params.cover.hiddenInSingle | default site.Params.cover.hidden }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
-  {{- if (.Param "ShowToc") }}
-  {{- partial "toc.html" . }}
-  {{- end }}
-
-  {{- if .Content }}
-  <div class="post-content">
-    {{- if not (.Param "disableAnchoredHeadings") }}
-    {{- partial "anchored_headings.html" .Content -}}
-    {{- else }}{{ .Content }}{{ end }}
+  {{- if .Param "ShowToc" }}{{ partial "toc.html" . }}{{ end }}
+  {{- with .Content }}
+  <div class="single-prose single-section">
+    {{- if not ($.Param "disableAnchoredHeadings") }}
+      {{- partial "anchored_headings.html" . -}}
+    {{- else }}{{ . }}{{ end }}
   </div>
   {{- end }}
-
-  <footer class="post-footer">
-    {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
-    <ul class="post-tags">
-      {{- range ($.GetTerms $tags) }}
-      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
-      {{- end }}
-    </ul>
-    {{- if (.Param "ShowPostNavLinks") }}
-    {{- partial "post_nav_links.html" . }}
-    {{- end }}
-    {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
-    {{- partial "share_icons.html" . -}}
-    {{- end }}
-  </footer>
-
-  {{- if (.Param "comments") }}
-  {{- partial "comments.html" . }}
+  {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+  {{- with ($.GetTerms $tags) }}
+  <ul class="single-terms" aria-label="Topics">
+    {{- range . }}<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{- end }}
+  </ul>
   {{- end }}
+  {{- if .Param "ShowPostNavLinks" }}{{ partial "post_nav_links.html" . }}{{ end }}
+  {{- if and site.Params.ShowShareButtons (ne .Params.disableShare true) }}{{ partial "share_icons.html" . }}{{ end }}
+  {{- if .Param "comments" }}{{ partial "comments.html" . }}{{ end }}
 </article>
-
-{{- end }}{{/* end main */}}
+{{- end }}

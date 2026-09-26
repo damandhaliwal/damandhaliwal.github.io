@@ -1,0 +1,29 @@
+<svg class="intersection-art" viewBox="0 0 520 500" role="img" aria-labelledby="intersection-title intersection-description">
+  <title id="intersection-title">Where research, engineering, and business meet</title>
+  <desc id="intersection-description">Three overlapping elliptical fields meet around a central point, representing the disciplines behind my work.</desc>
+  <defs>
+    <pattern id="intersection-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="12" cy="12" r="0.8" fill="#2E4756" opacity="0.16"/></pattern>
+    <radialGradient id="intersection-wash"><stop offset="0" stop-color="#A5C4D4" stop-opacity="0.2"/><stop offset="1" stop-color="#A5C4D4" stop-opacity="0"/></radialGradient>
+  </defs>
+  <circle cx="260" cy="240" r="220" fill="url(#intersection-wash)"/>
+  <circle cx="260" cy="240" r="214" fill="url(#intersection-grid)"/>
+  <g fill="none" stroke="#2E4756" stroke-width="0.65" opacity="0.1"><circle cx="260" cy="240" r="208"/><path d="M28 240h464M260 8v464"/></g>
+  <g class="intersection-orbits" fill="none" stroke-width="0.75">
+    {{- range seq 0 13 }}
+    {{- $r := add 74 (mul . 4) -}}
+    <ellipse cx="260" cy="240" rx="{{ $r }}" ry="192" transform="rotate(-38 260 240)" stroke="#2E4756" opacity="{{ add 0.12 (mul . 0.018) }}"/>
+    <ellipse cx="260" cy="240" rx="{{ $r }}" ry="192" transform="rotate(38 260 240)" stroke="#A5C4D4" opacity="0.62"/>
+    {{- end }}
+    <ellipse cx="260" cy="240" rx="200" ry="87" transform="rotate(-6 260 240)" stroke="#C2948A" stroke-width="1.5"/>
+  </g>
+  <g fill="#F5F1E8" stroke="#2E4756" stroke-width="1"><circle cx="155" cy="99" r="5"/><circle cx="397" cy="360" r="5"/></g>
+  <circle cx="67" cy="274" r="5" fill="#C2948A"/>
+  <circle class="intersection-center" cx="260" cy="240" r="9" fill="#2E4756"/>
+  <circle cx="260" cy="240" r="17" fill="none" stroke="#2E4756" stroke-width="0.8" opacity="0.3"/>
+  <g font-family="Inter, sans-serif" font-size="10" letter-spacing="1.6" fill="#2E4756">
+    <text x="100" y="64">RESEARCH</text>
+    <text x="333" y="411">ENGINEERING</text>
+    <text x="27" y="307">BUSINESS</text>
+  </g>
+  <path d="M447 69h12m-6-6v12M81 423h12m-6-6v12" stroke="#C2948A" stroke-width="1"/>
+</svg>
