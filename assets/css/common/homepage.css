@@ -1,34 +1,7 @@
 /* Shared text-first portfolio design.
-   Self-hosted webfonts keep typography consistent across every route.
+   Webfonts load from Google Fonts (see extend_head.html) with display=swap;
+   system stacks below are the fallbacks.
    Palette tokens live in theme-vars.css; --home-* aliases keep detail pages working. */
-@font-face {
-  font-family: "Cormorant Garamond";
-  src: url("/fonts/cormorant-garamond-regular.ttf") format("truetype");
-  font-weight: 400 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Cormorant Garamond";
-  src: url("/fonts/cormorant-garamond-italic.ttf") format("truetype");
-  font-weight: 400 500;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: Inter;
-  src: url("/fonts/inter-regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: Inter;
-  src: url("/fonts/inter-medium.ttf") format("truetype");
-  font-weight: 500 900;
-  font-style: normal;
-  font-display: swap;
-}
 
 .portfolio-page {
   --home-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
