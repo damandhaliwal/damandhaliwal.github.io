@@ -20,7 +20,8 @@ hugo --minify --destination /tmp/website-render-check --cleanDestinationDir
 
 - `content/_index.md` is the homepage content stub; the custom homepage is primarily driven by `config.yml` under `params.homepage`.
 - `content/research/` contains research page bundles. Each research item is a directory containing `index.md` plus associated PDFs or other files.
-- Old `/projects/` URLs are preserved through aliases in research front matter; the canonical public section is `/research/`.
+- `content/projects/` contains the ML simulation and Sundai Mars project case studies. `/projects/` is now a real section.
+- Old `/projects/<research-slug>/` detail URLs remain aliases to `/research/<slug>/`. Do not restore a `/projects/` alias on the Research index.
 
 ### Config
 
@@ -32,25 +33,31 @@ hugo --minify --destination /tmp/website-render-check --cleanDestinationDir
 ### Layout Overrides
 
 - `layouts/_default/` overrides PaperMod's default list, single, baseof, and related templates.
-- `layouts/_default/baseof.html` adds the custom homepage shell on the homepage and skips the old PaperMod header/footer treatment on About and Research routes.
+- `layouts/_default/baseof.html` renders the shared portfolio navigation and footer on all routes and gives Home, About, Research, and Projects the full-width portfolio shell.
+- `layouts/partials/portfolio-nav.html` provides Home, current-section state, and external Writing links that open in a new tab.
+- `layouts/partials/portfolio-footer.html` provides contact, social, and CV links.
 - `layouts/_default/list.html` routes the homepage to `layouts/partials/homepage.html` when `params.homepage.enabled` is true.
 - `layouts/research/list.html` renders the Research index.
 - `layouts/research/single.html` renders individual Research detail pages.
 - `layouts/partials/homepage.html` controls the custom visual homepage.
 - `layouts/partials/index_profile.html` is the older profile-mode fallback.
-- `layouts/partials/extend_footer.html` loads homepage-only JavaScript from `assets/js/homepage.js`.
+- `layouts/projects/` renders the Projects index and case studies.
+- `layouts/partials/intersection.html` provides the homepage vector illustration.
+- The portfolio uses native links and CSS; `extend_footer.html` does not load homepage JavaScript.
 - Hugo's lookup order means local files in `layouts/` take precedence over `themes/PaperMod/layouts/`.
 
 ### CSS
 
 - `assets/css/core/theme-vars.css` defines shared CSS custom properties for colors, spacing, and fonts.
 - `assets/css/common/` contains per-component stylesheets.
-- `assets/css/common/homepage.css` contains the homepage, About, and Research visual system. Keep selectors rooted in page-specific wrappers such as `.home-page`, `.home-experience`, `.research-page-shell`, or `.research-detail-shell` so styles do not leak into unrelated pages.
+- `assets/css/common/homepage.css` contains the shared portfolio shell, typography, navigation, footer, and homepage styles.
+- `assets/css/extended/{about,projects,research}.css` contains the respective page styles, scoped to their page wrappers.
+- Cormorant Garamond and Inter are self-hosted under `static/fonts/` with their open font licenses. Preserve the existing paper, ink, cyan, and clay palette.
 - Changes in `assets/css/` override the theme. Inspect `themes/PaperMod/assets/css/` for the original PaperMod styles when needed.
 
 ### JavaScript
 
-- `assets/js/homepage.js` provides the lightweight homepage canvas animation and is loaded only on the homepage. It is guarded for reduced-motion users.
+- No homepage JavaScript is loaded. Navigation and timeline links work without JavaScript; CSS respects reduced-motion preferences.
 
 ### Static Assets
 
@@ -68,8 +75,10 @@ hugo --minify --destination /tmp/website-render-check --cleanDestinationDir
 
 - The public label for the former Projects section is now Research.
 - Canonical URLs are `/research/` and `/research/<slug>/`.
-- Old `/projects/` URLs should remain supported with Hugo aliases.
-- Research cards and detail pages share the About/homepage visual language: Cormorant display headings, Inter body text, paper background, muted copy colors, light artifact cards, and the shared floating nav.
+- Old `/projects/<research-slug>/` detail URLs should remain supported with Hugo aliases; `/projects/` itself belongs to the Projects section.
+- Research cards and detail pages share the About/homepage visual language: Cormorant display headings, Inter body text, paper background, muted copy colors, light artifact cards, and the shared sticky navigation.
+- `displayTitle`, `displaySummary`, `topic`, and `illustration` front matter drive visual cards; full titles and original abstracts remain on detail pages.
+- SVG artwork is conceptual, not an empirical result. Keep synthetic/local/prototype limits explicit in project case studies.
 
 ## Visual QA Notes
 

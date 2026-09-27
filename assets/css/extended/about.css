@@ -1,0 +1,389 @@
+.about-editorial {
+    color: var(--home-ink);
+    font-family: var(--home-body);
+    padding-top: clamp(48px, 6vw, 88px);
+    padding-bottom: 96px;
+}
+
+.about-editorial .about-eyebrow {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.about-editorial .about-introduction {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: center;
+    gap: clamp(52px, 9vw, 132px);
+    padding-bottom: 66px;
+}
+
+.about-editorial .about-introduction h1 {
+    margin: 22px 0;
+    font-family: var(--home-display);
+    font-size: clamp(76px, 8.3vw, 112px);
+    font-weight: 500;
+    letter-spacing: -0.055em;
+    line-height: 0.86;
+}
+
+.about-editorial .about-introduction-lead {
+    max-width: 470px;
+    margin: 30px 0 14px;
+    font-size: clamp(17px, 1.7vw, 21px);
+    line-height: 1.55;
+    letter-spacing: -0.025em;
+}
+
+.about-editorial .about-introduction-note {
+    max-width: 450px;
+    margin: 0;
+    color: var(--home-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.about-editorial .about-portrait-figure {
+    width: 100%;
+    max-width: 365px;
+    justify-self: end;
+    margin: 0;
+}
+
+.about-editorial .about-portrait-frame {
+    overflow: hidden;
+    aspect-ratio: 0.88;
+    background: var(--home-surface);
+    border-radius: 3px;
+}
+
+.about-editorial .about-portrait-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 38%;
+}
+
+.about-editorial .about-portrait-figure figcaption {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 13px;
+    color: var(--home-muted);
+    font-size: 10px;
+    letter-spacing: 0.03em;
+}
+
+.about-editorial .about-journey {
+    padding: 32px 0 42px;
+    border-top: 1px solid rgba(46, 71, 86, 0.18);
+    border-bottom: 1px solid rgba(46, 71, 86, 0.18);
+}
+
+.about-editorial .about-journey > .about-eyebrow {
+    color: var(--home-muted);
+}
+
+.about-editorial .about-journey ol {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+}
+
+.about-editorial .about-journey li {
+    position: relative;
+    padding: 0 20px 0 0;
+}
+
+.about-editorial .about-journey li::before {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(46, 71, 86, 0.2);
+    content: "";
+}
+
+.about-editorial .about-journey li:last-child::before {
+    right: calc(100% - 24px);
+}
+
+.about-editorial .about-journey a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--home-ink);
+    text-decoration: none;
+}
+
+.about-editorial .about-journey-marker {
+    display: grid;
+    width: 25px;
+    height: 25px;
+    place-items: center;
+    border: 1px solid var(--home-coral);
+    border-radius: 50%;
+    background: var(--home-paper);
+    font-size: 9px;
+    font-weight: 500;
+    transition: background 180ms ease;
+}
+
+.about-editorial .about-journey a:hover .about-journey-marker,
+.about-editorial .about-journey a:focus-visible .about-journey-marker {
+    background: var(--home-coral);
+}
+
+.about-editorial .about-journey-stage {
+    margin-top: 18px;
+    color: var(--home-muted);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.about-editorial .about-journey-place {
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.about-editorial .about-chapters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px 48px;
+    margin: 64px 0 72px;
+}
+
+.about-editorial .about-chapter,
+.about-editorial .about-current {
+    scroll-margin-top: 130px;
+}
+
+.about-editorial .about-chapter-figure {
+    position: relative;
+    margin: 0 0 23px;
+}
+
+.about-editorial .about-chapter-figure img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.9;
+    object-fit: cover;
+    border-radius: 3px;
+    background: var(--home-surface);
+}
+
+.about-editorial .about-chapter-drawing img {
+    object-fit: contain;
+    padding: 16px;
+    background: #efeee4;
+}
+
+.about-editorial .about-chapter-figure figcaption {
+    margin-top: 10px;
+    color: var(--home-muted);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.about-editorial .about-chapter-copy .about-eyebrow {
+    color: var(--home-muted);
+    letter-spacing: 0.09em;
+}
+
+.about-editorial .about-chapter-copy .about-eyebrow span {
+    padding-right: 9px;
+    color: var(--home-ink);
+}
+
+.about-editorial .about-chapter h2 {
+    margin: 10px 0 12px;
+    font-family: var(--home-display);
+    font-size: clamp(30px, 3vw, 40px);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+}
+
+.about-editorial .about-chapter-copy > p:last-child {
+    max-width: 510px;
+    margin: 0;
+    color: var(--home-muted);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.about-editorial .about-chapter-copy > p a {
+    color: var(--home-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--home-coral);
+    text-underline-offset: 3px;
+}
+
+.about-editorial .about-current {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 48px;
+    padding: 42px 0 0;
+    border-top: 1px solid rgba(46, 71, 86, 0.18);
+}
+
+.about-editorial .about-current h2 {
+    margin: 14px 0 0;
+    font-family: var(--home-display);
+    font-size: clamp(33px, 3.5vw, 46px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.035em;
+}
+
+.about-editorial .about-current-copy p {
+    margin: 0 0 16px;
+    color: var(--home-muted);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.about-editorial .about-current-copy strong {
+    color: var(--home-ink);
+    font-weight: 500;
+}
+
+.about-editorial .about-current-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 26px;
+}
+
+.about-editorial .about-current-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(46, 71, 86, 0.4);
+    color: var(--home-ink);
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.about-editorial .about-current-links a:hover {
+    border-color: var(--home-coral);
+}
+
+.about-editorial a:focus-visible {
+    outline: 2px solid var(--home-ink);
+    outline-offset: 5px;
+}
+
+@media (max-width: 900px) {
+    .about-editorial .about-introduction { gap: 42px; }
+    .about-editorial .about-introduction h1 { font-size: 84px; }
+    .about-editorial .about-chapters { gap: 48px 30px; }
+    .about-editorial .about-journey-place { font-size: 12px; }
+}
+
+@media (max-width: 650px) {
+    .about-editorial {
+        padding-top: 42px;
+        padding-bottom: 58px;
+    }
+
+    .about-editorial .about-introduction {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-bottom: 36px;
+    }
+
+    .about-editorial .about-introduction h1 {
+        margin-top: 20px;
+        font-size: 82px;
+    }
+
+    .about-editorial .about-introduction-lead {
+        margin-top: 25px;
+        font-size: 18px;
+    }
+
+    .about-editorial .about-introduction-note { font-size: 13px; }
+    .about-editorial .about-portrait-figure { max-width: none; }
+    .about-editorial .about-portrait-frame { aspect-ratio: 1.3; }
+    .about-editorial .about-portrait-frame img { object-position: 50% 35%; }
+    .about-editorial .about-journey { padding: 28px 0; }
+
+    .about-editorial .about-journey ol {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-top: 18px;
+    }
+
+    .about-editorial .about-journey li { padding: 0 0 21px; }
+    .about-editorial .about-journey li:last-child { padding-bottom: 0; }
+
+    .about-editorial .about-journey li::before {
+        top: 12px;
+        bottom: -12px;
+        left: 12px;
+        right: auto;
+        width: 1px;
+        height: auto;
+    }
+
+    .about-editorial .about-journey li:last-child::before { content: none; }
+
+    .about-editorial .about-journey a {
+        display: grid;
+        grid-template-columns: 25px 1fr;
+        grid-template-rows: auto auto;
+        column-gap: 17px;
+    }
+
+    .about-editorial .about-journey-marker {
+        grid-row: 1 / 3;
+        align-self: center;
+    }
+
+    .about-editorial .about-journey-stage {
+        margin: 0;
+        font-size: 10px;
+    }
+
+    .about-editorial .about-journey-place {
+        margin-top: 2px;
+        font-size: 13px;
+    }
+
+    .about-editorial .about-chapters {
+        grid-template-columns: 1fr;
+        gap: 42px;
+        margin: 38px 0 45px;
+    }
+
+    .about-editorial .about-chapter-figure { margin-bottom: 20px; }
+    .about-editorial .about-chapter-figure img { aspect-ratio: 1.55; }
+    .about-editorial .about-chapter h2 { font-size: 33px; }
+
+    .about-editorial .about-current {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-top: 32px;
+    }
+
+    .about-editorial .about-current h2 { font-size: 39px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-editorial .about-journey-marker { transition: none; }
+}

@@ -1,62 +1,107 @@
 {{- $home := site.Params.homepage -}}
-{{- with $home }}
-<div class="home-experience" data-homepage>
-    <section class="home-panel home-about" id="about" aria-labelledby="home-about-title">
-        <nav class="home-nav" aria-label="Homepage navigation">
-            <div class="home-nav-links">
-                {{- range .nav }}
-                <a href="{{ .url | safeURL }}">{{ .label }}</a>
-                {{- end }}
-            </div>
-            {{- with .headerCta }}
-            <a class="home-nav-cta" href="{{ .url | safeURL }}">{{ .label }}</a>
-            {{- end }}
-        </nav>
-        <div class="about-mosaic">
-            <article class="about-card about-lead">
-                <h2 id="home-about-title" class="sr-only">{{ .about.title }}</h2>
-                <div class="about-statement">
-                    {{- range .about.intro }}
-                    <span>{{ . }}</span>
-                    {{- end }}
-                </div>
-                {{- with .about.description }}
-                <p>{{ . }}</p>
-                {{- end }}
-            </article>
-            <div class="about-side-stack">
-                <article class="about-card about-portrait-card">
-                    <div class="about-portrait">
-                        <img src="{{ .about.imageUrl | relURL }}" alt="{{ .about.imageAlt }}" loading="lazy">
-                    </div>
-                    <span class="about-name">{{ .about.imageAlt }}</span>
-                </article>
-                <article class="about-card about-research-card" aria-label="Location and local time">
-                    <p class="about-place-time">
-                        <span>{{ .about.location }}</span>
-                        <span aria-hidden="true">|</span>
-                        <span data-local-time data-time-zone="{{ .about.timezone }}">--:--</span>
-                    </p>
-                </article>
-            </div>
-            <div class="about-contact-panel" id="contact" aria-labelledby="home-contact-title">
-                <div class="about-contact-copy">
-                    <p id="home-contact-title"><span>{{ .contact.title }}</span> {{ .contact.description | safeHTML }}</p>
-                    <div class="contact-actions">
-                        <div class="contact-links" aria-label="Contact links">
-                            {{- range .contact.links }}
-                            <a href="{{ .url | safeURL }}" aria-label="{{ .label }}" title="{{ .label }}">
-                                <span class="contact-icon">{{ partial "svg.html" (dict "name" .icon) }}</span>
-                            </a>
-                            {{- end }}
-                        </div>
-                        {{- with .contact.cta }}
-                        <a class="panel-link" href="{{ .url | safeURL }}">{{ .label }} <span aria-hidden="true">-></span></a>
-                        {{- end }}
-                    </div>
-                </div>
-            </div>
-        </div>
+{{- $email := $home.contact.email | default "mailto:damandhaliwal1910@gmail.com" -}}
+{{- $linkedin := $home.contact.linkedin | default "https://www.linkedin.com/in/dhaliwaldaman/" -}}
+{{- $github := $home.contact.github | default "https://github.com/damandhaliwal" -}}
+<div class="single-home" data-home-panels>
+  <div class="home-panel" id="home-panel-about" data-home-panel="about">
+    <section class="single-section" id="about" aria-label="About">
+      <p>I work on problems where data, software, and consequential decisions meet.</p>
+      <p>I'm an economist by training, with an MA in Economics from the University of Toronto. My work has ranged from institutional real estate finance and investment to econometrics, data science, and software. The common thread is applied decision-making: using data, models, and judgment to understand complex problems and decide what to do.</p>
+      <p>I spent three years in institutional real estate investment and development, working on underwriting, financing, capital allocation, and strategic decisions across a billion-dollar development program. Today, I'm a replicator for the Journal of Political Economy, working across empirical research pipelines and computational workflows.</p>
+      <p>I also contribute to open-source econometrics and build projects across machine learning, quantitative research, and software.</p>
+      <p>Much of my work comes back to one question: given the evidence, what should we actually do?</p>
     </section>
+
+    <section class="single-section" id="contact" aria-labelledby="contact-title">
+      <p class="kicker" id="contact-title">Contact</p>
+      <p>The fastest way to reach me is email. I'm also on LinkedIn and GitHub.</p>
+      <p class="single-contact-links">
+        <a href="{{ $email }}">Email</a><span aria-hidden="true"> · </span><a href="{{ $linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a><span aria-hidden="true"> · </span><a href="{{ $github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </section>
+  </div>
+
+  <div class="home-panel" id="home-panel-work" data-home-panel="work">
+    <section class="single-section" id="work" aria-labelledby="work-title">
+      <p class="kicker" id="work-title">Work</p>
+      <ul class="single-list">
+        <li>
+          <h3>Senior Financial Analyst, Chard</h3>
+          <p class="single-meta">2022–2025 · Institutional real estate finance</p>
+          <p>Worked across underwriting, capital allocation, debt financing, forecasting, and portfolio decisions for a $1B real estate development program. I also built data and market-intelligence systems to make those decisions faster and more repeatable.</p>
+        </li>
+        <li>
+          <h3>Data Scientist, Sciences Po</h3>
+          <p class="single-meta">2024 · London bus networks</p>
+          <p>Built a geospatial dataset from more than 50 million GPS observations to study how London's bus network operates, including efficiency, asset utilization, spatial competition, and market power.</p>
+        </li>
+        <li>
+          <h3>Replicator, Journal of Political Economy</h3>
+          <p class="single-meta">2025–Present · Empirical research</p>
+          <p>Reproduce and audit empirical research across R, Stata, Python, Julia, and shell, checking statistical methods, outputs, dependencies, and whether the results can actually be reproduced.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="home-panel" id="home-panel-projects" data-home-panel="projects">
+    <section class="single-section" id="projects" aria-labelledby="projects-title">
+      <p class="kicker" id="projects-title">Projects</p>
+      <ul class="single-list">
+        <li>
+          <h3><a href="{{ "/projects/ml-simulation/" | relURL }}">Marketplace simulation</a></h3>
+          <p class="single-meta">Production-style ML systems demo</p>
+          <p>Simulated orders and couriers with matching, routing, ETA estimation, batching, experimentation, monitoring, and CI/CD.</p>
+        </li>
+        <li>
+          <h3><a href="{{ "/projects/mars-water-search/" | relURL }}">Mars Water Search</a></h3>
+          <p class="single-meta">Agents &amp; decision-making · Sundai Club research prototype</p>
+          <p>Four AI rovers, limited budgets, one discovery prize. An experiment in search, incentives, and collaboration.</p>
+        </li>
+        <li>
+          <h3>Open source</h3>
+          <p class="single-meta"><a href="https://github.com/py-econometrics/pyfixest" target="_blank" rel="noopener noreferrer">PyFixest</a> · <a href="https://github.com/py-econometrics/rovingbandit" target="_blank" rel="noopener noreferrer">RovingBandit</a></p>
+          <p>Contributions to econometric inference tooling and multi-armed bandit algorithms.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="home-panel" id="home-panel-research" data-home-panel="research">
+    <section class="single-section" id="research" aria-labelledby="research-title">
+      <p class="kicker" id="research-title">Research</p>
+      <ul class="single-list">
+        <li>
+          <h3><a href="{{ "/research/socialcapital/" | relURL }}">The Role of Social Capital in Business Performance: An Empirical Analysis</a></h3>
+          <p class="single-meta">Working paper</p>
+          <p>Using nearly 14 million US businesses with double machine learning and quantile regression to study how social capital shapes firm outcomes.</p>
+        </li>
+        <li>
+          <h3><a href="{{ "/research/viralvoting/" | relURL }}">Viral Voting: A study in the information diffusion effects of different social pressure treatments on voter turnout.</a></h3>
+          <p class="single-meta">Political economy · Spatial effects</p>
+          <p>Can social pressure spread from one household to the next—and change who turns out to vote?</p>
+        </li>
+        <li>
+          <h3><a href="{{ "/research/rlalgotrading/" | relURL }}">Deep Hedging with Non-Parametric Volatility Surfaces and Explicit Forecasting</a></h3>
+          <p class="single-meta">Machine learning · Quantitative finance</p>
+          <p>Can a reinforcement learning agent use the shape of volatility to make better hedging decisions?</p>
+        </li>
+        <li>
+          <h3><a href="{{ "/research/index-funds/" | relURL }}">Index Funds’ Corporate Stewardship Behaviour</a></h3>
+          <p class="single-meta">Corporate governance · Finance</p>
+          <p>What happens to corporate stewardship when ownership is concentrated in the largest passive investors?</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="home-panel contact-panel" id="home-panel-contact" data-home-panel="contact">
+    <section class="single-section" aria-labelledby="contact-panel-title">
+      <p class="kicker" id="contact-panel-title">Contact</p>
+      <p>The fastest way to reach me is email. I'm also on LinkedIn and GitHub.</p>
+      <p class="single-contact-links">
+        <a href="{{ $email }}">Email</a><span aria-hidden="true"> · </span><a href="{{ $linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a><span aria-hidden="true"> · </span><a href="{{ $github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </section>
+  </div>
 </div>
-{{- end }}

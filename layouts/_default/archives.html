@@ -1,40 +1,34 @@
 {{- define "main" }}
 
-<header class="page-header">
-</header>
-
-{{- $pages := site.RegularPages}}
-{{- if site.Params.ShowAllPagesInArchive }}
-{{- $pages = site.RegularPages }}
-{{- end }}
-
-{{- range $pages.GroupByPublishDate "2006" }}
-{{- if ne .Key "0001" }}
-<div class="archive-year">
-  <h2 class="archive-year-header">
-    {{- replace .Key "0001" "" }}
-  </h2>
-  {{- range .Pages.GroupByDate "January" }}
-  <div class="archive-month">
-    <h3 class="archive-month-header">{{- .Key }}
-    </h3>
-    <div class="archive-posts">
-      {{- range .Pages }}
-      {{- if eq .Kind "page" }}
-      <div class="archive-entry">
-        <h3 class="archive-entry-title">
-          {{- .Title | markdownify }}
-          {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
-        </h3>
-        <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+<div class="single-home archive-page">
+  <header class="single-page-head">
+    <p class="kicker">A record of the work</p>
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}<p class="single-lede">{{ . }}</p>{{- end }}
+  </header>
+  {{- $pages := site.RegularPages }}
+  {{- range $pages.GroupByPublishDate "2006" }}
+    {{- if ne .Key "0001" }}
+    <section class="single-section archive-year" aria-labelledby="archive-{{ .Key }}">
+      <h2 id="archive-{{ .Key }}" class="archive-year-title">{{ .Key }}</h2>
+      {{- range .Pages.GroupByDate "January" }}
+      <div class="archive-month">
+        <h3 class="archive-month-header">{{ .Key }}</h3>
+        <ul class="single-list">
+          {{- range .Pages }}
+            {{- if eq .Kind "page" }}
+            <li>
+              <h4><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ if .Draft }} <span class="entry-isdraft">(draft)</span>{{ end }}</h4>
+              {{- with .Params.topic }}<p class="single-meta">{{ . }}</p>{{- end }}
+            </li>
+            {{- end }}
+          {{- end }}
+        </ul>
       </div>
       {{- end }}
-      {{- end }}
-    </div>
-  </div>
+    </section>
+    {{- end }}
   {{- end }}
 </div>
-{{- end }}
-{{- end }}
 
 {{- end }}{{/* end main */}}
